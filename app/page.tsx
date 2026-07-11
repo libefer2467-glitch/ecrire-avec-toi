@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { AuthorsPhoto } from "@/components/AuthorsPhoto";
+import { VideoEmbed } from "@/components/VideoEmbed";
 import { INTELLIGENCES } from "@/lib/intelligences";
 import { TOTAL_QUESTIONS } from "@/lib/mckenzie";
 
@@ -47,6 +48,15 @@ export default function Home() {
             <AuthorsPhoto />
           </div>
         </div>
+      </section>
+
+      {/* ============ VIDEO INTRODUCTORIO ============ */}
+      <section className="mx-auto max-w-3xl px-4 pb-4">
+        <VideoEmbed
+          url="https://www.youtube.com/watch?v=2hJnFAysNNs"
+          title="Inteligencias Múltiples - Howard Gardner"
+          accentVar="var(--ling)"
+        />
       </section>
 
       {/* ============ PROCESO (3 pasos) ============ */}
