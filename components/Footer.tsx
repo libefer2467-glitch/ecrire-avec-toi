@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { UmssLogo } from "./UmssLogo";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -61,11 +61,31 @@ export function Footer() {
               Universidad
             </h2>
             <div className="mt-3 flex items-center gap-3">
-              <UmssLogo className="h-14 w-14 shrink-0" />
+              <Image
+                src="/umss-logo.png"
+                alt="Universidad Mayor de San Simón"
+                width={56}
+                height={56}
+                className="h-14 w-14 shrink-0 object-contain"
+              />
               <p className="text-sm text-ink-soft">
                 Universidad Mayor de San Simón
                 <br />
                 <span className="text-xs">Cochabamba · Bolivia</span>
+              </p>
+            </div>
+            <div className="mt-4 flex items-center gap-3">
+              <Image
+                src="/lael-logo.jpg"
+                alt="Lingüística Aplicada a la Enseñanza de Lenguas (LAEL)"
+                width={56}
+                height={51}
+                className="h-14 w-auto shrink-0 object-contain"
+              />
+              <p className="text-sm text-ink-soft">
+                Lingüística Aplicada a la
+                <br />
+                <span className="text-xs">Enseñanza de Lenguas (LAEL)</span>
               </p>
             </div>
           </div>
