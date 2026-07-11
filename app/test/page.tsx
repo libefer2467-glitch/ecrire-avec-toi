@@ -29,10 +29,16 @@ export default function TestPage() {
   const currentAnswered = answers[question.id] !== undefined;
 
   const selectAnswer = (value: number) => {
+    // Índice de ESTA pregunta al momento del clic (evita saltos por clics
+    // rápidos: dos avances encadenados podrían saltarse una pregunta).
+    const answeredIndex = current;
     setAnswers((prev) => ({ ...prev, [question.id]: value }));
-    // Auto-avanzar salvo en la última pregunta
-    if (!isLast) {
-      window.setTimeout(() => setCurrent((c) => Math.min(c + 1, TOTAL_QUESTIONS - 1)), 180);
+    // Auto-avanzar salvo en la última pregunta. Solo avanza si seguimos en
+    // la misma pregunta que se respondió (idempotente ante clics repetidos).
+    if (answeredIndex < TOTAL_QUESTIONS - 1) {
+      window.setTimeout(() => {
+        setCurrent((c) => (c === answeredIndex ? answeredIndex + 1 : c));
+      }, 180);
     }
   };
 
