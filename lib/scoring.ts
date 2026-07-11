@@ -86,16 +86,24 @@ export interface StoredResult {
   scoresByIntelligence: Record<IntelligenceId, number>; // raw
   dominant: IntelligenceId;
   dominantIds: IntelligenceId[];
+  /** Respuesta (1-4) de cada pregunta: { "1": 3, "2": 4, ... } (para análisis). */
+  answers: Record<string, number>;
   createdAt: number;
 }
 
-export function toStoredResult(result: TestResult): StoredResult {
+export function toStoredResult(result: TestResult, answers: Answers): StoredResult {
   const scoresByIntelligence = {} as Record<IntelligenceId, number>;
   for (const s of result.scores) scoresByIntelligence[s.id] = s.raw;
+  // Normaliza las claves a string (JSON/Convex usan claves de texto).
+  const answersOut: Record<string, number> = {};
+  for (const [id, value] of Object.entries(answers)) {
+    if (typeof value === "number") answersOut[id] = value;
+  }
   return {
     scoresByIntelligence,
     dominant: result.dominant.id,
     dominantIds: result.dominantIds,
+    answers: answersOut,
     createdAt: Date.now(),
   };
 }

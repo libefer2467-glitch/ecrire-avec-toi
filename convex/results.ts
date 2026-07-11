@@ -7,6 +7,7 @@ export const saveResult = mutation({
     scoresByIntelligence: v.record(v.string(), v.number()),
     dominant: v.string(),
     dominantIds: v.array(v.string()),
+    answers: v.optional(v.record(v.string(), v.number())),
     createdAt: v.number(),
   },
   handler: async (ctx, args) => {
@@ -27,6 +28,22 @@ export const listResults = query({
       .order("desc")
       .take(args.limit ?? 200);
     return results;
+  },
+});
+
+/**
+ * Devuelve TODOS los resultados (sin límite), del más antiguo al más
+ * reciente. Se usa para exportar los datos a CSV/Excel para el análisis
+ * de la tesis. El acceso se protege en la capa web (clave de exportación).
+ */
+export const allResults = query({
+  args: {},
+  handler: async (ctx) => {
+    return await ctx.db
+      .query("testResults")
+      .withIndex("by_createdAt")
+      .order("asc")
+      .collect();
   },
 });
 

@@ -22,9 +22,11 @@ export default function TestPage() {
   const [submitting, setSubmitting] = useState(false);
 
   const question = QUESTIONS[current];
-  const progress = Math.round((Object.keys(answers).length / TOTAL_QUESTIONS) * 100);
+  const answeredCount = Object.keys(answers).length;
+  const progress = Math.round((answeredCount / TOTAL_QUESTIONS) * 100);
   const isLast = current === TOTAL_QUESTIONS - 1;
-  const allAnswered = Object.keys(answers).length === TOTAL_QUESTIONS;
+  const allAnswered = answeredCount === TOTAL_QUESTIONS;
+  const currentAnswered = answers[question.id] !== undefined;
 
   const selectAnswer = (value: number) => {
     setAnswers((prev) => ({ ...prev, [question.id]: value }));
@@ -36,12 +38,17 @@ export default function TestPage() {
 
   const goBack = () => setCurrent((c) => Math.max(c - 1, 0));
   const goNext = () => setCurrent((c) => Math.min(c + 1, TOTAL_QUESTIONS - 1));
+  // Salta a la primera pregunta sin responder (para completar el test).
+  const goToFirstUnanswered = () => {
+    const idx = QUESTIONS.findIndex((q) => answers[q.id] === undefined);
+    if (idx >= 0) setCurrent(idx);
+  };
 
   const finish = async () => {
     if (!allAnswered) return;
     setSubmitting(true);
     const result = computeScores(answers);
-    const stored = toStoredResult(result);
+    const stored = toStoredResult(result, answers);
     try {
       sessionStorage.setItem(RESULT_STORAGE_KEY, JSON.stringify(stored));
     } catch {
@@ -192,30 +199,45 @@ export default function TestPage() {
           ← Anterior
         </button>
 
-        {isLast ? (
+        {isLast && allAnswered ? (
           <button
             type="button"
             onClick={finish}
-            disabled={!allAnswered || submitting}
+            disabled={submitting}
             className="rounded-full bg-verde-ande px-7 py-2.5 text-sm font-semibold text-white shadow-md transition enabled:hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
           >
             {submitting ? "Calculando…" : "Ver mi resultado →"}
+          </button>
+        ) : isLast && !allAnswered ? (
+          <button
+            type="button"
+            onClick={goToFirstUnanswered}
+            className="rounded-full bg-terracota px-6 py-2.5 text-sm font-semibold text-white shadow-md transition hover:bg-terracota-ink"
+          >
+            Faltan {TOTAL_QUESTIONS - answeredCount} · Ir a responderlas →
           </button>
         ) : (
           <button
             type="button"
             onClick={goNext}
-            className="rounded-full border border-line bg-paper px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-cream-2"
+            disabled={!currentAnswered}
+            className="rounded-full border border-line bg-paper px-5 py-2.5 text-sm font-semibold text-ink transition enabled:hover:bg-cream-2 disabled:cursor-not-allowed disabled:opacity-40"
           >
             Siguiente →
           </button>
         )}
       </div>
 
+      {!currentAnswered && !isLast && (
+        <p className="mt-3 text-center text-sm text-ink-soft">
+          Elige una opción para continuar.
+        </p>
+      )}
+
       {!allAnswered && isLast && (
         <p className="mt-3 text-center text-sm text-terracota-ink">
-          Responde todas las preguntas para ver tu resultado. Te faltan{" "}
-          {TOTAL_QUESTIONS - Object.keys(answers).length}.
+          Te faltan {TOTAL_QUESTIONS - answeredCount} preguntas por responder.
+          Pulsa el botón para ir a ellas y así ver tu resultado.
         </p>
       )}
     </div>

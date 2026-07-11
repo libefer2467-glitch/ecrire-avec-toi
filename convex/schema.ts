@@ -16,6 +16,9 @@ export default defineSchema({
     scoresByIntelligence: v.record(v.string(), v.number()),
     dominant: v.string(),
     dominantIds: v.array(v.string()),
+    // Respuesta (1-4) de cada pregunta: { "1": 3, ... }. Opcional para
+    // no romper filas antiguas guardadas antes de agregar este campo.
+    answers: v.optional(v.record(v.string(), v.number())),
     createdAt: v.number(),
   }).index("by_createdAt", ["createdAt"]),
 

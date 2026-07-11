@@ -1,35 +1,18 @@
 /*
-  PLACEHOLDER de la fotografía de las autoras (Libertad Fernández y
-  María Cruz Quiroz) para el hero.
-
-  Para usar la foto real:
-    1. Coloca la imagen en /public/autoras.jpg
-    2. Reemplaza este componente por:
-         import Image from "next/image";
-         <Image src="/autoras.jpg" alt="Libertad Fernández y María Cruz Quiroz"
-                fill className="object-cover" priority />
+  Fotografía de las autoras (Libertad Fernández y María Cruz Quiroz) para el hero.
+  La imagen real está en /public/autoras.png. Next.js la optimiza al servirla.
 */
+import Image from "next/image";
+
 export function AuthorsPhoto() {
   return (
-    <div
-      className="relative flex h-full w-full items-center justify-center bg-gradient-to-br from-verde-ande/15 via-ocre/15 to-terracota/20"
-      role="img"
-      aria-label="Espacio para la fotografía de Libertad Fernández y María Cruz Quiroz"
-    >
-      <div className="flex flex-col items-center gap-3 px-6 text-center">
-        <span className="text-5xl" aria-hidden="true">
-          📸
-        </span>
-        <p className="font-display text-lg font-semibold text-ink">
-          Fotografía de las autoras
-        </p>
-        <p className="max-w-xs text-sm text-ink-soft">
-          Libertad Fernández y María Cruz Quiroz
-        </p>
-        <p className="mt-2 rounded-full bg-paper/70 px-3 py-1 text-xs text-ink-soft">
-          Reemplazar por <code>/public/autoras.jpg</code>
-        </p>
-      </div>
-    </div>
+    <Image
+      src="/autoras.png"
+      alt="Libertad Fernández y María Cruz Quiroz, autoras del proyecto"
+      fill
+      priority
+      sizes="(max-width: 768px) 100vw, 50vw"
+      className="object-cover"
+    />
   );
 }
