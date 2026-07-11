@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+/*
+  ============================================================
+  Écrire avec toi — Sistema de diseño
+  ------------------------------------------------------------
+  Identidad: base cálida (crema) con acentos andino-bolivianos
+  (terracota, ocre, verde ande) combinados con una tipografía
+  serif elegante de aire francés. Accesibilidad: cada color de
+  inteligencia tiene una variante "ink" con contraste AA sobre
+  fondos claros y una variante "soft" para superficies.
+  ============================================================
+*/
+
+:root {
+  /* Superficies y texto (paleta base) */
+  --cream: #fbf6ec;
+  --cream-2: #f4ecdd;
+  --paper: #ffffff;
+  --ink: #2b2620;          /* texto principal, AA sobre crema */
+  --ink-soft: #5c554a;     /* texto secundario */
+  --line: #e6dcc8;         /* bordes suaves */
+
+  /* Acentos de marca (andino / boliviano, sobrios) */
+  --terracota: #c0562e;    /* CTA / acento cálido */
+  --terracota-ink: #97401f;
+  --ocre: #c9a227;         /* dorado ande */
+  --verde-ande: #2f6b46;   /* verde profundo */
+  --verde-ande-soft: #e2efe6;
+  --azul-noche: #1b3757;   /* navy base de marca */
+
+  /* Marca principal */
+  --brand: var(--terracota);
+  --brand-ink: var(--terracota-ink);
+
+  /* -------- Colores por inteligencia (8) -------- */
+  /* 1. Lingüística-Verbal — LILA MEDIO (estricto, no púrpura) */
+  --ling: #9b7ec8;
+  --ling-ink: #6b4f9e;
+  --ling-soft: #efe9f8;
+  /* 2. Lógico-Matemática — AZUL MARINO (estricto, no azul eléctrico) */
+  --logi: #24476f;
+  --logi-ink: #1b3757;
+  --logi-soft: #e4eaf1;
+  /* 3. Musical — AMARILLO / MOSTAZA */
+  --musi: #c9a227;
+  --musi-ink: #8a6d0f;
+  --musi-soft: #f7efd4;
+  /* 4. Visual-Espacial — TURQUESA (lago andino) */
+  --espa: #2c8c8c;
+  --espa-ink: #1f6a6a;
+  --espa-soft: #dcf0f0;
+  /* 5. Corporal-Cinestésica — TERRACOTA */
+  --corp: #c05a2e;
+  --corp-ink: #98431f;
+  --corp-soft: #f6e3d9;
+  /* 6. Interpersonal — ROSA / CORAL */
+  --inter: #c24e7d;
+  --inter-ink: #983b60;
+  --inter-soft: #f7e1ea;
+  /* 7. Intrapersonal — ÍNDIGO */
+  --intra: #4c5ba6;
+  --intra-ink: #3a4784;
+  --intra-soft: #e3e6f4;
+  /* 8. Naturalista — VERDE */
+  --natu: #3c8c5a;
+  --natu-ink: #2c6b44;
+  --natu-soft: #deefe4;
+}
+
+@theme inline {
+  --color-cream: var(--cream);
+  --color-cream-2: var(--cream-2);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-line: var(--line);
+  --color-terracota: var(--terracota);
+  --color-terracota-ink: var(--terracota-ink);
+  --color-ocre: var(--ocre);
+  --color-verde-ande: var(--verde-ande);
+  --color-verde-ande-soft: var(--verde-ande-soft);
+  --color-azul-noche: var(--azul-noche);
+  --color-brand: var(--brand);
+  --color-brand-ink: var(--brand-ink);
+
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-geist-sans);
+}
+
+/* Forzamos tema claro cálido (la identidad es luminosa/crema). */
+html {
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  /* Patrón andino sutil como textura de fondo (rombos diagonales) */
+  background-image:
+    radial-gradient(circle at 100% 0, rgba(192, 86, 46, 0.05), transparent 40%),
+    radial-gradient(circle at 0 100%, rgba(47, 107, 70, 0.05), transparent 40%);
+  background-attachment: fixed;
+}
+
+/* Títulos con serif elegante */
+.font-display {
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+/* Franja andina decorativa reutilizable */
+.andean-stripe {
+  background: linear-gradient(
+    90deg,
+    var(--terracota) 0 20%,
+    var(--ocre) 20% 40%,
+    var(--verde-ande) 40% 60%,
+    var(--azul-noche) 60% 80%,
+    var(--ling) 80% 100%
+  );
+}
+
+/* Utilidades de foco accesibles */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--azul-noche);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Respeto a "reducir movimiento" */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Scrollbar sutil */
+* {
+  scrollbar-color: var(--line) transparent;
+}
