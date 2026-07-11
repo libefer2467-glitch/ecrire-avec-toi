@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { INTELLIGENCES } from "@/lib/intelligences";
+import { VideoEmbed } from "@/components/VideoEmbed";
 
 export const metadata: Metadata = {
   title: "Las 8 Inteligencias",
@@ -21,6 +22,14 @@ export default function IntelligencesPage() {
           cada una.
         </p>
       </header>
+
+      <div className="mx-auto mt-10 max-w-3xl">
+        <VideoEmbed
+          url="https://www.youtube.com/watch?v=2hJnFAysNNs"
+          title="Inteligencias Múltiples - Howard Gardner"
+          accentVar="var(--ling)"
+        />
+      </div>
 
       <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {INTELLIGENCES.map((intel) => (

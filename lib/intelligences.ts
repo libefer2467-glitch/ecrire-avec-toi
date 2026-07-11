@@ -63,7 +63,7 @@ export const INTELLIGENCES: Intelligence[] = [
     description:
       "Sensibilidad hacia el lenguaje oral y escrito, la gramática, el vocabulario y la construcción del discurso. Aprendes contando, leyendo y escribiendo.",
     content: {
-      videoUrl: null,
+      videoUrl: "https://www.youtube.com/watch?v=urmcWpdVfDg",
       intro:
         "Si tu inteligencia dominante es la lingüística-verbal, aprender a escribir en francés te resultará natural a través de la lectura y la escritura frecuente. Estas estrategias potencian tu fortaleza.",
       strategies: [
@@ -97,7 +97,7 @@ export const INTELLIGENCES: Intelligence[] = [
     description:
       "Razonamiento, secuencias, patrones y relaciones lógicas. Aprendes organizando, clasificando y resolviendo problemas.",
     content: {
-      videoUrl: null,
+      videoUrl: "https://www.youtube.com/watch?v=R5cVJi7Chlw&t=2041s",
       intro:
         "Con una inteligencia lógico-matemática, la escritura en francés mejora cuando la abordas como un sistema de reglas y patrones. Estas estrategias aprovechan tu pensamiento estructurado.",
       strategies: [
@@ -131,7 +131,7 @@ export const INTELLIGENCES: Intelligence[] = [
     description:
       "Sensibilidad al ritmo, la entonación y los sonidos. Aprendes con música, canciones y patrones sonoros.",
     content: {
-      videoUrl: null,
+      videoUrl: "https://www.youtube.com/watch?v=g5vCLE_cYbQ",
       intro:
         "Si tu fuerte es la inteligencia musical, el ritmo y la sonoridad del francés son tus aliados. Estas estrategias vinculan la escritura con la música y la prosodia.",
       strategies: [
@@ -165,7 +165,7 @@ export const INTELLIGENCES: Intelligence[] = [
     description:
       "Pensamiento en imágenes, colores y relaciones espaciales. Aprendes visualizando, dibujando y usando mapas mentales.",
     content: {
-      videoUrl: null,
+      videoUrl: "https://www.youtube.com/watch?v=082GFQRakz0",
       intro:
         "Con inteligencia visual-espacial, escribir en francés se facilita cuando conviertes las ideas en imágenes y organizadores visuales.",
       strategies: [
@@ -199,7 +199,7 @@ export const INTELLIGENCES: Intelligence[] = [
     description:
       "Aprendizaje a través del cuerpo, el movimiento y la manipulación de objetos. Aprendes haciendo y actuando.",
     content: {
-      videoUrl: null,
+      videoUrl: "https://www.youtube.com/watch?v=8ag_31qyHW8",
       intro:
         "Si dominas la inteligencia corporal-cinestésica, aprender a escribir en francés funciona mejor cuando el proceso implica acción y manipulación.",
       strategies: [
@@ -233,7 +233,7 @@ export const INTELLIGENCES: Intelligence[] = [
     description:
       "Capacidad para relacionarse, colaborar y comprender a otras personas. Aprendes en grupo, dialogando y enseñando.",
     content: {
-      videoUrl: null,
+      videoUrl: "https://www.youtube.com/watch?v=_Ur8EPG05C8",
       intro:
         "Con inteligencia interpersonal, la escritura en francés progresa en la interacción: escribir con y para otros.",
       strategies: [
@@ -267,7 +267,7 @@ export const INTELLIGENCES: Intelligence[] = [
     description:
       "Conciencia de las propias emociones, metas y procesos. Aprendes reflexionando, trabajando de forma autónoma y personalizada.",
     content: {
-      videoUrl: null,
+      videoUrl: "https://www.youtube.com/watch?v=egLptXb99U8",
       intro:
         "Si tu inteligencia dominante es la intrapersonal, escribir en francés se potencia cuando conectas el idioma con tu mundo interior y tus metas.",
       strategies: [
@@ -301,7 +301,7 @@ export const INTELLIGENCES: Intelligence[] = [
     description:
       "Capacidad para observar, clasificar y comprender la naturaleza y el entorno. Aprendes explorando, categorizando y conectando con el mundo natural.",
     content: {
-      videoUrl: null,
+      videoUrl: "https://www.youtube.com/watch?v=1Ik5IjfKxI0",
       intro:
         "Con inteligencia naturalista, escribir en francés se facilita observando y clasificando el entorno como fuente de contenido.",
       strategies: [
