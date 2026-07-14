@@ -33,6 +33,7 @@ export default async function IntelligenceDetailPage({
   if (!intel) notFound();
 
   const media = intel.content.media;
+  const quotesImage = media?.quotesImage;
   const [profileImage, approachImage] = media?.sideImages ?? [];
   const [iconConversacion, iconCuaderno, iconPluma] = media?.icons ?? [];
 
@@ -140,63 +141,73 @@ export default async function IntelligenceDetailPage({
         </header>
       )}
 
-      <div className="mx-auto max-w-4xl px-4">
-        {/* ===== Frases + perfil ===== */}
-        <section className="mt-10 grid gap-6 md:grid-cols-2">
-          {/* Frases que te describen */}
-          <div
-            className="rounded-2xl p-6"
-            style={{ backgroundColor: intel.softVar }}
-          >
-            <h2
-              className="mb-3 flex items-center gap-2 font-display text-lg font-bold"
-              style={{ color: intel.inkVar }}
-            >
-              {iconCuaderno && (
-                <Image
-                  src={iconCuaderno}
-                  alt=""
-                  width={22}
-                  height={22}
-                  className="h-[22px] w-[22px]"
-                  aria-hidden="true"
-                />
+      {/* ===== Banda con fondo del color de la inteligencia: frases + perfil ===== */}
+      <div style={{ backgroundColor: intel.softVar }}>
+        <div className="mx-auto max-w-4xl px-4 py-10 md:py-14">
+          <section className="grid gap-8 md:grid-cols-2 md:items-start">
+            {/* Frases que te describen (sin tarjeta propia: se funde con la banda) */}
+            <div>
+              <h2
+                className="mb-3 flex items-center gap-2 font-display text-lg font-bold"
+                style={{ color: intel.inkVar }}
+              >
+                {iconCuaderno && (
+                  <Image
+                    src={iconCuaderno}
+                    alt=""
+                    width={22}
+                    height={22}
+                    className="h-[22px] w-[22px]"
+                    aria-hidden="true"
+                  />
+                )}
+                ¿Te suena familiar?
+              </h2>
+              <ul className="space-y-2.5">
+                {intel.quotes.map((q, i) => (
+                  <li key={i} className="text-sm italic text-ink">
+                    &ldquo;{q}&rdquo;
+                  </li>
+                ))}
+              </ul>
+
+              {quotesImage && (
+                <div className="relative mt-5 aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-sm">
+                  <Image
+                    src={quotesImage}
+                    alt=""
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                </div>
               )}
-              ¿Te suena familiar?
-            </h2>
-            <ul className="space-y-2.5">
-              {intel.quotes.map((q, i) => (
-                <li key={i} className="flex gap-2 text-sm text-ink">
-                  <span aria-hidden="true" style={{ color: intel.inkVar }}>
-                    &ldquo;
-                  </span>
-                  <span className="italic">{q}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+            </div>
 
-          {/* Perfil */}
-          <div className="overflow-hidden rounded-2xl border border-line bg-paper shadow-sm">
-            {profileImage && (
-              <div className="relative aspect-video w-full">
-                <Image
-                  src={profileImage}
-                  alt=""
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover"
-                />
-              </div>
-            )}
-            <p className="p-6 text-ink">{intel.content.profile}</p>
-          </div>
-        </section>
+            {/* Perfil: tarjeta blanca "flotando" sobre la banda de color */}
+            <div className="overflow-hidden rounded-2xl bg-paper shadow-sm">
+              {profileImage && (
+                <div className="relative aspect-video w-full">
+                  <Image
+                    src={profileImage}
+                    alt=""
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                </div>
+              )}
+              <p className="p-6 text-ink">{intel.content.profile}</p>
+            </div>
+          </section>
+        </div>
+      </div>
 
-        {/* ===== Enfoque teórico ===== */}
+      <div className="mx-auto max-w-4xl px-4">
+        {/* ===== Enfoque teórico: tarjeta de color sobre fondo blanco ===== */}
         <section
-          className="mt-8 overflow-hidden rounded-2xl border-l-4 bg-paper shadow-sm"
-          style={{ borderLeftColor: intel.colorVar }}
+          className="mt-10 overflow-hidden rounded-2xl shadow-sm"
+          style={{ backgroundColor: intel.softVar }}
         >
           <div className={approachImage ? "grid gap-0 md:grid-cols-[1fr_220px]" : ""}>
             <div className="p-6">

@@ -36,6 +36,8 @@ export interface Tip {
 export interface IntelligenceMedia {
   /** foto grande del hero (junto al título) */
   heroImage?: string;
+  /** foto que acompaña la tarjeta de frases ("¿Te suena familiar?") */
+  quotesImage?: string;
   /** fotos de apoyo para la sección de perfil/enfoque */
   sideImages?: string[];
   /** íconos de línea (chat, cuaderno, pluma…) para acentos visuales */
@@ -87,9 +89,7 @@ export const INTELLIGENCES: Intelligence[] = [
       "El lenguaje es tu terreno: vocabulario, oído para las frases y facilidad para expresarte. Aprendes leyendo, escribiendo y conversando.",
     quotes: [
       "Cuando leo algo que me gusta, me olvido de la hora.",
-      "Las palabras nuevas se me quedan sin esfuerzo.",
       "Me sale natural explicar las cosas con mis propias palabras.",
-      "Los juegos de palabras y los chistes con doble sentido me encantan.",
       "Si tengo que elegir entre ver un video o leer sobre el tema, elijo leer.",
     ],
     content: {
@@ -146,6 +146,9 @@ export const INTELLIGENCES: Intelligence[] = [
       videoUrl: "https://www.youtube.com/watch?v=urmcWpdVfDg",
       media: {
         heroImage: "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784055827/hero_qmu148.png",
+        // Foto de banco libre (Unsplash) para acompañar "¿Te suena familiar?".
+        quotesImage:
+          "https://images.unsplash.com/photo-1591504212642-241ee8b51e24?w=900&q=80&auto=format&fit=crop",
         sideImages: [
           "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784055812/apoyo-1_zzqcaz.png",
           "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784055826/apoyo-2_cxyugi.png",
