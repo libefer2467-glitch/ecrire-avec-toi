@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { QUESTIONS, LIKERT_SCALE, TOTAL_QUESTIONS } from "@/lib/mckenzie";
@@ -82,22 +82,27 @@ export default function TestPage() {
             Test de Inteligencias Múltiples
           </h1>
           <p className="mt-3 text-ink-soft">
-            Responderás <strong>{TOTAL_QUESTIONS} afirmaciones</strong> indicando
-            tu grado de acuerdo. Toma entre 5 y 10 minutos. No hay respuestas
-            correctas ni incorrectas: se trata de conocerte mejor.
+            Responderás <strong>{TOTAL_QUESTIONS} afirmaciones</strong> marcando
+            si son <strong>Verdadero</strong> o <strong>Falso</strong> para ti.
+            Toma entre 5 y 10 minutos. No hay respuestas correctas ni
+            incorrectas: se trata de conocerte mejor.
           </p>
 
           <div className="mt-6 rounded-2xl bg-cream-2 p-5">
-            <h2 className="font-semibold text-ink">Escala de respuesta</h2>
+            <h2 className="font-semibold text-ink">Cómo responder</h2>
             <ul className="mt-3 grid gap-2 text-sm text-ink-soft sm:grid-cols-2">
-              {LIKERT_SCALE.map((s) => (
-                <li key={s.value} className="flex items-center gap-2">
-                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-terracota text-xs font-bold text-white">
-                    {s.value}
-                  </span>
-                  {s.label}
-                </li>
-              ))}
+              <li className="flex items-center gap-2">
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-verde-ande text-xs font-bold text-white">
+                  ✓
+                </span>
+                <strong>Verdadero</strong>: la afirmación te describe.
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-ink-soft text-xs font-bold text-white">
+                  ✗
+                </span>
+                <strong>Falso</strong>: no te describe.
+              </li>
             </ul>
           </div>
 
@@ -155,36 +160,44 @@ export default function TestPage() {
 
       {/* Tarjeta de pregunta */}
       <div className="rounded-3xl border border-line bg-paper p-7 shadow-sm">
-        <p className="text-sm font-medium text-terracota-ink">Indica tu grado de acuerdo</p>
+        <p className="text-sm font-medium text-terracota-ink">¿Es verdadero o falso para ti?</p>
         <h2 className="mt-2 min-h-[3.5rem] font-display text-2xl font-semibold text-ink">
           {question.text}
         </h2>
 
         <fieldset className="mt-6">
-          <legend className="sr-only">Escala Likert de 4 puntos</legend>
-          <div className="grid gap-3">
+          <legend className="sr-only">Responde Verdadero o Falso</legend>
+          <div className="grid grid-cols-2 gap-3">
             {LIKERT_SCALE.map((option) => {
               const selected = answers[question.id] === option.value;
+              const isTrue = option.value === 1;
               return (
                 <button
                   key={option.value}
                   type="button"
                   onClick={() => selectAnswer(option.value)}
                   aria-pressed={selected}
-                  className={`flex items-center gap-3 rounded-2xl border px-4 py-3.5 text-left transition ${
+                  className={`flex flex-col items-center justify-center gap-2 rounded-2xl border px-4 py-6 transition ${
                     selected
-                      ? "border-terracota bg-terracota/10 ring-2 ring-terracota"
+                      ? isTrue
+                        ? "border-verde-ande bg-verde-ande/10 ring-2 ring-verde-ande"
+                        : "border-ink-soft bg-ink-soft/10 ring-2 ring-ink-soft"
                       : "border-line bg-cream hover:border-terracota/50 hover:bg-cream-2"
                   }`}
                 >
                   <span
-                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-bold ${
-                      selected ? "bg-terracota text-white" : "bg-cream-2 text-ink-soft"
+                    className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-lg font-bold ${
+                      selected
+                        ? isTrue
+                          ? "bg-verde-ande text-white"
+                          : "bg-ink-soft text-white"
+                        : "bg-cream-2 text-ink-soft"
                     }`}
+                    aria-hidden="true"
                   >
-                    {option.value}
+                    {isTrue ? "✓" : "✗"}
                   </span>
-                  <span className={`font-medium ${selected ? "text-ink" : "text-ink-soft"}`}>
+                  <span className={`text-base font-semibold ${selected ? "text-ink" : "text-ink-soft"}`}>
                     {option.label}
                   </span>
                 </button>

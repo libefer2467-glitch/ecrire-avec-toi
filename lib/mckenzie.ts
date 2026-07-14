@@ -1,24 +1,21 @@
 /*
   ============================================================
-  INVENTARIO DE INTELIGENCIAS MÚLTIPLES
-  Basado en el Multiple Intelligences Inventory de Walter McKenzie (1999).
+  TEST DE INTELIGENCIAS MÚLTIPLES  (Verdadero / Falso)
+  Adaptación del inventario de Armstrong para el proyecto
+  "Écrire avec toi" (tesis UMSS — Libertad Fernández y María Cruz Quiroz).
   ------------------------------------------------------------
-  Versión completa: 80 ítems (10 por cada una de las 8 inteligencias).
-  Escala Likert de 4 puntos:
-     1 = Totalmente en desacuerdo
-     2 = En desacuerdo
-     3 = De acuerdo
-     4 = Totalmente de acuerdo
+  40 afirmaciones. Cada una se responde VERDADERO o FALSO.
+  Las 5 afirmaciones de cada inteligencia están repartidas (intercaladas)
+  a lo largo del test.
 
-  ⚠️  NOTA METODOLÓGICA PARA LAS AUTORAS (Libertad y María):
-  Estos ítems son una ADAPTACIÓN y TRADUCCIÓN al español del
-  inventario de McKenzie, redactados en primera persona para la
-  escala Likert. Antes de aplicarlos en la tesis, REVISEN y ajusten
-  la redacción a su marco teórico y, si corresponde, citen la fuente:
-  McKenzie, W. (1999). Multiple Intelligences Survey. surfaquarium.com
+  PUNTUACIÓN: se cuenta cuántas afirmaciones marcó la persona como
+  VERDADERO en cada inteligencia (0 a 5).
+     4 o 5  → inteligencia DOMINANTE
+     3      → desarrollo MEDIO
+     0 a 2  → inteligencia POCO desarrollada
 
-  El motor del test es "data-driven": pueden cambiar el número de
-  preguntas, el texto o la escala editando SOLO este archivo.
+  El motor del test es "data-driven": para cambiar preguntas, escala o
+  el mapeo, editar SOLO este archivo.
   ============================================================
 */
 
@@ -30,138 +27,88 @@ export interface Question {
   intelligence: IntelligenceId;
 }
 
-/** Escala Likert de 4 puntos (etiquetas mostradas al usuario) */
-export const LIKERT_SCALE: { value: number; label: string }[] = [
-  { value: 1, label: "Totalmente en desacuerdo" },
-  { value: 2, label: "En desacuerdo" },
-  { value: 3, label: "De acuerdo" },
-  { value: 4, label: "Totalmente de acuerdo" },
+/**
+ * Escala Verdadero / Falso.
+ * value 1 = Verdadero (suma al puntaje), value 0 = Falso.
+ */
+export const VF_SCALE: { value: number; label: string }[] = [
+  { value: 1, label: "Verdadero" },
+  { value: 0, label: "Falso" },
 ];
 
-export const QUESTIONS_PER_INTELLIGENCE = 10;
-export const LIKERT_MIN = 1;
-export const LIKERT_MAX = 4;
+/** Compatibilidad: algunas partes usan LIKERT_SCALE como nombre genérico. */
+export const LIKERT_SCALE = VF_SCALE;
+
+export const QUESTIONS_PER_INTELLIGENCE = 5;
+/** En V/F el puntaje mínimo por respuesta es 0 y el máximo 1. */
+export const LIKERT_MIN = 0;
+export const LIKERT_MAX = 1;
 
 /** Máximo puntaje posible por inteligencia (para normalizar el radar). */
 export const MAX_SCORE_PER_INTELLIGENCE =
-  QUESTIONS_PER_INTELLIGENCE * LIKERT_MAX; // 40
+  QUESTIONS_PER_INTELLIGENCE * LIKERT_MAX; // 5
 export const MIN_SCORE_PER_INTELLIGENCE =
-  QUESTIONS_PER_INTELLIGENCE * LIKERT_MIN; // 10
+  QUESTIONS_PER_INTELLIGENCE * LIKERT_MIN; // 0
 
-const RAW: Record<IntelligenceId, string[]> = {
-  linguistica: [
-    "Disfruto leer libros, artículos o historias en mi tiempo libre.",
-    "Se me facilita expresar mis ideas por escrito.",
-    "Me gusta jugar con las palabras: rimas, trabalenguas o juegos de lenguaje.",
-    "Recuerdo con facilidad frases, citas o versos.",
-    "Me resulta sencillo aprender vocabulario de un idioma nuevo.",
-    "Prefiero explicar algo con palabras antes que con dibujos.",
-    "Disfruto escribir cartas, mensajes o publicaciones.",
-    "Noto cuando alguien usa mal una palabra o comete un error gramatical.",
-    "Me gusta contar historias o anécdotas a otras personas.",
-    "Aprendo mejor cuando leo o escucho explicaciones.",
-  ],
-  logica: [
-    "Disfruto resolver problemas, acertijos o rompecabezas lógicos.",
-    "Me gusta trabajar con números y hacer cálculos.",
-    "Busco patrones y relaciones entre las cosas.",
-    "Me organizo con listas, pasos y esquemas ordenados.",
-    "Me interesa saber cómo y por qué funcionan las cosas.",
-    "Se me facilita razonar de forma abstracta.",
-    "Prefiero que la información esté clasificada y estructurada.",
-    "Disfruto los juegos de estrategia y de lógica.",
-    "Analizo las situaciones antes de tomar una decisión.",
-    "Me gusta hacer experimentos o comprobar hipótesis.",
-  ],
-  musical: [
-    "Reconozco fácilmente melodías y canciones.",
-    "Suelo tararear, cantar o llevar el ritmo con las manos o los pies.",
-    "La música influye mucho en mi estado de ánimo.",
-    "Distingo cuando un instrumento o una voz desafina.",
-    "Recuerdo información con más facilidad si la asocio a una canción.",
-    "Disfruto escuchar distintos tipos de música.",
-    "Puedo seguir el ritmo de una pieza sin dificultad.",
-    "Me gusta aprender letras de canciones.",
-    "Toco un instrumento o me gustaría aprender a hacerlo.",
-    "Percibo los sonidos del entorno con sensibilidad.",
-  ],
-  espacial: [
-    "Pienso en imágenes y visualizo con facilidad.",
-    "Se me facilita orientarme y recordar lugares.",
-    "Disfruto dibujar, pintar o diseñar.",
-    "Entiendo mejor la información con mapas, gráficos o diagramas.",
-    "Me fijo en los colores, las formas y los detalles visuales.",
-    "Puedo imaginar cómo se ve un objeto desde otro ángulo.",
-    "Prefiero las instrucciones con imágenes antes que con texto.",
-    "Disfruto la fotografía, el cine o las artes visuales.",
-    "Uso mapas mentales o esquemas visuales para estudiar.",
-    "Armo rompecabezas o construyo cosas con facilidad.",
-  ],
-  corporal: [
-    "Aprendo mejor haciendo las cosas con mis manos.",
-    "Me cuesta quedarme quieto/a durante mucho tiempo.",
-    "Disfruto los deportes o la actividad física.",
-    "Uso gestos y movimientos cuando hablo o explico.",
-    "Tengo buena coordinación y equilibrio.",
-    "Prefiero participar y actuar antes que solo observar.",
-    "Manipular objetos me ayuda a comprender ideas.",
-    "Disfruto bailar, actuar o hacer manualidades.",
-    "Recuerdo mejor lo que hago que lo que solo leo.",
-    "Me gusta desarmar y armar cosas para entender cómo funcionan.",
-  ],
-  interpersonal: [
-    "Me relaciono con facilidad con personas nuevas.",
-    "Disfruto trabajar en equipo y colaborar.",
-    "Los demás suelen buscarme para pedir consejo.",
-    "Percibo cómo se sienten las personas a mi alrededor.",
-    "Me gusta mediar y resolver conflictos entre otros.",
-    "Aprendo mejor cuando estudio o converso en grupo.",
-    "Disfruto enseñar o explicar cosas a otras personas.",
-    "Me resulta fácil mantener amistades duraderas.",
-    "Prefiero las actividades grupales a las individuales.",
-    "Comprendo distintos puntos de vista con facilidad.",
-  ],
-  intrapersonal: [
-    "Conozco bien mis fortalezas y mis debilidades.",
-    "Prefiero trabajar de forma independiente y autónoma.",
-    "Reflexiono con frecuencia sobre mis emociones y decisiones.",
-    "Tengo metas personales claras y trabajo por ellas.",
-    "Me gusta tener momentos de silencio para pensar.",
-    "Aprendo mejor cuando el tema conecta con mis intereses.",
-    "Soy consciente de lo que me motiva y de lo que no.",
-    "Confío en mi criterio para tomar decisiones.",
-    "Llevo o me gustaría llevar un diario personal.",
-    "Necesito entender el sentido de lo que hago para comprometerme.",
-  ],
-  naturalista: [
-    "Disfruto estar en contacto con la naturaleza.",
-    "Me interesa observar plantas, animales o fenómenos naturales.",
-    "Me gusta clasificar y ordenar cosas por categorías.",
-    "Noto los cambios en el clima y en el entorno.",
-    "Me preocupa el cuidado del medioambiente.",
-    "Disfruto actividades al aire libre como caminatas o excursiones.",
-    "Reconozco distintas especies de plantas o animales.",
-    "Me gusta coleccionar u organizar objetos naturales.",
-    "Observo con detalle los patrones de la naturaleza.",
-    "Aprendo mejor con ejemplos del mundo real y natural.",
-  ],
-};
-
-/** Orden de bloques según el orden de las inteligencias. */
-const ORDER: IntelligenceId[] = [
-  "linguistica",
-  "logica",
-  "musical",
-  "espacial",
-  "corporal",
-  "interpersonal",
-  "intrapersonal",
-  "naturalista",
+/**
+ * Las 40 afirmaciones EN ORDEN (1..40), cada una con la inteligencia a la
+ * que pertenece. El mapeo original del test es:
+ *   Verbal-lingüística : 9, 10, 17, 22, 30
+ *   Lógico-matemática  : 5, 7, 15, 20, 25
+ *   Visual-espacial    : 1, 11, 14, 23, 27
+ *   Musical-rítmica    : 3, 4, 13, 24, 28
+ *   Kinestésica-corporal: 8, 16, 19, 21, 29
+ *   Intrapersonal      : 2, 6, 26, 31, 33
+ *   Interpersonal      : 12, 18, 32, 34, 35
+ *   Naturalista        : 36, 37, 38, 39, 40
+ */
+const ITEMS: { text: string; intelligence: IntelligenceId }[] = [
+  /* 1  */ { text: "Prefiero hacer un mapa que explicarle a alguien cómo tiene que llegar.", intelligence: "espacial" },
+  /* 2  */ { text: "Si estoy enfadado(a) o contento(a), generalmente sé exactamente por qué.", intelligence: "intrapersonal" },
+  /* 3  */ { text: "Sé tocar (o antes sabía tocar) un instrumento musical.", intelligence: "musical" },
+  /* 4  */ { text: "Asocio la música con mis estados de ánimo.", intelligence: "musical" },
+  /* 5  */ { text: "Puedo sumar o multiplicar mentalmente con mucha rapidez.", intelligence: "logica" },
+  /* 6  */ { text: "Puedo ayudar a un amigo a manejar sus sentimientos, porque yo pude hacerlo antes con sentimientos parecidos.", intelligence: "intrapersonal" },
+  /* 7  */ { text: "Me gusta trabajar con calculadoras y computadoras.", intelligence: "logica" },
+  /* 8  */ { text: "Aprendo rápido a bailar un ritmo nuevo.", intelligence: "corporal" },
+  /* 9  */ { text: "No me es difícil decir lo que pienso durante una discusión o debate.", intelligence: "linguistica" },
+  /* 10 */ { text: "Disfruto de una buena charla, discurso o conferencia.", intelligence: "linguistica" },
+  /* 11 */ { text: "Siempre distingo el norte del sur, esté donde esté.", intelligence: "espacial" },
+  /* 12 */ { text: "Me gusta reunir grupos de personas en una fiesta o en un evento especial.", intelligence: "interpersonal" },
+  /* 13 */ { text: "La vida me parece vacía sin música.", intelligence: "musical" },
+  /* 14 */ { text: "Siempre entiendo los gráficos que vienen en las instrucciones de equipos o instrumentos.", intelligence: "espacial" },
+  /* 15 */ { text: "Me gusta hacer rompecabezas y entretenerme con juegos electrónicos.", intelligence: "logica" },
+  /* 16 */ { text: "Me fue fácil aprender a andar en bicicleta (o en patines).", intelligence: "corporal" },
+  /* 17 */ { text: "Me molesta oír una discusión o una afirmación que parece ilógica.", intelligence: "linguistica" },
+  /* 18 */ { text: "Soy capaz de convencer a otros de que sigan mis planes.", intelligence: "interpersonal" },
+  /* 19 */ { text: "Tengo buen sentido del equilibrio y de la coordinación.", intelligence: "corporal" },
+  /* 20 */ { text: "Con frecuencia veo configuraciones y relaciones entre números con más rapidez y facilidad que otros.", intelligence: "logica" },
+  /* 21 */ { text: "Me gusta construir modelos (o hacer esculturas).", intelligence: "corporal" },
+  /* 22 */ { text: "Tengo agudeza para encontrar el significado de las palabras.", intelligence: "linguistica" },
+  /* 23 */ { text: "Puedo mirar un objeto de una manera y con la misma facilidad verlo de otra forma.", intelligence: "espacial" },
+  /* 24 */ { text: "Con frecuencia relaciono una pieza de música con algún evento de mi vida.", intelligence: "musical" },
+  /* 25 */ { text: "Me gusta trabajar con números y figuras.", intelligence: "logica" },
+  /* 26 */ { text: "Me gusta sentarme en silencio y reflexionar sobre mis sentimientos íntimos.", intelligence: "intrapersonal" },
+  /* 27 */ { text: "Con solo mirar la forma de construcciones y estructuras me siento a gusto.", intelligence: "espacial" },
+  /* 28 */ { text: "Me gusta tararear, silbar y cantar en la ducha o cuando estoy solo(a).", intelligence: "musical" },
+  /* 29 */ { text: "Soy bueno(a) para el atletismo.", intelligence: "corporal" },
+  /* 30 */ { text: "Me gusta escribir cartas o mensajes detallados a mis amigos.", intelligence: "linguistica" },
+  /* 31 */ { text: "Generalmente, me doy cuenta de la expresión que tengo en la cara.", intelligence: "intrapersonal" },
+  /* 32 */ { text: "Me doy cuenta de las expresiones en la cara de otras personas.", intelligence: "interpersonal" },
+  /* 33 */ { text: "Me mantengo “en contacto” con mis estados de ánimo: no me cuesta identificarlos.", intelligence: "intrapersonal" },
+  /* 34 */ { text: "Me doy cuenta de los estados de ánimo de los demás.", intelligence: "interpersonal" },
+  /* 35 */ { text: "Me doy cuenta bastante bien de lo que otros piensan de mí.", intelligence: "interpersonal" },
+  /* 36 */ { text: "Disfruto clasificar la flora, la fauna y los fenómenos naturales.", intelligence: "naturalista" },
+  /* 37 */ { text: "Me gusta coleccionar plantas, insectos o rocas.", intelligence: "naturalista" },
+  /* 38 */ { text: "Soy bueno(a) descubriendo patrones en la naturaleza.", intelligence: "naturalista" },
+  /* 39 */ { text: "Tengo conciencia de la necesidad de proteger el medioambiente.", intelligence: "naturalista" },
+  /* 40 */ { text: "Mis materias de estudio preferidas están relacionadas con las ciencias naturales o sociales.", intelligence: "naturalista" },
 ];
 
-/** Lista plana de 80 preguntas con id secuencial. */
-export const QUESTIONS: Question[] = ORDER.flatMap((intelligence) =>
-  RAW[intelligence].map((text) => ({ text, intelligence }))
-).map((q, index) => ({ id: index + 1, ...q }));
+/** Lista de preguntas con id secuencial 1..40 (en el orden del test). */
+export const QUESTIONS: Question[] = ITEMS.map((q, index) => ({
+  id: index + 1,
+  ...q,
+}));
 
-export const TOTAL_QUESTIONS = QUESTIONS.length; // 80
+export const TOTAL_QUESTIONS = QUESTIONS.length; // 40

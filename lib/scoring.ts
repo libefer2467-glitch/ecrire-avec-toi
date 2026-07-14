@@ -12,8 +12,24 @@ import {
   MAX_SCORE_PER_INTELLIGENCE,
 } from "./mckenzie";
 
-/** Respuestas: mapa de id de pregunta -> valor Likert (1-4). */
+/** Respuestas: mapa de id de pregunta -> valor (V/F: 1 = Verdadero, 0 = Falso). */
 export type Answers = Record<number, number>;
+
+/** Nivel de desarrollo de una inteligencia según su puntaje V/F (0-5). */
+export type IntelligenceLevel = "dominante" | "media" | "poca";
+
+export const LEVEL_LABEL: Record<IntelligenceLevel, string> = {
+  dominante: "Dominante",
+  media: "Desarrollo medio",
+  poca: "Poco desarrollada",
+};
+
+/** Clasifica el puntaje bruto (nº de "Verdadero", 0-5) en un nivel. */
+export function levelForScore(raw: number): IntelligenceLevel {
+  if (raw >= 4) return "dominante";
+  if (raw === 3) return "media";
+  return "poca";
+}
 
 export interface IntelligenceScore {
   id: IntelligenceId;
@@ -21,8 +37,9 @@ export interface IntelligenceScore {
   shortName: string;
   colorVar: string;
   inkVar: string;
-  raw: number; // suma bruta (p. ej. 10-40)
+  raw: number; // nº de afirmaciones marcadas "Verdadero" (0-5)
   percentage: number; // 0-100 normalizado
+  level: IntelligenceLevel;
 }
 
 export interface TestResult {
@@ -56,6 +73,7 @@ export function computeScores(answers: Answers): TestResult {
       inkVar: intel.inkVar,
       raw: rawScore,
       percentage: Math.round((rawScore / MAX_SCORE_PER_INTELLIGENCE) * 100),
+      level: levelForScore(rawScore),
     };
   });
 

@@ -1,7 +1,9 @@
 import { makeFunctionReference } from "convex/server";
 import { getConvexClient } from "@/lib/convexServer";
 import { QUESTIONS } from "@/lib/mckenzie";
-import { INTELLIGENCES } from "@/lib/intelligences";
+import { INTELLIGENCES, INTELLIGENCES_BY_ID } from "@/lib/intelligences";
+import { levelForScore, LEVEL_LABEL } from "@/lib/scoring";
+import type { IntelligenceId } from "@/lib/intelligences";
 
 /**
  * Exporta TODOS los resultados del test a un archivo CSV (abre en Excel).
@@ -12,6 +14,9 @@ import { INTELLIGENCES } from "@/lib/intelligences";
  * datos, aunque el resto de la web sea pública.
  *
  * Uso: /api/export?key=LA_CLAVE
+ *
+ * Formato: separado por punto y coma (;) para que Excel en español lo
+ * abra ya acomodado en columnas.
  */
 export async function GET(req: Request) {
   const secret = process.env.EXPORT_SECRET;
@@ -35,6 +40,7 @@ export async function GET(req: Request) {
   let rows: Array<{
     scoresByIntelligence: Record<string, number>;
     dominant: string;
+    dominantIds?: string[];
     answers?: Record<string, number>;
     createdAt: number;
   }>;
@@ -48,32 +54,61 @@ export async function GET(req: Request) {
     return new Response("Error al leer los datos.", { status: 500 });
   }
 
-  // ----- Encabezados del CSV -----
+  const SEP = ";";
+  const nameOf = (id: string) =>
+    INTELLIGENCES_BY_ID[id as IntelligenceId]?.name ?? id;
+
+  // ----- Encabezados -----
   const header = [
+    "N°",
     "fecha",
-    "inteligencia_dominante",
-    ...INTELLIGENCES.map((i) => `punt_${i.id}`),
-    ...QUESTIONS.map((q) => `q${q.id}`),
+    "resultado (inteligencia dominante)",
+    ...INTELLIGENCES.map((i) => `${i.name} (0-5)`),
+    ...INTELLIGENCES.map((i) => `nivel ${i.name}`),
+    ...QUESTIONS.map((q) => `P${q.id}`),
   ];
 
+  // Escapa un valor para CSV con separador ';'.
   const escape = (val: string | number): string => {
     const s = String(val);
-    // Encierra en comillas si contiene coma, comilla o salto de línea.
-    return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+    return /[";\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
   };
 
-  const lines = [header.join(",")];
-  for (const r of rows) {
-    const cells: (string | number)[] = [
-      new Date(r.createdAt).toISOString(),
-      r.dominant,
-      ...INTELLIGENCES.map((i) => r.scoresByIntelligence[i.id] ?? ""),
-      ...QUESTIONS.map((q) => r.answers?.[String(q.id)] ?? ""),
-    ];
-    lines.push(cells.map(escape).join(","));
-  }
+  // Fecha legible en formato local (día/mes/año hora:min).
+  const fmtDate = (ms: number) =>
+    new Date(ms).toLocaleString("es-BO", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
 
-  // BOM (﻿) para que Excel reconozca los acentos correctamente.
+  const lines = [header.join(SEP)];
+  rows.forEach((r, idx) => {
+    // Resultado legible: nombre(s) de la(s) inteligencia(s) dominante(s).
+    const domIds = r.dominantIds?.length ? r.dominantIds : [r.dominant];
+    const resultado = domIds.map(nameOf).join(" / ");
+
+    const cells: (string | number)[] = [
+      idx + 1,
+      fmtDate(r.createdAt),
+      resultado,
+      ...INTELLIGENCES.map((i) => r.scoresByIntelligence[i.id] ?? ""),
+      ...INTELLIGENCES.map((i) => {
+        const score = r.scoresByIntelligence[i.id];
+        return typeof score === "number" ? LEVEL_LABEL[levelForScore(score)] : "";
+      }),
+      ...QUESTIONS.map((q) => {
+        const a = r.answers?.[String(q.id)];
+        // 1 = Verdadero, 0 = Falso (vacío si no se guardó).
+        return a === undefined ? "" : a === 1 ? "V" : "F";
+      }),
+    ];
+    lines.push(cells.map(escape).join(SEP));
+  });
+
+  // BOM para que Excel reconozca los acentos correctamente.
   const csv = "﻿" + lines.join("\r\n");
   const fecha = new Date().toISOString().slice(0, 10);
 
