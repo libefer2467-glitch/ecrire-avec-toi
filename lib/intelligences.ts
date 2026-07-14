@@ -23,6 +23,23 @@ export interface Tip {
   what: string; // En qué consiste
   why: string; // Por qué te sirve
   how: string; // Cómo hacerlo
+  /** foto opcional (en /public) que acompaña la tarjeta del tip */
+  image?: string;
+}
+
+/**
+ * Fotos/íconos reales de una inteligencia (opcional). Mientras una
+ * inteligencia no tenga fotos propias, la página usa el diseño con color
+ * sólido de siempre (emoji + colorVar). En cuanto lleguen las fotos, basta
+ * con completar este objeto — el template las toma automáticamente.
+ */
+export interface IntelligenceMedia {
+  /** foto grande del hero (junto al título) */
+  heroImage?: string;
+  /** fotos de apoyo para la sección de perfil/enfoque */
+  sideImages?: string[];
+  /** íconos de línea (chat, cuaderno, pluma…) para acentos visuales */
+  icons?: string[];
 }
 
 export interface Intelligence {
@@ -45,10 +62,12 @@ export interface Intelligence {
     profile: string;
     /** enfoque/método/teoría recomendado */
     approach: { name: string; body: string };
-    /** los 7 tips de escritura en francés */
+    /** tips de escritura en francés */
     tips: Tip[];
     /** video explicativo (va al final de la sección) */
     videoUrl: string | null;
+    /** material fotográfico real (opcional, ver IntelligenceMedia) */
+    media?: IntelligenceMedia;
   };
 }
 
@@ -86,45 +105,57 @@ export const INTELLIGENCES: Intelligence[] = [
           what: "Elige un libro, un ensayo o una revista en francés sobre un tema que te apasione de verdad, y léelo entero. Sin diccionario en la mano, sin detenerte en cada palabra, sin estudiar gramática. Solo leer.",
           why: "La investigación sobre lectura extensiva (Krashen, 1982) muestra que la exposición sostenida a textos comprensibles y que interesan al lector produce adquisición de vocabulario y estructuras sin estudio explícito. Tu cerebro absorbe la lengua mientras persigue el contenido. Y como te gusta leer, el esfuerzo casi no se siente.",
           how: "Elige el tema primero, el libro después. ¿Te gusta la filosofía? Busca filosofía en francés. ¿El cine? Busca crítica de cine. En la Alianza Francesa de Cochabamba y en la biblioteca de la carrera de LAEL hay novelas y ensayos que puedes leer ahí mismo o llevarte prestados cumpliendo unos pocos requisitos.",
+          image: "/inteligencias/linguistica/tip-1.png",
         },
         {
           title: "Escritura libre (free writing)",
           what: "Elige un tema, pon el cronómetro en cinco minutos y escribe en francés sin parar. Sin corregir, sin borrar, sin preocuparte por la gramática ni por la ortografía. Si te quedas en blanco, escribe «je ne sais pas quoi écrire» hasta que aparezca una idea nueva.",
           why: "Peter Elbow (1973) demostró que separar la generación de ideas de la corrección libera al escritor del bloqueo de la página en blanco. El error paraliza; el flujo desbloquea. Después vendrá el momento de corregir, pero primero hay que tener algo que corregir.",
           how: "Hazlo antes de cualquier texto que tengas que entregar. Cinco minutos de escritura libre sobre el tema y vas a descubrir que ya tienes la mitad de las ideas. Después las ordenas.",
-        },
-        {
-          title: "Detonadores de historia (story starters)",
-          what: "Toma una frase de arranque y sigue escribiendo a partir de ella. Por ejemplo: «Quand j'ai ouvert la porte, je ne m'attendais pas à…» o «Personne ne savait pourquoi elle avait décidé de partir.»",
-          why: "El síndrome de la página en blanco es real, y una frase inicial lo desactiva de inmediato. Esta técnica, muy usada en la enseñanza de escritura creativa, aprovecha el impulso narrativo: una vez que la historia arranca, la mente quiere saber cómo sigue. Y a alguien con tu perfil, eso lo engancha.",
-          how: "Arma tu propia lista de diez frases de arranque y guárdala. Cada vez que quieras practicar escritura sin presión, saca una al azar y escribe veinte minutos.",
+          image: "/inteligencias/linguistica/tip-2.png",
         },
         {
           title: "Reescribe con sinónimos",
           what: "Toma un texto que ya escribiste y reescríbelo cambiando todas las palabras que se repitan. Si usaste «parce que» tres veces, busca «puisque», «étant donné que», «car», «en raison de».",
           why: "La riqueza léxica es uno de los criterios que más pesan al evaluar un texto. Y como el vocabulario es tu fortaleza natural, este ejercicio te hace crecer justamente donde ya eres fuerte. Además te obliga a notar tus muletillas, que todos tenemos.",
           how: "Hazlo con tus propios textos, no con textos ajenos. Es más incómodo, pero es donde realmente aprendes. Ten a mano un diccionario de sinónimos francés (los hay gratuitos en línea, como el CRISCO o el de Larousse).",
+          image: "/inteligencias/linguistica/tip-4.png",
         },
         {
           title: "Lee como escritor, no solo como lector",
           what: "Cuando leas un texto en francés, subráyalo por estructura: marca dónde termina la introducción, dónde arranca cada bloque de desarrollo, dónde empieza la conclusión. Marca los conectores con otro color.",
           why: "Los escritores aprenden leyendo, pero no leyendo como lectores comunes: leyendo con el ojo puesto en cómo está construido el texto. Cuando identificas conscientemente las estructuras de otros, tu mano empieza a reproducirlas casi sin querer. Es imitación en el mejor sentido.",
           how: "Hazlo con textos que admires, no con textos cualquiera. Un buen artículo de Le Monde, un ensayo, una columna de opinión. Después, intenta escribir uno propio con la misma estructura que acabas de identificar.",
+          image: "/inteligencias/linguistica/tip-5.png",
         },
         {
           title: "Conversa con una IA para aclarar tus ideas",
           what: "Antes de escribir un texto, discute el tema con una inteligencia artificial usando mensajes de voz en francés. Pídele que te contradiga, que te haga preguntas difíciles, que te obligue a defender tu posición.",
           why: "No se puede escribir bien sobre algo que no se tiene claro. Y a alguien con tu perfil, las ideas se le ordenan hablando. Discutir en voz alta te obliga a formular argumentos, encontrar ejemplos y detectar los huecos de tu razonamiento. Cuando después te sientas a escribir, ya tienes el contenido.",
           how: "Hay varias aplicaciones gratuitas con las que puedes hablar por voz en francés. Un buen arranque: «Je pense que [tu opinión]. Peux-tu me contredire et me poser des questions difficiles ?» Y después, a defenderte.",
+          image: "/inteligencias/linguistica/tip-6.png",
         },
         {
           title: "Cuaderno de campos semánticos",
           what: "Cada semana, elige un campo semántico y anota diez palabras nuevas con su definición en francés, un sinónimo, un antónimo y un ejemplo de uso propio.",
           why: "Aprender palabras sueltas es ineficiente; aprenderlas agrupadas por tema las fija mucho mejor, porque el cerebro las almacena en redes. Al final del semestre tendrás un diccionario personal construido por ti, con tus temas y tus ejemplos. Es tuyo, y por eso no se olvida.",
           how: "Un campo semántico es un grupo de palabras que comparten un mismo terreno de significado. Por ejemplo, el del cine incluye: le réalisateur, le scénario, la scène, le plan, le montage, la bande sonore. El del medio ambiente: la pollution, le réchauffement, le recyclage, les déchets, la biodiversité.",
+          image: "/inteligencias/linguistica/tip-7.png",
         },
       ],
       videoUrl: "https://www.youtube.com/watch?v=urmcWpdVfDg",
+      media: {
+        heroImage: "/inteligencias/linguistica/hero.png",
+        sideImages: [
+          "/inteligencias/linguistica/apoyo-1.png",
+          "/inteligencias/linguistica/apoyo-2.png",
+        ],
+        icons: [
+          "/inteligencias/linguistica/icon-conversacion.png",
+          "/inteligencias/linguistica/icon-cuaderno.png",
+          "/inteligencias/linguistica/icon-pluma.png",
+        ],
+      },
     },
   },
   {

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { INTELLIGENCES, getIntelligenceBySlug } from "@/lib/intelligences";
@@ -31,30 +32,91 @@ export default async function IntelligenceDetailPage({
   const intel = getIntelligenceBySlug(slug);
   if (!intel) notFound();
 
+  const media = intel.content.media;
+  const [profileImage, approachImage] = media?.sideImages ?? [];
+  const [iconConversacion, iconCuaderno, iconPluma] = media?.icons ?? [];
+
   return (
     <article className="pb-16">
-      {/* ===== Header con color de la inteligencia ===== */}
-      <header style={{ backgroundColor: intel.colorVar }} className="text-white">
-        <div className="mx-auto max-w-4xl px-4 py-14">
-          <Link
-            href="/inteligencias"
-            className="text-sm font-medium text-white/90 hover:text-white"
-          >
-            ← Todas las inteligencias
-          </Link>
-          <div className="mt-4 flex items-center gap-4">
-            <span className="text-5xl" aria-hidden="true">
-              {intel.emoji}
-            </span>
+      {/* ===== Hero: con foto real si existe, si no el banner de color ===== */}
+      {media?.heroImage ? (
+        <header
+          className="relative overflow-hidden"
+          style={{ backgroundColor: intel.softVar }}
+        >
+          <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-12 md:grid-cols-2 md:py-16">
             <div>
-              <h1 className="font-display text-4xl font-black md:text-5xl">
+              <Link
+                href="/inteligencias"
+                className="text-sm font-medium hover:underline"
+                style={{ color: intel.inkVar }}
+              >
+                ← Todas las inteligencias
+              </Link>
+
+              {iconPluma && (
+                <div
+                  className="mt-5 inline-flex items-center gap-2 rounded-full bg-paper px-3 py-1.5 shadow-sm"
+                >
+                  <Image
+                    src={iconPluma}
+                    alt=""
+                    width={18}
+                    height={18}
+                    className="h-[18px] w-[18px]"
+                    aria-hidden="true"
+                  />
+                  <span className="text-xs font-semibold" style={{ color: intel.inkVar }}>
+                    Inteligencia {intel.name}
+                  </span>
+                </div>
+              )}
+
+              <h1
+                className="mt-4 font-display text-4xl font-black leading-tight md:text-5xl"
+                style={{ color: intel.inkVar }}
+              >
                 {intel.name}
               </h1>
-              <p className="mt-1 text-white/90">{intel.tagline}</p>
+              <p className="mt-2 text-lg font-semibold text-ink">{intel.tagline}</p>
+              <p className="mt-3 max-w-md text-ink-soft">{intel.description}</p>
+            </div>
+
+            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-line shadow-xl">
+              <Image
+                src={media.heroImage}
+                alt={`Inteligencia ${intel.name}`}
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+              />
             </div>
           </div>
-        </div>
-      </header>
+        </header>
+      ) : (
+        <header style={{ backgroundColor: intel.colorVar }} className="text-white">
+          <div className="mx-auto max-w-4xl px-4 py-14">
+            <Link
+              href="/inteligencias"
+              className="text-sm font-medium text-white/90 hover:text-white"
+            >
+              ← Todas las inteligencias
+            </Link>
+            <div className="mt-4 flex items-center gap-4">
+              <span className="text-5xl" aria-hidden="true">
+                {intel.emoji}
+              </span>
+              <div>
+                <h1 className="font-display text-4xl font-black md:text-5xl">
+                  {intel.name}
+                </h1>
+                <p className="mt-1 text-white/90">{intel.tagline}</p>
+              </div>
+            </div>
+          </div>
+        </header>
+      )}
 
       <div className="mx-auto max-w-4xl px-4">
         {/* ===== Frases + perfil ===== */}
@@ -65,9 +127,19 @@ export default async function IntelligenceDetailPage({
             style={{ backgroundColor: intel.softVar }}
           >
             <h2
-              className="mb-3 font-display text-lg font-bold"
+              className="mb-3 flex items-center gap-2 font-display text-lg font-bold"
               style={{ color: intel.inkVar }}
             >
+              {iconCuaderno && (
+                <Image
+                  src={iconCuaderno}
+                  alt=""
+                  width={22}
+                  height={22}
+                  className="h-[22px] w-[22px]"
+                  aria-hidden="true"
+                />
+              )}
               ¿Te suena familiar?
             </h2>
             <ul className="space-y-2.5">
@@ -83,29 +155,65 @@ export default async function IntelligenceDetailPage({
           </div>
 
           {/* Perfil */}
-          <div className="rounded-2xl border border-line bg-paper p-6 shadow-sm">
-            <p className="text-ink">{intel.content.profile}</p>
+          <div className="overflow-hidden rounded-2xl border border-line bg-paper shadow-sm">
+            {profileImage && (
+              <div className="relative aspect-video w-full">
+                <Image
+                  src={profileImage}
+                  alt=""
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+            )}
+            <p className="p-6 text-ink">{intel.content.profile}</p>
           </div>
         </section>
 
         {/* ===== Enfoque teórico ===== */}
         <section
-          className="mt-8 rounded-2xl border-l-4 bg-paper p-6 shadow-sm"
+          className="mt-8 overflow-hidden rounded-2xl border-l-4 bg-paper shadow-sm"
           style={{ borderLeftColor: intel.colorVar }}
         >
-          <h2
-            className="font-display text-lg font-bold"
-            style={{ color: intel.inkVar }}
-          >
-            {intel.content.approach.name}
-          </h2>
-          <p className="mt-2 text-ink-soft">{intel.content.approach.body}</p>
+          <div className={approachImage ? "grid gap-0 md:grid-cols-[1fr_220px]" : ""}>
+            <div className="p-6">
+              <h2
+                className="flex items-center gap-2 font-display text-lg font-bold"
+                style={{ color: intel.inkVar }}
+              >
+                {iconConversacion && (
+                  <Image
+                    src={iconConversacion}
+                    alt=""
+                    width={22}
+                    height={22}
+                    className="h-[22px] w-[22px]"
+                    aria-hidden="true"
+                  />
+                )}
+                {intel.content.approach.name}
+              </h2>
+              <p className="mt-2 text-ink-soft">{intel.content.approach.body}</p>
+            </div>
+            {approachImage && (
+              <div className="relative hidden min-h-[180px] md:block">
+                <Image
+                  src={approachImage}
+                  alt=""
+                  fill
+                  sizes="220px"
+                  className="object-cover"
+                />
+              </div>
+            )}
+          </div>
         </section>
 
-        {/* ===== Los 7 tips ===== */}
+        {/* ===== Tips ===== */}
         <section className="mt-12">
           <h2 className="mb-1 font-display text-2xl font-bold text-ink">
-            7 tips para escribir en francés
+            Tips para escribir en francés
           </h2>
           <p className="mb-6 text-sm text-ink-soft">
             Estrategias pensadas para tu forma de aprender.
@@ -115,55 +223,68 @@ export default async function IntelligenceDetailPage({
             {intel.content.tips.map((tip, i) => (
               <div
                 key={i}
-                className="overflow-hidden rounded-2xl border border-line bg-paper shadow-sm"
+                className="overflow-hidden rounded-2xl border border-line bg-paper shadow-sm md:grid md:grid-cols-[220px_1fr]"
               >
-                {/* Título del tip con número */}
-                <div
-                  className="flex items-center gap-3 px-6 py-4"
-                  style={{ backgroundColor: intel.softVar }}
-                >
-                  <span
-                    className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-bold text-white"
-                    style={{ backgroundColor: intel.colorVar }}
-                    aria-hidden="true"
-                  >
-                    {i + 1}
-                  </span>
-                  <h3
-                    className="font-display text-lg font-bold"
-                    style={{ color: intel.inkVar }}
-                  >
-                    {tip.title}
-                  </h3>
-                </div>
-                {/* Cuerpo del tip */}
-                <div className="space-y-4 px-6 py-5">
-                  <div>
-                    <p
-                      className="text-xs font-semibold uppercase tracking-wide"
-                      style={{ color: intel.inkVar }}
-                    >
-                      En qué consiste
-                    </p>
-                    <p className="mt-1 text-sm text-ink">{tip.what}</p>
+                {tip.image && (
+                  <div className="relative h-48 w-full md:h-full">
+                    <Image
+                      src={tip.image}
+                      alt=""
+                      fill
+                      sizes="(max-width: 768px) 100vw, 220px"
+                      className="object-cover"
+                    />
                   </div>
-                  <div>
-                    <p
-                      className="text-xs font-semibold uppercase tracking-wide"
+                )}
+                <div>
+                  {/* Título del tip con número */}
+                  <div
+                    className="flex items-center gap-3 px-6 py-4"
+                    style={{ backgroundColor: intel.softVar }}
+                  >
+                    <span
+                      className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-bold text-white"
+                      style={{ backgroundColor: intel.colorVar }}
+                      aria-hidden="true"
+                    >
+                      {i + 1}
+                    </span>
+                    <h3
+                      className="font-display text-lg font-bold"
                       style={{ color: intel.inkVar }}
                     >
-                      Por qué te sirve
-                    </p>
-                    <p className="mt-1 text-sm text-ink-soft">{tip.why}</p>
+                      {tip.title}
+                    </h3>
                   </div>
-                  <div>
-                    <p
-                      className="text-xs font-semibold uppercase tracking-wide"
-                      style={{ color: intel.inkVar }}
-                    >
-                      Cómo hacerlo
-                    </p>
-                    <p className="mt-1 text-sm text-ink-soft">{tip.how}</p>
+                  {/* Cuerpo del tip */}
+                  <div className="space-y-4 px-6 py-5">
+                    <div>
+                      <p
+                        className="text-xs font-semibold uppercase tracking-wide"
+                        style={{ color: intel.inkVar }}
+                      >
+                        En qué consiste
+                      </p>
+                      <p className="mt-1 text-sm text-ink">{tip.what}</p>
+                    </div>
+                    <div>
+                      <p
+                        className="text-xs font-semibold uppercase tracking-wide"
+                        style={{ color: intel.inkVar }}
+                      >
+                        Por qué te sirve
+                      </p>
+                      <p className="mt-1 text-sm text-ink-soft">{tip.why}</p>
+                    </div>
+                    <div>
+                      <p
+                        className="text-xs font-semibold uppercase tracking-wide"
+                        style={{ color: intel.inkVar }}
+                      >
+                        Cómo hacerlo
+                      </p>
+                      <p className="mt-1 text-sm text-ink-soft">{tip.how}</p>
+                    </div>
                   </div>
                 </div>
               </div>
