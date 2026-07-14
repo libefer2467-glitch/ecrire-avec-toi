@@ -146,9 +146,8 @@ export const INTELLIGENCES: Intelligence[] = [
       videoUrl: "https://www.youtube.com/watch?v=urmcWpdVfDg",
       media: {
         heroImage: "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784055827/hero_qmu148.png",
-        // Foto de banco libre (Unsplash) para acompañar "¿Te suena familiar?".
         quotesImage:
-          "https://images.unsplash.com/photo-1591504212642-241ee8b51e24?w=900&q=80&auto=format&fit=crop",
+          "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784071920/joven_lectora_i0gxfb.png",
         sideImages: [
           "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784055812/apoyo-1_zzqcaz.png",
           "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784055826/apoyo-2_cxyugi.png",
