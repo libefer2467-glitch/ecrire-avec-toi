@@ -41,57 +41,79 @@ export default async function IntelligenceDetailPage({
       {/* ===== Hero: con foto real si existe, si no el banner de color ===== */}
       {media?.heroImage ? (
         <header
-          className="relative overflow-hidden"
-          style={{ backgroundColor: intel.softVar }}
+          className="relative isolate min-h-[480px] overflow-hidden md:min-h-[560px]"
+          style={{
+            backgroundImage: `linear-gradient(135deg, ${intel.colorVar} 0%, ${intel.colorVar} 45%, var(--ocre) 100%)`,
+          }}
         >
-          <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-12 md:grid-cols-2 md:py-16">
-            <div>
-              <Link
-                href="/inteligencias"
-                className="text-sm font-medium hover:underline"
-                style={{ color: intel.inkVar }}
+          {/* Foto integrada a la derecha, difuminada hacia la izquierda */}
+          <div
+            className="absolute inset-y-0 right-0 w-full md:w-[58%]"
+            style={{
+              maskImage: "linear-gradient(to right, transparent 0%, black 38%)",
+              WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 38%)",
+            }}
+          >
+            <Image
+              src={media.heroImage}
+              alt={`Inteligencia ${intel.name}`}
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 60vw"
+              className="object-cover"
+            />
+          </div>
+
+          {/* Velo oscuro sutil para que el texto siempre tenga contraste,
+              sin importar qué tan clara sea la foto debajo (clave en móvil,
+              donde la foto ocupa todo el ancho). */}
+          <div
+            className="absolute inset-0 bg-gradient-to-r from-black/25 via-black/10 to-transparent md:from-black/20 md:via-transparent md:to-transparent"
+            aria-hidden="true"
+          />
+
+          {/* Corte curvo inferior-izquierdo que revela el fondo de la página */}
+          <div
+            className="absolute -bottom-px -left-px h-20 w-20 rounded-tr-[100%] bg-cream md:h-32 md:w-32"
+            aria-hidden="true"
+          />
+
+          {/* Contenido */}
+          <div className="relative z-10 mx-auto max-w-6xl px-4 py-14 md:py-20">
+            <Link
+              href="/inteligencias"
+              className="text-sm font-medium text-white/85 hover:text-white"
+            >
+              ← Todas las inteligencias
+            </Link>
+
+            <h1
+              className="mt-6 max-w-lg font-display text-4xl font-black uppercase leading-[1.05] md:text-5xl"
+              style={{ color: "var(--ocre)" }}
+            >
+              Inteligencia
+              <br />
+              {intel.name}
+            </h1>
+            <p className="mt-3 max-w-md text-xl font-bold text-white">{intel.tagline}</p>
+            <p className="mt-3 max-w-md text-white/85">{intel.description}</p>
+
+            {iconPluma && (
+              <a
+                href="#tips"
+                className="mt-7 inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 backdrop-blur-sm transition hover:bg-white/25"
               >
-                ← Todas las inteligencias
-              </Link>
-
-              {iconPluma && (
-                <div
-                  className="mt-5 inline-flex items-center gap-2 rounded-full bg-paper px-3 py-1.5 shadow-sm"
-                >
-                  <Image
-                    src={iconPluma}
-                    alt=""
-                    width={18}
-                    height={18}
-                    className="h-[18px] w-[18px]"
-                    aria-hidden="true"
-                  />
-                  <span className="text-xs font-semibold" style={{ color: intel.inkVar }}>
-                    Inteligencia {intel.name}
-                  </span>
-                </div>
-              )}
-
-              <h1
-                className="mt-4 font-display text-4xl font-black leading-tight md:text-5xl"
-                style={{ color: intel.inkVar }}
-              >
-                {intel.name}
-              </h1>
-              <p className="mt-2 text-lg font-semibold text-ink">{intel.tagline}</p>
-              <p className="mt-3 max-w-md text-ink-soft">{intel.description}</p>
-            </div>
-
-            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-line shadow-xl">
-              <Image
-                src={media.heroImage}
-                alt={`Inteligencia ${intel.name}`}
-                fill
-                priority
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover"
-              />
-            </div>
+                <Image
+                  src={iconPluma}
+                  alt=""
+                  width={18}
+                  height={18}
+                  className="h-[18px] w-[18px] brightness-0 invert"
+                  aria-hidden="true"
+                />
+                <span className="text-sm font-semibold text-white">Ver los tips ↓</span>
+              </a>
+            )}
           </div>
         </header>
       ) : (
@@ -211,7 +233,7 @@ export default async function IntelligenceDetailPage({
         </section>
 
         {/* ===== Tips ===== */}
-        <section className="mt-12">
+        <section id="tips" className="mt-12 scroll-mt-6">
           <h2 className="mb-1 font-display text-2xl font-bold text-ink">
             Tips para escribir en francés
           </h2>
