@@ -62,3 +62,36 @@ export const dominantCounts = query({
     return { total: results.length, counts };
   },
 });
+
+/**
+ * Estadística agregada por inteligencia para el reporte grupal (tesis):
+ * promedio de puntaje (0-5), cuántas personas quedaron "Dominante" en esa
+ * inteligencia (contando empates, vía dominantIds) y cuántas en cada nivel.
+ */
+export const groupStats = query({
+  args: {},
+  handler: async (ctx) => {
+    const results = await ctx.db.query("testResults").collect();
+    const total = results.length;
+
+    const sums: Record<string, number> = {};
+    const dominantCount: Record<string, number> = {};
+    const levelCounts: Record<string, { dominante: number; media: number; poca: number }> = {};
+
+    for (const r of results) {
+      for (const [id, raw] of Object.entries(r.scoresByIntelligence)) {
+        sums[id] = (sums[id] ?? 0) + raw;
+        if (!levelCounts[id]) levelCounts[id] = { dominante: 0, media: 0, poca: 0 };
+        if (raw >= 4) levelCounts[id].dominante += 1;
+        else if (raw === 3) levelCounts[id].media += 1;
+        else levelCounts[id].poca += 1;
+      }
+      const domIds = r.dominantIds?.length ? r.dominantIds : [r.dominant];
+      for (const id of domIds) {
+        dominantCount[id] = (dominantCount[id] ?? 0) + 1;
+      }
+    }
+
+    return { total, sums, dominantCount, levelCounts };
+  },
+});

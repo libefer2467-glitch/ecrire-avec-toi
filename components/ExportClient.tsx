@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 /**
  * Formulario mínimo para descargar los resultados del test en CSV (Excel).
@@ -52,7 +53,14 @@ export function ExportClient() {
         <p className="mt-4 text-xs text-ink-soft">
           Si la clave es incorrecta verás un mensaje &ldquo;No autorizado&rdquo;.
           El archivo incluye una fila por cada persona que completó el test, con
-          la fecha, su inteligencia dominante, los puntajes y las 80 respuestas.
+          la fecha, su inteligencia dominante, los puntajes y las 40 respuestas.
+        </p>
+
+        <p className="mt-3 text-center text-xs text-ink-soft">
+          ¿Buscas promedios y gráficos para la tesis?{" "}
+          <Link href="/reporte" className="font-semibold text-terracota-ink hover:underline">
+            Ver reporte grupal →
+          </Link>
         </p>
       </div>
     </div>
