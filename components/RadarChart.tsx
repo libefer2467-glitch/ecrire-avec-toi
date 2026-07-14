@@ -27,6 +27,9 @@ export function RadarChart({
   const cy = size / 2;
   const radius = size * 0.36;
   const rings = [0.25, 0.5, 0.75, 1];
+  // Margen horizontal extra para que las etiquetas largas (Interpersonal,
+  // Intrapersonal…) no se corten a los lados del SVG.
+  const padX = size * 0.28;
 
   const angleFor = (i: number) => (Math.PI * 2 * i) / n - Math.PI / 2;
 
@@ -43,8 +46,8 @@ export function RadarChart({
 
   return (
     <svg
-      viewBox={`0 0 ${size} ${size}`}
-      className="mx-auto h-auto w-full max-w-[420px]"
+      viewBox={`${-padX} 0 ${size + padX * 2} ${size}`}
+      className="mx-auto h-auto w-full max-w-[500px]"
       role="img"
       aria-label={
         "Gráfico de radar de las 8 inteligencias: " +
