@@ -57,83 +57,143 @@ export default async function IntelligenceDetailPage({
       </header>
 
       <div className="mx-auto max-w-4xl px-4">
-        {/* Intro */}
-        <section className="mt-10 rounded-2xl border border-line bg-paper p-6 shadow-sm">
-          <p className="text-lg text-ink">{intel.description}</p>
-          <p className="mt-3 text-ink-soft">{intel.content.intro}</p>
+        {/* ===== Frases + perfil ===== */}
+        <section className="mt-10 grid gap-6 md:grid-cols-2">
+          {/* Frases que te describen */}
+          <div
+            className="rounded-2xl p-6"
+            style={{ backgroundColor: intel.softVar }}
+          >
+            <h2
+              className="mb-3 font-display text-lg font-bold"
+              style={{ color: intel.inkVar }}
+            >
+              ¿Te suena familiar?
+            </h2>
+            <ul className="space-y-2.5">
+              {intel.quotes.map((q, i) => (
+                <li key={i} className="flex gap-2 text-sm text-ink">
+                  <span aria-hidden="true" style={{ color: intel.inkVar }}>
+                    &ldquo;
+                  </span>
+                  <span className="italic">{q}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Perfil */}
+          <div className="rounded-2xl border border-line bg-paper p-6 shadow-sm">
+            <p className="text-ink">{intel.content.profile}</p>
+          </div>
         </section>
 
-        {/* Video */}
-        <section className="mt-10">
-          <h2 className="mb-4 font-display text-2xl font-bold text-ink">
-            Video explicativo
+        {/* ===== Enfoque teórico ===== */}
+        <section
+          className="mt-8 rounded-2xl border-l-4 bg-paper p-6 shadow-sm"
+          style={{ borderLeftColor: intel.colorVar }}
+        >
+          <h2
+            className="font-display text-lg font-bold"
+            style={{ color: intel.inkVar }}
+          >
+            {intel.content.approach.name}
           </h2>
-          <VideoEmbed
-            url={intel.content.videoUrl}
-            title={intel.name}
-            accentVar={intel.colorVar}
-          />
+          <p className="mt-2 text-ink-soft">{intel.content.approach.body}</p>
         </section>
 
-        {/* Estrategias */}
+        {/* ===== Los 7 tips ===== */}
         <section className="mt-12">
-          <h2 className="mb-4 font-display text-2xl font-bold text-ink">
-            Estrategias de escritura en francés
+          <h2 className="mb-1 font-display text-2xl font-bold text-ink">
+            7 tips para escribir en francés
           </h2>
-          <div className="grid gap-4">
-            {intel.content.strategies.map((s, i) => (
+          <p className="mb-6 text-sm text-ink-soft">
+            Estrategias pensadas para tu forma de aprender.
+          </p>
+
+          <div className="space-y-5">
+            {intel.content.tips.map((tip, i) => (
               <div
                 key={i}
-                className="rounded-2xl border border-line bg-paper p-6 shadow-sm"
-                style={{ borderLeftWidth: 5, borderLeftColor: intel.colorVar }}
+                className="overflow-hidden rounded-2xl border border-line bg-paper shadow-sm"
               >
-                <h3 className="font-display text-lg font-bold" style={{ color: intel.inkVar }}>
-                  {s.title}
-                </h3>
-                <p className="mt-2 text-ink-soft">{s.body}</p>
+                {/* Título del tip con número */}
+                <div
+                  className="flex items-center gap-3 px-6 py-4"
+                  style={{ backgroundColor: intel.softVar }}
+                >
+                  <span
+                    className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-bold text-white"
+                    style={{ backgroundColor: intel.colorVar }}
+                    aria-hidden="true"
+                  >
+                    {i + 1}
+                  </span>
+                  <h3
+                    className="font-display text-lg font-bold"
+                    style={{ color: intel.inkVar }}
+                  >
+                    {tip.title}
+                  </h3>
+                </div>
+                {/* Cuerpo del tip */}
+                <div className="space-y-4 px-6 py-5">
+                  <div>
+                    <p
+                      className="text-xs font-semibold uppercase tracking-wide"
+                      style={{ color: intel.inkVar }}
+                    >
+                      En qué consiste
+                    </p>
+                    <p className="mt-1 text-sm text-ink">{tip.what}</p>
+                  </div>
+                  <div>
+                    <p
+                      className="text-xs font-semibold uppercase tracking-wide"
+                      style={{ color: intel.inkVar }}
+                    >
+                      Por qué te sirve
+                    </p>
+                    <p className="mt-1 text-sm text-ink-soft">{tip.why}</p>
+                  </div>
+                  <div>
+                    <p
+                      className="text-xs font-semibold uppercase tracking-wide"
+                      style={{ color: intel.inkVar }}
+                    >
+                      Cómo hacerlo
+                    </p>
+                    <p className="mt-1 text-sm text-ink-soft">{tip.how}</p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Descargas */}
-        <section className="mt-12">
-          <h2 className="mb-4 font-display text-2xl font-bold text-ink">
-            Descargas
-          </h2>
-          <ul className="space-y-3">
-            {intel.content.downloads.map((d, i) => (
-              <li key={i}>
-                <a
-                  href={d.href}
-                  className="flex items-center justify-between rounded-2xl border border-line bg-paper p-4 shadow-sm transition hover:bg-cream-2"
-                  {...(d.href === "#" ? { "aria-disabled": true } : { download: true })}
-                >
-                  <span className="flex items-center gap-3 font-medium text-ink">
-                    <span
-                      className="flex h-10 w-10 items-center justify-center rounded-lg text-lg"
-                      style={{ backgroundColor: intel.softVar, color: intel.inkVar }}
-                      aria-hidden="true"
-                    >
-                      📄
-                    </span>
-                    {d.label}
-                  </span>
-                  <span className="text-sm font-semibold" style={{ color: intel.inkVar }}>
-                    {d.href === "#" ? "Próximamente" : "Descargar"}
-                  </span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </section>
+        {/* ===== Video al final de la sección ===== */}
+        {intel.content.videoUrl && (
+          <section className="mt-12">
+            <h2 className="mb-4 font-display text-2xl font-bold text-ink">
+              Video recomendado
+            </h2>
+            <VideoEmbed
+              url={intel.content.videoUrl}
+              title={intel.name}
+              accentVar={intel.colorVar}
+            />
+          </section>
+        )}
 
-        {/* CTA final */}
+        {/* ===== CTA final ===== */}
         <section
           className="mt-14 rounded-3xl p-8 text-center"
           style={{ backgroundColor: intel.softVar }}
         >
-          <h2 className="font-display text-2xl font-bold" style={{ color: intel.inkVar }}>
+          <h2
+            className="font-display text-2xl font-bold"
+            style={{ color: intel.inkVar }}
+          >
             ¿No sabes cuál es tu inteligencia dominante?
           </h2>
           <p className="mt-2 text-ink-soft">

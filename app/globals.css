@@ -33,39 +33,42 @@
   --brand: var(--terracota);
   --brand-ink: var(--terracota-ink);
 
-  /* -------- Colores por inteligencia (8) -------- */
-  /* 1. Lingüística-Verbal — LILA MEDIO (estricto, no púrpura) */
-  --ling: #9b7ec8;
-  --ling-ink: #6b4f9e;
-  --ling-soft: #efe9f8;
-  /* 2. Lógico-Matemática — AZUL MARINO (estricto, no azul eléctrico) */
-  --logi: #24476f;
-  --logi-ink: #1b3757;
-  --logi-soft: #e4eaf1;
-  /* 3. Musical — AMARILLO / MOSTAZA */
-  --musi: #c9a227;
-  --musi-ink: #8a6d0f;
-  --musi-soft: #f7efd4;
-  /* 4. Visual-Espacial — TURQUESA (lago andino) */
-  --espa: #2c8c8c;
-  --espa-ink: #1f6a6a;
-  --espa-soft: #dcf0f0;
-  /* 5. Corporal-Cinestésica — TERRACOTA */
-  --corp: #c05a2e;
-  --corp-ink: #98431f;
-  --corp-soft: #f6e3d9;
-  /* 6. Interpersonal — ROSA / CORAL */
-  --inter: #c24e7d;
-  --inter-ink: #983b60;
-  --inter-soft: #f7e1ea;
-  /* 7. Intrapersonal — ÍNDIGO */
-  --intra: #4c5ba6;
-  --intra-ink: #3a4784;
-  --intra-soft: #e3e6f4;
-  /* 8. Naturalista — VERDE */
-  --natu: #3c8c5a;
-  --natu-ink: #2c6b44;
-  --natu-soft: #deefe4;
+  /* -------- Colores por inteligencia (8) --------
+     Paleta oficial del folleto/tesis (2026). base = color de marca,
+     -ink = versión oscura con contraste AA para texto sobre claro,
+     -soft = tinte claro para fondos. */
+  /* 1. Verbal-Lingüística — violeta */
+  --ling: #6a2c91;
+  --ling-ink: #5a2480;
+  --ling-soft: #efe6f5;
+  /* 2. Lógico-Matemática — azul marino */
+  --logi: #1b4f72;
+  --logi-ink: #143b56;
+  --logi-soft: #e5edf2;
+  /* 3. Musical-Rítmica — rojo */
+  --musi: #b22222;
+  --musi-ink: #8c1b1b;
+  --musi-soft: #f6e2e2;
+  /* 4. Visual-Espacial — naranja */
+  --espa: #d96a18;
+  --espa-ink: #9c4a0e;
+  --espa-soft: #fbeade;
+  /* 5. Kinestésica-Corporal — verde */
+  --corp: #1e8449;
+  --corp-ink: #155f34;
+  --corp-soft: #e2f1e9;
+  /* 6. Interpersonal — teal */
+  --inter: #0e7c74;
+  --inter-ink: #0a5952;
+  --inter-soft: #e0f0ee;
+  /* 7. Intrapersonal — púrpura */
+  --intra: #7d3c98;
+  --intra-ink: #653079;
+  --intra-soft: #f1e8f6;
+  /* 8. Naturalista — verde oliva */
+  --natu: #6b7c32;
+  --natu-ink: #4e5b23;
+  --natu-soft: #eef1e2;
 }
 
 @theme inline {

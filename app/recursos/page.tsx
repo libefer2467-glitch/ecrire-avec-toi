@@ -81,7 +81,7 @@ export default function RecursosPage() {
                 <span>
                   <span className="block font-semibold text-ink">{intel.name}</span>
                   <span className="block text-xs text-ink-soft">
-                    {intel.content.downloads[0]?.label ?? "Material de apoyo"}
+                    {intel.tagline}
                   </span>
                 </span>
               </Link>
