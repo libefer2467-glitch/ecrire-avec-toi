@@ -44,6 +44,19 @@ export interface IntelligenceMedia {
   icons?: string[];
 }
 
+/** Juego externo incrustable (ej. Educaplay) vía iframe. */
+export interface EmbeddedGame {
+  title: string;
+  embedUrl: string;
+}
+
+/** Enlace a un recurso externo (ej. Lingolia). */
+export interface ExternalResource {
+  label: string;
+  url: string;
+  description?: string;
+}
+
 export interface Intelligence {
   id: IntelligenceId;
   order: number;
@@ -72,6 +85,10 @@ export interface Intelligence {
     banner: string;
     /** material fotográfico real (opcional, ver IntelligenceMedia) */
     media?: IntelligenceMedia;
+    /** juegos externos incrustados (ej. Educaplay) */
+    games?: EmbeddedGame[];
+    /** enlaces a recursos externos (ej. Lingolia) */
+    externalLinks?: ExternalResource[];
   };
 }
 
@@ -147,6 +164,30 @@ export const INTELLIGENCES: Intelligence[] = [
       ],
       videoUrl: "https://www.youtube.com/watch?v=urmcWpdVfDg",
       banner: "¡El lenguaje te conecta con el mundo!",
+      games: [
+        {
+          title: "Sopa de letras — Les adjectifs indéfinis",
+          embedUrl:
+            "https://www.educaplay.com/game/29640139-les_adjectifs_indefinis.html",
+        },
+        {
+          title: "Froggy Jumps — L'hypothèse",
+          embedUrl: "https://www.educaplay.com/game/29623099-l_hypothese.html",
+        },
+        {
+          title: "Completar frases — Comparatives and Superlatives",
+          embedUrl:
+            "https://www.educaplay.com/game/27161675-comparatives_and_superlatives.html",
+        },
+      ],
+      externalLinks: [
+        {
+          label: "Lingolia Français",
+          url: "https://francais.lingolia.com/es/",
+          description:
+            "Página gratuita con ejercicios de gramática (conjugaciones, artículos, pronombres…) y vocabulario (sinónimos, parónimos, homófonos, vocabulario temático).",
+        },
+      ],
       media: {
         heroImage: "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784055827/hero_qmu148.png",
         quotesImage:

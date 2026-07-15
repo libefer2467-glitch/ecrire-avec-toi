@@ -55,6 +55,83 @@ export default function RecursosPage() {
         </div>
       </section>
 
+      {/* Recursos externos: biblioteca y ejercicios */}
+      <section className="mt-12">
+        <h2 className="font-display text-2xl font-bold text-ink">
+          Biblioteca y ejercicios en línea
+        </h2>
+        <p className="mt-2 text-ink-soft">
+          Recursos externos y gratuitos para seguir practicando tu francés.
+        </p>
+        <div className="mt-6 grid gap-5 sm:grid-cols-3">
+          <a
+            href="https://drive.google.com/drive/u/0/folders/1UqUm08whph3c3huXaFaSh179parUI6z"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-start gap-3 rounded-2xl border border-line bg-paper p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+          >
+            <span
+              className="flex h-12 w-12 items-center justify-center rounded-xl text-2xl"
+              style={{ backgroundColor: "var(--ling-soft)" }}
+              aria-hidden="true"
+            >
+              📚
+            </span>
+            <span className="font-display text-lg font-bold text-ink">
+              Biblioteca virtual de francés
+            </span>
+            <span className="text-sm text-ink-soft">
+              Catálogo de libros por nivel (A1, A2, B1), literatura francesa y
+              material DELF-DALF, de la biblioteca de la carrera de LAEL.
+            </span>
+          </a>
+
+          <a
+            href="https://es.educaplay.com/usuario/13948908-libertad/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-start gap-3 rounded-2xl border border-line bg-paper p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+          >
+            <span
+              className="flex h-12 w-12 items-center justify-center rounded-xl text-2xl"
+              style={{ backgroundColor: "var(--musi-soft)" }}
+              aria-hidden="true"
+            >
+              🎮
+            </span>
+            <span className="font-display text-lg font-bold text-ink">
+              Juegos interactivos
+            </span>
+            <span className="text-sm text-ink-soft">
+              Sopa de letras, Froggy Jumps y ejercicios de completar frases,
+              hechos a medida para este proyecto.
+            </span>
+          </a>
+
+          <a
+            href="https://francais.lingolia.com/es/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-start gap-3 rounded-2xl border border-line bg-paper p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+          >
+            <span
+              className="flex h-12 w-12 items-center justify-center rounded-xl text-2xl"
+              style={{ backgroundColor: "var(--espa-soft)" }}
+              aria-hidden="true"
+            >
+              ✏️
+            </span>
+            <span className="font-display text-lg font-bold text-ink">
+              Lingolia Français
+            </span>
+            <span className="text-sm text-ink-soft">
+              Ejercicios gratuitos de gramática y vocabulario: sinónimos,
+              parónimos, homófonos y mucho más.
+            </span>
+          </a>
+        </div>
+      </section>
+
       {/* Descargas por inteligencia */}
       <section className="mt-12">
         <h2 className="font-display text-2xl font-bold text-ink">

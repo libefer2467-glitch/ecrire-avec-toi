@@ -63,6 +63,8 @@ export default async function IntelligenceDetailPage({
   const quotesImage = media?.quotesImage;
   const [profileImage, approachImage] = media?.sideImages ?? [];
   const [iconConversacion, iconCuaderno, iconPluma] = media?.icons ?? [];
+  const games = intel.content.games ?? [];
+  const externalLinks = intel.content.externalLinks ?? [];
 
   return (
     <article className="pb-16">
@@ -363,6 +365,81 @@ export default async function IntelligenceDetailPage({
               title={intel.name}
               accentVar={intel.colorVar}
             />
+          </section>
+        )}
+
+        {/* ===== Practica jugando: juegos incrustados + enlaces externos ===== */}
+        {(games.length > 0 || externalLinks.length > 0) && (
+          <section className="mt-12">
+            <h2 className="mb-1 font-display text-2xl font-bold text-ink">
+              Practica jugando
+            </h2>
+            <p className="mb-6 text-sm text-ink-soft">
+              Ejercicios interactivos gratuitos para reforzar lo que acabas de
+              leer.
+            </p>
+
+            {games.length > 0 && (
+              <div className="grid gap-5 md:grid-cols-3">
+                {games.map((game, i) => (
+                  <div
+                    key={i}
+                    className="overflow-hidden rounded-2xl border border-line bg-paper shadow-sm"
+                  >
+                    <div
+                      className="px-4 py-3"
+                      style={{ backgroundColor: intel.softVar }}
+                    >
+                      <p
+                        className="text-sm font-semibold"
+                        style={{ color: intel.inkVar }}
+                      >
+                        {game.title}
+                      </p>
+                    </div>
+                    <div className="relative w-full" style={{ aspectRatio: "795 / 690" }}>
+                      <iframe
+                        src={game.embedUrl}
+                        title={game.title}
+                        loading="lazy"
+                        allow="fullscreen; autoplay; allow-top-navigation-by-user-activation"
+                        allowFullScreen
+                        className="absolute inset-0 h-full w-full border-0"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {externalLinks.length > 0 && (
+              <div className={games.length > 0 ? "mt-5 grid gap-4" : "grid gap-4"}>
+                {externalLinks.map((link, i) => (
+                  <a
+                    key={i}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between gap-4 rounded-2xl border border-line bg-paper p-5 shadow-sm transition hover:bg-cream-2"
+                  >
+                    <div>
+                      <p className="font-display text-base font-bold text-ink">
+                        {link.label}
+                      </p>
+                      {link.description && (
+                        <p className="mt-1 text-sm text-ink-soft">{link.description}</p>
+                      )}
+                    </div>
+                    <span
+                      className="shrink-0 text-sm font-semibold"
+                      style={{ color: intel.inkVar }}
+                    >
+                      Ir al sitio ↗
+                    </span>
+                  </a>
+                ))}
+              </div>
+            )}
           </section>
         )}
       </div>
