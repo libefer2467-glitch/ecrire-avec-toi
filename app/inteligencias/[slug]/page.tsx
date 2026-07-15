@@ -382,32 +382,35 @@ export default async function IntelligenceDetailPage({
             {games.length > 0 && (
               <div className="grid gap-5 md:grid-cols-3">
                 {games.map((game, i) => (
-                  <div
+                  <a
                     key={i}
-                    className="overflow-hidden rounded-2xl border border-line bg-paper shadow-sm"
+                    href={game.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group overflow-hidden rounded-2xl border border-line bg-paper shadow-sm transition hover:-translate-y-1 hover:shadow-md"
                   >
                     <div
-                      className="px-4 py-3"
+                      className="relative flex aspect-[4/3] items-center justify-center p-8"
                       style={{ backgroundColor: intel.softVar }}
                     >
-                      <p
-                        className="text-sm font-semibold"
-                        style={{ color: intel.inkVar }}
-                      >
-                        {game.title}
-                      </p>
-                    </div>
-                    <div className="relative w-full" style={{ aspectRatio: "795 / 690" }}>
-                      <iframe
-                        src={game.embedUrl}
-                        title={game.title}
-                        loading="lazy"
-                        allow="fullscreen; autoplay; allow-top-navigation-by-user-activation"
-                        allowFullScreen
-                        className="absolute inset-0 h-full w-full border-0"
+                      <Image
+                        src={game.thumbnail}
+                        alt=""
+                        width={140}
+                        height={140}
+                        className="h-auto w-full max-w-[140px] object-contain"
                       />
+                      <span
+                        className="absolute bottom-3 right-3 flex items-center gap-1 rounded-full px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition group-hover:opacity-90"
+                        style={{ backgroundColor: intel.colorVar }}
+                      >
+                        Jugar ↗
+                      </span>
                     </div>
-                  </div>
+                    <div className="px-4 py-3">
+                      <p className="text-sm font-semibold text-ink">{game.title}</p>
+                    </div>
+                  </a>
                 ))}
               </div>
             )}

@@ -44,10 +44,15 @@ export interface IntelligenceMedia {
   icons?: string[];
 }
 
-/** Juego externo incrustable (ej. Educaplay) vía iframe. */
+/**
+ * Juego externo (ej. Educaplay): se muestra como tarjeta con miniatura
+ * que, al hacer clic, abre el juego en una pestaña nueva (no se incrusta
+ * por iframe: la ventana quedaba demasiado chica para jugar bien).
+ */
 export interface EmbeddedGame {
   title: string;
-  embedUrl: string;
+  url: string;
+  thumbnail: string;
 }
 
 /** Enlace a un recurso externo (ej. Lingolia). */
@@ -167,17 +172,18 @@ export const INTELLIGENCES: Intelligence[] = [
       games: [
         {
           title: "Sopa de letras — Les adjectifs indéfinis",
-          embedUrl:
-            "https://www.educaplay.com/learning-resources/29640139-les_adjectifs_indefinis.html",
+          url: "https://www.educaplay.com/learning-resources/29640139-les_adjectifs_indefinis.html",
+          thumbnail: "https://cloud.educaplay.com/r/img/actividadSOPA.webp",
         },
         {
           title: "Froggy Jumps — L'hypothèse",
-          embedUrl: "https://www.educaplay.com/learning-resources/29623099-l_hypothese.html",
+          url: "https://www.educaplay.com/learning-resources/29623099-l_hypothese.html",
+          thumbnail: "https://cloud.educaplay.com/r/img/actividadFROGGY_JUMPS.webp",
         },
         {
           title: "Completar frases — Comparatives and Superlatives",
-          embedUrl:
-            "https://www.educaplay.com/learning-resources/27161675-comparatives_and_superlatives.html",
+          url: "https://www.educaplay.com/learning-resources/27161675-comparatives_and_superlatives.html",
+          thumbnail: "https://cloud.educaplay.com/r/img/actividadCOMPLETAR.webp",
         },
       ],
       externalLinks: [
