@@ -168,16 +168,16 @@ export const INTELLIGENCES: Intelligence[] = [
         {
           title: "Sopa de letras — Les adjectifs indéfinis",
           embedUrl:
-            "https://www.educaplay.com/game/29640139-les_adjectifs_indefinis.html",
+            "https://www.educaplay.com/learning-resources/29640139-les_adjectifs_indefinis.html",
         },
         {
           title: "Froggy Jumps — L'hypothèse",
-          embedUrl: "https://www.educaplay.com/game/29623099-l_hypothese.html",
+          embedUrl: "https://www.educaplay.com/learning-resources/29623099-l_hypothese.html",
         },
         {
           title: "Completar frases — Comparatives and Superlatives",
           embedUrl:
-            "https://www.educaplay.com/game/27161675-comparatives_and_superlatives.html",
+            "https://www.educaplay.com/learning-resources/27161675-comparatives_and_superlatives.html",
         },
       ],
       externalLinks: [
