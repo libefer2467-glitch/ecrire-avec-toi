@@ -9,6 +9,33 @@ export function generateStaticParams() {
   return INTELLIGENCES.map((i) => ({ slug: i.slug }));
 }
 
+// Patrón decorativo tipo "circuito" para el banner previo al CTA final.
+const CIRCUIT_PATTERN = `<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'>
+  <g fill='none' stroke='white' stroke-width='1.2' opacity='0.5'>
+    <path d='M0 40 H60 V0' />
+    <path d='M220 180 H150 V220' />
+    <path d='M0 150 H55 V220' />
+    <path d='M220 40 H160 V0' />
+    <path d='M60 0 V40 H160 V0' />
+    <path d='M0 110 H90' />
+    <path d='M130 110 H220' />
+    <path d='M90 110 V150' />
+  </g>
+  <g fill='white' opacity='0.6'>
+    <circle cx='60' cy='40' r='3' />
+    <circle cx='150' cy='180' r='3' />
+    <circle cx='55' cy='150' r='3' />
+    <circle cx='160' cy='40' r='3' />
+    <circle cx='110' cy='110' r='3' />
+    <circle cx='90' cy='150' r='3' />
+  </g>
+</svg>`;
+const CIRCUIT_PATTERN_URL = `url("data:image/svg+xml,${encodeURIComponent(CIRCUIT_PATTERN)}")`;
+
+// Foto de banco libre (Unsplash): mapa antiguo, fondo del CTA final.
+const MAP_TEXTURE_URL =
+  "https://images.unsplash.com/photo-1723306743407-cb6ac8f19941?w=1600&q=75&auto=format&fit=crop";
+
 export async function generateMetadata({
   params,
 }: {
@@ -338,28 +365,58 @@ export default async function IntelligenceDetailPage({
             />
           </section>
         )}
+      </div>
 
-        {/* ===== CTA final ===== */}
-        <section
-          className="mt-14 rounded-3xl p-8 text-center"
-          style={{ backgroundColor: intel.softVar }}
-        >
-          <h2
-            className="font-display text-2xl font-bold"
-            style={{ color: intel.inkVar }}
-          >
-            ¿No sabes cuál es tu inteligencia dominante?
-          </h2>
-          <p className="mt-2 text-ink-soft">
-            Haz el test y descubre tu perfil completo en pocos minutos.
-          </p>
-          <Link
-            href="/test"
-            className="mt-5 inline-block rounded-full px-7 py-3.5 font-semibold text-white shadow-md transition hover:opacity-90"
-            style={{ backgroundColor: intel.inkVar }}
-          >
-            Hacer el test →
-          </Link>
+      {/* ===== Banner celebratorio (a todo lo ancho) ===== */}
+      <section
+        className="relative mt-14 overflow-hidden py-10 text-center"
+        style={{
+          backgroundImage: `linear-gradient(90deg, ${intel.inkVar}, ${intel.colorVar})`,
+        }}
+      >
+        <div
+          className="absolute inset-0"
+          style={{ backgroundImage: CIRCUIT_PATTERN_URL, backgroundSize: "220px 220px" }}
+          aria-hidden="true"
+        />
+        <p className="relative px-4 font-display text-2xl font-bold text-white md:text-3xl">
+          {intel.content.banner}
+        </p>
+      </section>
+
+      <div className="mx-auto max-w-4xl px-4">
+        {/* ===== CTA final (mapa antiguo de fondo) ===== */}
+        <section className="relative mt-10 overflow-hidden rounded-3xl shadow-md">
+          <div className="absolute inset-0">
+            <Image
+              src={MAP_TEXTURE_URL}
+              alt=""
+              fill
+              sizes="(max-width: 768px) 100vw, 800px"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-cream/85" aria-hidden="true" />
+          </div>
+          <div className="relative p-10 text-center">
+            <h2
+              className="font-display text-2xl font-bold md:text-3xl"
+              style={{ color: intel.inkVar }}
+            >
+              ¿No sabes cuál es tu inteligencia dominante?
+            </h2>
+            <p className="mt-2 text-ink-soft">
+              ¡Descubre tu perfil completo con nuestro test especializado y
+              detallado!
+            </p>
+            <Link
+              href="/test"
+              className="mt-5 inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-semibold text-white shadow-md transition hover:opacity-90"
+              style={{ backgroundColor: intel.inkVar }}
+            >
+              <span aria-hidden="true">🧠</span>
+              Haz el Test de Inteligencias Múltiples
+            </Link>
+          </div>
         </section>
       </div>
     </article>

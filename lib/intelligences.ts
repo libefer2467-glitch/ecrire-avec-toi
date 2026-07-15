@@ -68,6 +68,8 @@ export interface Intelligence {
     tips: Tip[];
     /** video explicativo (va al final de la sección) */
     videoUrl: string | null;
+    /** frase corta y celebratoria para el banner previo al CTA final */
+    banner: string;
     /** material fotográfico real (opcional, ver IntelligenceMedia) */
     media?: IntelligenceMedia;
   };
@@ -144,6 +146,7 @@ export const INTELLIGENCES: Intelligence[] = [
         },
       ],
       videoUrl: "https://www.youtube.com/watch?v=urmcWpdVfDg",
+      banner: "¡El lenguaje te conecta con el mundo!",
       media: {
         heroImage: "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784055827/hero_qmu148.png",
         quotesImage:
@@ -232,6 +235,7 @@ export const INTELLIGENCES: Intelligence[] = [
         },
       ],
       videoUrl: "https://www.youtube.com/watch?v=R5cVJi7Chlw&t=2041s",
+      banner: "¡La lógica te ayuda a resolverlo todo!",
     },
   },
   {
@@ -306,6 +310,7 @@ export const INTELLIGENCES: Intelligence[] = [
         },
       ],
       videoUrl: "https://www.youtube.com/watch?v=082GFQRakz0",
+      banner: "¡Tu imaginación no tiene límites!",
     },
   },
   {
@@ -380,6 +385,7 @@ export const INTELLIGENCES: Intelligence[] = [
         },
       ],
       videoUrl: "https://www.youtube.com/watch?v=g5vCLE_cYbQ",
+      banner: "¡El ritmo te acompaña en cada palabra!",
     },
   },
   {
@@ -454,6 +460,7 @@ export const INTELLIGENCES: Intelligence[] = [
         },
       ],
       videoUrl: "https://www.youtube.com/watch?v=8ag_31qyHW8",
+      banner: "¡Aprende moviéndote, escribe sintiendo!",
     },
   },
   {
@@ -528,6 +535,7 @@ export const INTELLIGENCES: Intelligence[] = [
         },
       ],
       videoUrl: "https://www.youtube.com/watch?v=egLptXb99U8",
+      banner: "¡Conócete y escribe con propósito!",
     },
   },
   {
@@ -602,6 +610,7 @@ export const INTELLIGENCES: Intelligence[] = [
         },
       ],
       videoUrl: "https://www.youtube.com/watch?v=_Ur8EPG05C8",
+      banner: "¡Con otros, aprendes y escribes mejor!",
     },
   },
   {
@@ -676,6 +685,7 @@ export const INTELLIGENCES: Intelligence[] = [
         },
       ],
       videoUrl: "https://www.youtube.com/watch?v=1Ik5IjfKxI0",
+      banner: "¡Observa el mundo, escríbelo en francés!",
     },
   },
 ];
