@@ -141,7 +141,7 @@ export default async function IntelligenceDetailPage({
                   className="h-[18px] w-[18px] brightness-0 invert"
                   aria-hidden="true"
                 />
-                <span className="text-sm font-semibold text-white">Ver los tips ↓</span>
+                <span className="text-sm font-semibold text-white">Ver los retos ↓</span>
               </a>
             )}
           </div>
@@ -275,7 +275,7 @@ export default async function IntelligenceDetailPage({
         {/* ===== Tips ===== */}
         <section id="tips" className="mt-12 scroll-mt-6">
           <h2 className="mb-1 font-display text-2xl font-bold text-ink">
-            Tips para escribir en francés
+            Retos para escribir en francés
           </h2>
           <p className="mb-6 text-sm text-ink-soft">
             Estrategias pensadas para tu forma de aprender.

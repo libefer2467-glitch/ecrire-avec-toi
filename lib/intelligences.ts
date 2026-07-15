@@ -274,12 +274,6 @@ export const INTELLIGENCES: Intelligence[] = [
           why: "Tus errores no son aleatorios: son sistemáticos, y siguen patrones. Cuando los clasificas, dejas de ver un montón de correcciones sueltas en rojo y empiezas a ver dos o tres problemas de fondo que se repiten. Y esos sí se pueden atacar.",
           how: "Haz una tabla de tres columnas: lo que escribí / lo correcto / el tipo de error. Después de veinte entradas, mira cuál tipo domina. Ese es tu punto ciego, y ahí es donde tienes que trabajar.",
         },
-        {
-          title: "Descompón los textos que lees",
-          what: "Toma un buen texto en francés y hazle una radiografía: cuenta cuántas frases tiene cada párrafo, cuántas palabras tiene cada frase, dónde están los conectores, cómo se distribuyen los tiempos verbales.",
-          why: "Los buenos textos tienen estructuras cuantificables. Cuando las mides, descubres cosas concretas: que los párrafos de opinión suelen tener entre cuatro y seis frases, que las frases eficaces rara vez pasan de veinticinco palabras, que los conectores aparecen cada dos o tres frases. Eso te da parámetros objetivos para revisar tus propios textos.",
-          how: "Después de analizar tres o cuatro textos, aplica los mismos parámetros a algo tuyo. ¿Tus frases son demasiado largas? ¿Tus párrafos tienen una sola idea o mezclan tres? Los números no mienten.",
-        },
       ],
       videoUrl: "https://www.youtube.com/watch?v=R5cVJi7Chlw&t=2041s",
       banner: "¡La lógica te ayuda a resolverlo todo!",
@@ -403,7 +397,7 @@ export const INTELLIGENCES: Intelligence[] = [
         {
           title: "Lee en voz alta cuando revises",
           what: "Nunca entregues un texto sin haberlo leído en voz alta. Tu oído va a detectar lo que tus ojos no vieron: frases demasiado largas, conectores repetidos, palabras que no cuajan, ritmos que se traban.",
-          why: "Este es probablemente el mejor tip de esta sección, y el más subestimado. Tu oído para el lenguaje es una herramienta de corrección de primer nivel. Si al leer una frase te quedas sin aire, es demasiado larga. Si algo suena repetitivo, es repetitivo. Si tropiezas al leer, el lector también va a tropezar.",
+          why: "Este es probablemente el mejor reto de esta sección, y el más subestimado. Tu oído para el lenguaje es una herramienta de corrección de primer nivel. Si al leer una frase te quedas sin aire, es demasiado larga. Si algo suena repetitivo, es repetitivo. Si tropiezas al leer, el lector también va a tropezar.",
           how: "Léelo en voz alta de verdad, no mentalmente. La diferencia es enorme. Y si puedes, grábate y escúchate después: vas a oír cosas que ni siquiera notaste mientras leías.",
         },
         {
