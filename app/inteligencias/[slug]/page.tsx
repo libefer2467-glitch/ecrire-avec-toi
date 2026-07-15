@@ -232,6 +232,9 @@ export default async function IntelligenceDetailPage({
         </div>
       </div>
 
+      {/* Banda blanca a todo lo ancho: Enfoque + Retos + Video, sin el
+          crema/mostaza del fondo general de la página en los costados. */}
+      <div className="bg-paper">
       <div className="mx-auto max-w-4xl px-4">
         {/* ===== Enfoque teórico: tarjeta de color sobre fondo blanco ===== */}
         <section
@@ -445,6 +448,7 @@ export default async function IntelligenceDetailPage({
             )}
           </section>
         )}
+      </div>
       </div>
 
       {/* ===== Banner celebratorio (a todo lo ancho) ===== */}
