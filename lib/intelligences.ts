@@ -243,40 +243,56 @@ export const INTELLIGENCES: Intelligence[] = [
           what: "Toma un texto en francés y borra sistemáticamente una palabra de cada siete. Después, intenta reconstruirlo. También puedes borrar solo un tipo de palabra: todos los conectores, o todos los verbos en pasado.",
           why: "La técnica del cloze, creada por Wilson Taylor (1953), obliga al cerebro a activar simultáneamente la gramática, el vocabulario y la lógica del texto para adivinar qué falta. Es como resolver una ecuación con varias incógnitas, y es exactamente el tipo de tarea en la que tu mente brilla.",
           how: "Empieza borrando solo los conectores: vas a descubrir cuáles usas de verdad y cuáles no conoces. Después sube la dificultad borrando los tiempos verbales.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784154897/reto-textos-con-huecos_ns8e1p.png",
         },
         {
           title: "Tablas de conversión verbal",
           what: "Toma una oración simple y transfórmala sistemáticamente: présent → passé composé → imparfait → plus-que-parfait → futur. Después cambia la persona. Después ponla en negativo. Después en pregunta.",
           why: "La conjugación francesa parece caótica, pero es un sistema con muy pocas excepciones reales. Cuando construyes las tablas tú mismo (en vez de leerlas hechas), el patrón se te queda grabado. Escribir con seguridad depende de tener los tiempos verbales automatizados: si tienes que parar a pensar cada verbo, pierdes el hilo de lo que querías decir.",
           how: "Cómprate una pizarra acrílica pequeña con marcadores borrables, o mete hojas bond en fundas plásticas transparentes (las fundas también se borran). Escribes, borras, vuelves a escribir. La repetición física fija el patrón. Un aliado perfecto es el Bescherelle, el clásico libro rojo de conjugación francesa (Hatier): 105 tablas modelo que cubren todos los verbos.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784154966/Tablas_vb70sf.png",
         },
         {
           title: "Listas y categorías antes de escribir",
           what: "Antes de redactar, haz una lista simple de todas las ideas que se te ocurran sobre el tema, en el orden en que aparezcan. Después márcalas con símbolos para agruparlas: un asterisco a las causas, un más a las consecuencias, un círculo a los ejemplos.",
           why: "Es la variante ordenada del brainstorming clásico (Osborn, 1953). A diferencia del mapa mental, que exige conectar todo desde el principio, la lista te deja generar primero y ordenar después. Es menos intimidante y encaja mejor con una mente que primero recolecta y luego clasifica.",
           how: "Regla de oro del brainstorming: mientras generas ideas, no juzgues ninguna. Ni siquiera las tontas. La censura viene después, en el momento de clasificar.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784154967/reto-listas-categorias_ewwj8n.png",
         },
         {
           title: "Esquema con cajas y flechas",
           what: "Antes de escribir, dibuja la arquitectura del texto: [Idea central] → [Argumento 1 → ejemplo] → [Argumento 2 → ejemplo] → [Conclusión]. Cada caja es un párrafo. Cada flecha es una transición.",
           why: "Flower y Hayes (1981) mostraron que los escritores que planifican producen textos más coherentes que los que escriben directamente. Y para tu perfil, planificar visualmente con una estructura lógica es lo más natural del mundo. El esquema te evita perder el hilo mientras escribes.",
           how: "Escribe primero el esquema completo. Recién cuando esté cerrado, empieza a redactar. Vas a notar que la redacción sale mucho más rápido, porque ya sabes exactamente qué toca en cada párrafo.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784154961/Planificar_i5bspe.png",
         },
         {
           title: "Prompts estructurados para la IA",
           what: "Usa la inteligencia artificial, pero con precisión quirúrgica. No le preguntes «explícame el subjuntivo». Pídele: «Dame una tabla comparativa entre el subjonctif présent y l'indicatif, con cinco ejemplos de cada uno, y una regla clara para saber cuándo usar cada uno.»",
           why: "La calidad de la respuesta depende de la calidad de la pregunta. Alguien con tu perfil puede sacarle mucho más provecho a una IA que la mayoría, porque sabe formular peticiones estructuradas. Pide tablas, reglas, comparaciones, contraejemplos. Es tu lenguaje.",
           how: "Tres prompts útiles: «Fais-moi un tableau comparatif de X et Y avec cinq exemples.» / «Quelle est la règle générale pour X ? Donne-moi les exceptions.» / «Voici mon texte. Analyse uniquement les erreurs de temps verbaux et explique la règle de chacune.»",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784154894/reto-prompts-ia_resysx.png",
         },
         {
           title: "Analiza tus errores como un sistema",
           what: "Lleva un registro de tus errores en francés y clasifícalos por tipo: errores de género, de concordancia, de tiempo verbal, de preposición, de pronombre relativo. Al cabo de unas semanas, cuenta cuántos hay de cada tipo.",
           why: "Tus errores no son aleatorios: son sistemáticos, y siguen patrones. Cuando los clasificas, dejas de ver un montón de correcciones sueltas en rojo y empiezas a ver dos o tres problemas de fondo que se repiten. Y esos sí se pueden atacar.",
           how: "Haz una tabla de tres columnas: lo que escribí / lo correcto / el tipo de error. Después de veinte entradas, mira cuál tipo domina. Ese es tu punto ciego, y ahí es donde tienes que trabajar.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784154968/reto-analiza-errores_ypwl2p.png",
         },
       ],
       videoUrl: "https://www.youtube.com/watch?v=R5cVJi7Chlw&t=2041s",
       banner: "¡La lógica te ayuda a resolverlo todo!",
+      media: {
+        heroImage:
+          "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784154968/hero_logico_matematico_pykjge.png",
+      },
     },
   },
   {
