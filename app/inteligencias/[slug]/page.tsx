@@ -374,9 +374,27 @@ export default async function IntelligenceDetailPage({
           backgroundImage: `linear-gradient(90deg, ${intel.inkVar}, ${intel.colorVar})`,
         }}
       >
+        {/* Patrón solo en los costados: se difumina antes de llegar al texto */}
         <div
-          className="absolute inset-0"
-          style={{ backgroundImage: CIRCUIT_PATTERN_URL, backgroundSize: "220px 220px" }}
+          className="absolute inset-y-0 left-0 w-1/2"
+          style={{
+            backgroundImage: CIRCUIT_PATTERN_URL,
+            backgroundSize: "220px 220px",
+            maskImage: "linear-gradient(to right, black 0%, black 30%, transparent 70%)",
+            WebkitMaskImage:
+              "linear-gradient(to right, black 0%, black 30%, transparent 70%)",
+          }}
+          aria-hidden="true"
+        />
+        <div
+          className="absolute inset-y-0 right-0 w-1/2"
+          style={{
+            backgroundImage: CIRCUIT_PATTERN_URL,
+            backgroundSize: "220px 220px",
+            maskImage: "linear-gradient(to left, black 0%, black 30%, transparent 70%)",
+            WebkitMaskImage:
+              "linear-gradient(to left, black 0%, black 30%, transparent 70%)",
+          }}
           aria-hidden="true"
         />
         <p className="relative px-4 font-display text-2xl font-bold text-white md:text-3xl">
