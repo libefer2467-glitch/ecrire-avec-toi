@@ -583,40 +583,56 @@ export const INTELLIGENCES: Intelligence[] = [
           what: "Lleva un diario de escritura en francés siguiendo tres pasos. Primero describe una experiencia con la mayor objetividad posible. Después interprétala: ¿qué significó para ti? Y al final evalúala: ¿qué sentiste, qué piensas ahora al respecto?",
           why: "La técnica DIE (Describe, Interpret, Evaluate) separa tres operaciones mentales que solemos mezclar: los hechos, la interpretación y el juicio. Escribir separándolas te obliga a un nivel de precisión que la escritura espontánea no exige. Y como tu fortaleza es la reflexión, este es tu terreno.",
           how: "Elige tú el tema. Puede ser cualquier cosa que te haya sorprendido, molestado, intrigado o alegrado. La única regla es escribir en francés y respetar los tres pasos en orden. No corrijas mientras escribes; corrige después.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784174860/ecrire-avec-toi/intrapersonal/reto-diario-die.png",
         },
         {
           title: "Explícate a ti mismo antes de escribir",
           what: "Antes de escribir sobre un tema, explícatelo a ti mismo en voz alta, en francés. Puede ser frente al espejo, caminando por la habitación, o simplemente hablando solo. Si logras explicarlo con claridad, estás listo para escribir. Si te trabas, todavía no lo entendiste.",
           why: "La investigación sobre autoexplicación (Chi y colaboradores, 1994) demostró que explicarse a uno mismo lo que se está aprendiendo mejora la comprensión más que releer o subrayar. Y hay algo más: la autoexplicación es un detector de mentiras infalible. Puedes engañar a otros sobre si entendiste algo. A ti mismo, no.",
           how: "Cronométrate: tres minutos explicando el tema en francés, sin parar. Si te quedaste sin palabras al minuto y medio, todavía no tienes suficiente material. Vuelve a leer y prueba otra vez.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784174864/ecrire-avec-toi/intrapersonal/reto-explicate.png",
         },
         {
           title: "Prepara el ambiente antes de escribir",
           what: "Antes de sentarte a escribir, prepara el espacio. Ordena la mesa. Apaga las notificaciones. Pon música suave o silencio total. Enciende una luz cálida. Prepárate un té. Crea un ambiente que le diga a tu cerebro: acá se escribe.",
           why: "Este es el principio central del método silencioso de Gattegno, y funciona especialmente bien con tu perfil. Necesitas quietud, orden y ausencia de interrupciones para que tu mente rinda. Un espacio caótico produce una escritura caótica.",
           how: "Repite el mismo ritual cada vez. El cerebro asocia el ambiente con la actividad, y al cabo de un tiempo, apenas prepares el espacio, tu mente va a entrar sola en modo escritura.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784174868/ecrire-avec-toi/intrapersonal/reto-ambiente.png",
         },
         {
           title: "Autoevalúate con una rúbrica",
           what: "Antes de entregar un texto, evalúalo tú mismo con una rúbrica. Pon una nota a cada criterio: contenido, coherencia, cohesión, vocabulario, gramática, ortografía. Sé honesto.",
           why: "Ser capaz de evaluar tu propio trabajo con criterios objetivos es una habilidad rara y valiosa, y tu perfil la tiene naturalmente. Además, cuando revisas con una rúbrica en la mano, dejas de leer «a ver si está bien» y pasas a revisar criterio por criterio, que es mucho más eficaz.",
           how: "Un truco: deja el texto reposar al menos unas horas antes de autoevaluarlo. Recién escrito, todavía lo lees con los ojos de quien lo escribió. Al día siguiente, lo lees con los ojos de un lector.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784174872/ecrire-avec-toi/intrapersonal/reto-rubrica.png",
         },
         {
           title: "Escritura libre sin corrector",
           what: "Escribe en francés durante cinco o diez minutos sin parar, sin corregir, sin borrar. No importa la gramática ni la ortografía. Solo que fluya.",
           why: "Peter Elbow (1973) mostró que separar el momento de generar del de corregir libera al escritor. Y aunque tu tendencia natural sea revisar y evaluar constantemente (porque eres bueno en eso), a veces ese mismo rigor te paraliza. La escritura libre es tu antídoto: un espacio donde nada puede estar mal.",
           how: "Ponte un cronómetro y no levantes la mano del papel hasta que suene. Si te quedas sin ideas, escribe «je ne sais pas quoi écrire, je ne sais pas quoi écrire» hasta que aparezca algo. Siempre aparece.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784174876/ecrire-avec-toi/intrapersonal/reto-libre.png",
         },
         {
           title: "Fija tus propias metas y sigue tu progreso",
           what: "Define una meta concreta de escritura para el mes: por ejemplo, «escribir tres textos de 300 palabras», o «eliminar mis errores con los pronombres relativos». Anótala. Al final del mes, evalúa si la cumpliste.",
           why: "Las metas propias motivan mucho más que las impuestas desde afuera, sobre todo para alguien con tu perfil, que funciona con autonomía. Y el seguimiento explícito convierte el aprendizaje en algo visible: puedes ver que avanzaste, y eso alimenta las ganas de seguir.",
           how: "Hazlas específicas y medibles. «Mejorar mi francés» no es una meta: es un deseo. «Escribir un texto de 300 palabras cada semana durante un mes» sí es una meta, porque puedes saber con certeza si la cumpliste o no.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784174881/ecrire-avec-toi/intrapersonal/reto-metas.png",
         },
       ],
       videoUrl: "https://www.youtube.com/watch?v=egLptXb99U8",
       banner: "¡Conócete y escribe con propósito!",
+      media: {
+        heroImage:
+          "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784174851/ecrire-avec-toi/intrapersonal/hero.png",
+      },
     },
   },
   {
