@@ -12,6 +12,9 @@ import { v } from "convex/values";
  */
 export default defineSchema({
   testResults: defineTable({
+    // Nombre opcional de quien hizo el test (solo para identificar, no
+    // afecta el análisis anónimo agregado de la tesis).
+    name: v.optional(v.string()),
     // Puntaje bruto por inteligencia (id -> suma Likert).
     scoresByIntelligence: v.record(v.string(), v.number()),
     dominant: v.string(),

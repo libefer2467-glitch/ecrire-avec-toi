@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { RadarChart, type RadarDatum } from "@/components/RadarChart";
 import {
@@ -15,6 +15,8 @@ import type { StoredResult } from "@/lib/scoring";
 export default function ResultPage() {
   const [result, setResult] = useState<StoredResult | null>(null);
   const [loaded, setLoaded] = useState(false);
+  const [downloading, setDownloading] = useState(false);
+  const pdfRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     try {
@@ -25,6 +27,46 @@ export default function ResultPage() {
     }
     setLoaded(true);
   }, []);
+
+  const downloadPdf = async () => {
+    if (!pdfRef.current) return;
+    setDownloading(true);
+    try {
+      const [{ default: html2canvas }, { default: jsPDF }] = await Promise.all([
+        import("html2canvas"),
+        import("jspdf"),
+      ]);
+      const canvas = await html2canvas(pdfRef.current, {
+        scale: 2,
+        backgroundColor: "#fbf6ec",
+        ignoreElements: (el) => el.classList.contains("no-pdf"),
+      });
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF({ orientation: "portrait", unit: "pt", format: "a4" });
+      const pageWidth = pdf.internal.pageSize.getWidth();
+      const pageHeight = pdf.internal.pageSize.getHeight();
+      const imgWidth = pageWidth - 48;
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      let heightLeft = imgHeight;
+      let position = 24;
+      pdf.addImage(imgData, "PNG", 24, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight - 48;
+      while (heightLeft > 0) {
+        position = heightLeft - imgHeight + 24;
+        pdf.addPage();
+        pdf.addImage(imgData, "PNG", 24, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+      }
+      const filenameName = result?.name
+        ? result.name.trim().toLowerCase().replace(/\s+/g, "-")
+        : "resultado";
+      pdf.save(`inteligencias-multiples-${filenameName}.pdf`);
+    } catch {
+      /* si falla, no rompemos la página */
+    } finally {
+      setDownloading(false);
+    }
+  };
 
   // Sin resultado guardado
   if (loaded && !result) {
@@ -83,12 +125,18 @@ export default function ResultPage() {
 
   return (
     <div className="pb-16">
+      <div ref={pdfRef}>
       {/* ====== Banda superior con color dominante ====== */}
       <section
         className="border-b border-line"
         style={{ backgroundColor: dominant.softVar }}
       >
         <div className="mx-auto max-w-4xl px-4 py-12 text-center">
+          {result.name && (
+            <p className="mb-1 text-sm font-medium text-ink-soft">
+              Resultado de <span className="font-semibold text-ink">{result.name}</span>
+            </p>
+          )}
           <p className="text-sm font-semibold uppercase tracking-wide" style={{ color: dominant.inkVar }}>
             Tu inteligencia dominante
           </p>
@@ -122,7 +170,7 @@ export default function ResultPage() {
 
           <Link
             href={`/inteligencias/${dominant.slug}`}
-            className="mt-7 inline-block rounded-full px-7 py-3.5 font-semibold text-white shadow-md transition hover:opacity-90"
+            className="no-pdf mt-7 inline-block rounded-full px-7 py-3.5 font-semibold text-white shadow-md transition hover:opacity-90"
             style={{ backgroundColor: dominant.inkVar }}
           >
             Ver mis estrategias de escritura →
@@ -174,8 +222,19 @@ export default function ResultPage() {
             </ul>
           </div>
         </div>
+      </section>
+      </div>
 
-        <div className="mt-10 flex flex-wrap justify-center gap-4">
+      <div className="mx-auto max-w-5xl px-4">
+        <div className="flex flex-wrap justify-center gap-4">
+          <button
+            type="button"
+            onClick={downloadPdf}
+            disabled={downloading}
+            className="rounded-full bg-terracota px-6 py-3 font-semibold text-white shadow-md transition hover:bg-terracota-ink disabled:cursor-not-allowed disabled:opacity-60"
+          >
+            {downloading ? "Generando PDF…" : "⬇ Descargar mi resultado en PDF"}
+          </button>
           <Link
             href="/inteligencias"
             className="rounded-full border border-line bg-paper px-6 py-3 font-semibold text-ink hover:bg-cream-2"
@@ -189,7 +248,7 @@ export default function ResultPage() {
             Repetir el test
           </Link>
         </div>
-      </section>
+      </div>
     </div>
   );
 }

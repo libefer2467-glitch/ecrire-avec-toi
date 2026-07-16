@@ -16,6 +16,7 @@ type Phase = "consent" | "quiz";
 export default function TestPage() {
   const router = useRouter();
   const [phase, setPhase] = useState<Phase>("consent");
+  const [name, setName] = useState("");
   const [consent, setConsent] = useState(false);
   const [current, setCurrent] = useState(0);
   const [answers, setAnswers] = useState<Answers>({});
@@ -54,7 +55,7 @@ export default function TestPage() {
     if (!allAnswered) return;
     setSubmitting(true);
     const result = computeScores(answers);
-    const stored = toStoredResult(result, answers);
+    const stored = toStoredResult(result, answers, name);
     try {
       sessionStorage.setItem(RESULT_STORAGE_KEY, JSON.stringify(stored));
     } catch {
@@ -106,7 +107,25 @@ export default function TestPage() {
             </ul>
           </div>
 
-          <label className="mt-6 flex cursor-pointer items-start gap-3 rounded-2xl border border-line bg-cream p-4">
+          <div className="mt-6">
+            <label htmlFor="test-name" className="text-sm font-semibold text-ink">
+              Tu nombre <span className="font-normal text-ink-soft">(opcional)</span>
+            </label>
+            <input
+              id="test-name"
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Ej. María Pérez"
+              className="mt-2 w-full rounded-xl border border-line bg-cream px-4 py-3 text-ink placeholder:text-ink-soft/60 focus:border-terracota focus:outline-none"
+            />
+            <p className="mt-1.5 text-xs text-ink-soft">
+              Solo para que puedas identificar tu propio resultado (por ejemplo,
+              al descargarlo en PDF). No es obligatorio.
+            </p>
+          </div>
+
+          <label className="mt-4 flex cursor-pointer items-start gap-3 rounded-2xl border border-line bg-cream p-4">
             <input
               type="checkbox"
               checked={consent}
@@ -114,10 +133,11 @@ export default function TestPage() {
               className="mt-1 h-5 w-5 shrink-0 accent-terracota"
             />
             <span className="text-sm text-ink-soft">
-              Acepto que mis respuestas <strong>anónimas</strong> se utilicen con
-              fines educativos y de investigación para este proyecto de tesis de
-              la UMSS. No se solicita ni almacena información personal que permita
-              identificarme.
+              Acepto que mis respuestas se utilicen con fines educativos y de
+              investigación para este proyecto de tesis de la UMSS. El análisis
+              agregado es anónimo: el nombre que ingreses arriba (si lo haces)
+              solo aparece en tu propio resultado descargable, no se usa para
+              identificarte en el estudio.
             </span>
           </label>
 

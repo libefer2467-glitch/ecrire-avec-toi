@@ -101,6 +101,8 @@ export function computeScores(answers: Answers): TestResult {
 
 /** Serializa a un objeto simple para sessionStorage / Convex. */
 export interface StoredResult {
+  /** Nombre opcional de quien hizo el test (no se exige, solo identifica). */
+  name?: string;
   scoresByIntelligence: Record<IntelligenceId, number>; // raw
   dominant: IntelligenceId;
   dominantIds: IntelligenceId[];
@@ -109,7 +111,11 @@ export interface StoredResult {
   createdAt: number;
 }
 
-export function toStoredResult(result: TestResult, answers: Answers): StoredResult {
+export function toStoredResult(
+  result: TestResult,
+  answers: Answers,
+  name?: string
+): StoredResult {
   const scoresByIntelligence = {} as Record<IntelligenceId, number>;
   for (const s of result.scores) scoresByIntelligence[s.id] = s.raw;
   // Normaliza las claves a string (JSON/Convex usan claves de texto).
@@ -118,6 +124,7 @@ export function toStoredResult(result: TestResult, answers: Answers): StoredResu
     if (typeof value === "number") answersOut[id] = value;
   }
   return {
+    ...(name?.trim() ? { name: name.trim() } : {}),
     scoresByIntelligence,
     dominant: result.dominant.id,
     dominantIds: result.dominantIds,

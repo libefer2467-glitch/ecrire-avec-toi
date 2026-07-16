@@ -4,6 +4,7 @@ import { v } from "convex/values";
 /** Guarda un resultado anónimo del test. */
 export const saveResult = mutation({
   args: {
+    name: v.optional(v.string()),
     scoresByIntelligence: v.record(v.string(), v.number()),
     dominant: v.string(),
     dominantIds: v.array(v.string()),
