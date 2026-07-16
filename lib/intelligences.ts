@@ -753,46 +753,56 @@ export const INTELLIGENCES: Intelligence[] = [
           what: "Sal a un lugar que conozcas (o que quieras conocer) y descríbelo por escrito en francés. La laguna Alalay, el parque Tunari, un mercado, una plaza. Qué se ve, qué se oye, qué se huele, cómo cambia con las horas o con las estaciones.",
           why: "Empiezas por donde eres fuerte: la observación. Y la escritura descriptiva es una de las mejores puertas de entrada al francés, porque te obliga a usar preposiciones de lugar, pronombres relativos, adjetivos precisos y vocabulario concreto. Además, escribir sobre lo que conoces siempre da mejores textos que escribir sobre abstracciones.",
           how: "Lleva un cuaderno y escribe en el lugar, no después. La escritura in situ captura detalles que la memoria pierde. Y usa al menos tres pronombres relativos (qui, que, dont, où): es la manera natural de encadenar descripciones.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784175884/ecrire-avec-toi/naturalista/reto-observas.png",
         },
         {
           title: "Lleva un cuaderno de campo",
           what: "Ten un cuaderno donde registres observaciones en francés de forma regular. No tienen que ser textos elaborados: pueden ser notas, listas de palabras nuevas, esquemas de lo que viste, fechas y lugares.",
           why: "El cuaderno de campo es la herramienta clásica del naturalista, y funciona igual de bien para aprender una lengua. La clave es la regularidad: escribir un poco todos los días produce mucho más avance que escribir mucho una vez al mes. Y como el contenido lo eliges tú a partir de lo que observas, nunca te vas a quedar sin qué decir.",
           how: "Divídelo en secciones: observaciones, vocabulario nuevo, preguntas que quiero resolver. Con el tiempo se va a convertir en un documento tuyo, único, que vale mucho más que cualquier cuaderno de ejercicios comprado.",
-        },
-        {
-          title: "Clasifica los conectores por función",
-          what: "Arma tu propio cuadro de conectores del francés, organizados por lo que hacen: los que añaden, los que oponen, los que explican causas, los que sacan consecuencias, los que ejemplifican, los que concluyen.",
-          why: "Los conectores son el sistema circulatorio de un texto: sin ellos, las ideas quedan sueltas. Y clasificarlos por función (en vez de memorizar una lista alfabética) es la manera de poder elegir el correcto en el momento exacto. Es taxonomía aplicada a la escritura, que es tu terreno.",
-          how: "Empieza con un cuadro base y ármate el tuyo con los conectores que vayas encontrando en tus lecturas. Lo que clasificas tú, lo recuerdas tú. Por ejemplo: añadir (de plus, en outre), oponer (cependant, néanmoins), causa (parce que, puisque), consecuencia (donc, par conséquent).",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784175887/ecrire-avec-toi/naturalista/reto-cuaderno.png",
         },
         {
           title: "Escribe sobre lo que te indigna",
           what: "Elige un tema ambiental o social que te importe de verdad y escribe sobre él en francés. La contaminación del río Rocha, la basura en las calles, el uso del agua, la deforestación, el cambio climático.",
           why: "Los temas que te importan producen textos mejores. Es así de simple. Cuando escribes sobre algo que te indigna o te conmueve, encuentras palabras que no aparecen cuando escribes sobre un tema impuesto. Y los temas ambientales tienen un vocabulario riquísimo en francés y prestan para textos de opinión, que es donde más se aprende.",
           how: "Busca información en francés sobre el tema antes de escribir: artículos, videos, reportajes. Vas a incorporar vocabulario específico y argumentos que no tenías. Después escribe tu posición.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784175892/ecrire-avec-toi/naturalista/reto-indigna.png",
         },
         {
           title: "Sigue a creadores de contenido francófonos",
           what: "Busca en redes a personas que creen contenido en francés sobre los temas que te interesan: medio ambiente, naturaleza, ciencia, sostenibilidad. Síguelas. Consume su contenido regularmente.",
           why: "Es inmersión sin salir de tu casa, y con un tema que ya te importa. Vas a aprender vocabulario específico, expresiones actuales y la forma real en que la gente escribe hoy en francés. Y como el contenido te interesa de verdad, no vas a sentir que estás estudiando.",
           how: "Empieza por buscar hashtags en francés sobre tus temas (por ejemplo, écologie, environnement, biodiversité) y sigue a los perfiles que te gusten. Lee los comentarios: ahí está el francés vivo, informal, real.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784175899/ecrire-avec-toi/naturalista/reto-creadores.png",
         },
         {
           title: "Arma tus propias taxonomías léxicas",
           what: "En vez de aprender palabras sueltas, agrúpalas en sistemas. El sistema del clima, el del relieve, el de la flora, el del agua, el de los residuos. Dentro de cada sistema, ordena las palabras de lo general a lo específico.",
           why: "El cerebro almacena las palabras en redes, no en listas. Cuando aprendes vocabulario organizado en taxonomías, cada palabra nueva se engancha a las que ya sabes, y todas se refuerzan mutuamente. Para tu perfil, que clasifica naturalmente, esta es la vía más eficiente.",
           how: "Ejemplo del sistema del agua: l'eau → la pluie, le fleuve, la rivière, le lac, la nappe phréatique, la sécheresse, l'inondation, la pollution de l'eau. Ocho palabras que se sostienen entre sí, mucho más fáciles de recordar que ocho palabras sin relación.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784175902/ecrire-avec-toi/naturalista/reto-taxonomias.png",
         },
         {
           title: "Escribe sobre procesos y ciclos",
           what: "Elige un proceso natural (el ciclo del agua, las estaciones, la migración de un ave, el crecimiento de una planta) y descríbelo por escrito en francés, paso a paso, respetando el orden temporal.",
           why: "Describir procesos te obliga a usar marcadores temporales y conectores de secuencia (d'abord, ensuite, puis, enfin, une fois que, après que), que son exactamente las herramientas que necesitas para organizar cualquier texto. Y como el proceso ya tiene un orden natural, la estructura te viene dada. Practicas la forma sin pelearte con el contenido.",
           how: "Después, aplica la misma lógica a un texto de opinión: un argumento también tiene un orden, una secuencia, un antes y un después. Es el mismo músculo.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784175906/ecrire-avec-toi/naturalista/reto-procesos.png",
         },
       ],
       videoUrl: "https://www.youtube.com/watch?v=1Ik5IjfKxI0",
       banner: "¡Observa el mundo, escríbelo en francés!",
+      media: {
+        heroImage:
+          "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784175881/ecrire-avec-toi/naturalista/hero.png",
+      },
     },
   },
 ];
