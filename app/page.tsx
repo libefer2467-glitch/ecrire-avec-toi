@@ -320,42 +320,30 @@ export default function Home() {
               <li key={intel.id}>
                 <Link
                   href={`/inteligencias/${intel.slug}`}
-                  className="group flex h-full flex-col overflow-hidden rounded-2xl shadow-sm transition-shadow hover:shadow-md"
+                  className="group flex h-full overflow-hidden rounded-2xl shadow-sm transition-shadow hover:shadow-md"
                 >
-                  {/* Degradé superior con los tonos de la inteligencia */}
                   <span
-                    className="h-1.5 w-full shrink-0"
-                    style={{
-                      backgroundImage: `linear-gradient(90deg, ${intel.inkVar} 0%, ${intel.colorVar} 35%, ${intel.softVar} 65%, ${intel.colorVar} 85%, ${intel.inkVar} 100%)`,
-                    }}
+                    className="flex w-20 shrink-0 items-center justify-center"
+                    style={{ backgroundColor: intel.colorVar }}
                     aria-hidden="true"
-                  />
-                  <span className="flex flex-1">
+                  >
+                    <Image
+                      src={INTEL_ICONS[intel.id]}
+                      alt=""
+                      width={32}
+                      height={32}
+                      className="h-8 w-8 brightness-0 invert transition-transform group-hover:scale-110"
+                    />
+                  </span>
+                  <span className="flex flex-1 flex-col justify-center bg-paper px-4 py-3">
                     <span
-                      className="flex w-20 shrink-0 items-center justify-center"
-                      style={{
-                        backgroundImage: `linear-gradient(155deg, ${intel.colorVar} 0%, ${intel.inkVar} 100%)`,
-                      }}
-                      aria-hidden="true"
+                      className="font-display text-base font-bold"
+                      style={{ color: intel.inkVar }}
                     >
-                      <Image
-                        src={INTEL_ICONS[intel.id]}
-                        alt=""
-                        width={32}
-                        height={32}
-                        className="h-8 w-8 brightness-0 invert transition-transform group-hover:scale-110"
-                      />
+                      {intel.shortName}
                     </span>
-                    <span className="flex flex-1 flex-col justify-center bg-paper px-4 py-3">
-                      <span
-                        className="font-display text-base font-bold"
-                        style={{ color: intel.inkVar }}
-                      >
-                        {intel.shortName}
-                      </span>
-                      <span className="mt-1 text-xs leading-snug text-ink-soft">
-                        {intel.tagline}
-                      </span>
+                    <span className="mt-1 text-xs leading-snug text-ink-soft">
+                      {intel.tagline}
                     </span>
                   </span>
                 </Link>

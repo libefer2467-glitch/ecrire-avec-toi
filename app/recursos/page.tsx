@@ -1,6 +1,26 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { INTELLIGENCES } from "@/lib/intelligences";
+
+const INTEL_ICONS: Record<string, string> = {
+  linguistica:
+    "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784206269/ecrire-avec-toi/home/icons-intel/verbal.png",
+  logica:
+    "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784206270/ecrire-avec-toi/home/icons-intel/matematica.png",
+  espacial:
+    "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784206272/ecrire-avec-toi/home/icons-intel/visual.png",
+  musical:
+    "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784206272/ecrire-avec-toi/home/icons-intel/musica.png",
+  corporal:
+    "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784206273/ecrire-avec-toi/home/icons-intel/kinestesica.png",
+  intrapersonal:
+    "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784206274/ecrire-avec-toi/home/icons-intel/intrapersonal.png",
+  interpersonal:
+    "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784206275/ecrire-avec-toi/home/icons-intel/interpersonal.png",
+  naturalista:
+    "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784206276/ecrire-avec-toi/home/icons-intel/naturalista.png",
+};
 
 export const metadata: Metadata = {
   title: "Recursos",
@@ -146,18 +166,26 @@ export default function RecursosPage() {
             <li key={intel.id}>
               <Link
                 href={`/inteligencias/${intel.slug}`}
-                className="flex items-center gap-3 rounded-2xl border border-line bg-paper p-4 shadow-sm transition hover:bg-cream-2"
+                className="group flex h-full overflow-hidden rounded-2xl shadow-sm transition-shadow hover:shadow-md"
               >
                 <span
-                  className="flex h-11 w-11 items-center justify-center rounded-xl text-xl"
-                  style={{ backgroundColor: intel.softVar }}
+                  className="flex w-20 shrink-0 items-center justify-center"
+                  style={{ backgroundColor: intel.colorVar }}
                   aria-hidden="true"
                 >
-                  {intel.emoji}
+                  <Image
+                    src={INTEL_ICONS[intel.id]}
+                    alt=""
+                    width={32}
+                    height={32}
+                    className="h-8 w-8 brightness-0 invert transition-transform group-hover:scale-110"
+                  />
                 </span>
-                <span>
-                  <span className="block font-semibold text-ink">{intel.name}</span>
-                  <span className="block text-xs text-ink-soft">
+                <span className="flex flex-1 flex-col justify-center bg-paper px-4 py-3">
+                  <span className="font-display text-base font-bold" style={{ color: intel.inkVar }}>
+                    {intel.name}
+                  </span>
+                  <span className="mt-1 text-xs leading-snug text-ink-soft">
                     {intel.tagline}
                   </span>
                 </span>

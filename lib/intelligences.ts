@@ -457,7 +457,7 @@ export const INTELLIGENCES: Intelligence[] = [
             "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784172781/ecrire-avec-toi/musical-ritmica/reto-podcasts.png",
         },
       ],
-      videoUrl: "https://www.youtube.com/watch?v=g5vCLE_cYbQ",
+      videoUrl: "https://www.youtube.com/watch?v=fj5A6jEUhQw",
       banner: "¡El ritmo te acompaña en cada palabra!",
       media: {
         heroImage:
