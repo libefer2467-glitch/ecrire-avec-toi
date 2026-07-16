@@ -383,7 +383,7 @@ export default async function IntelligenceDetailPage({
           </section>
         )}
 
-        {/* ===== Practica jugando: juegos incrustados + enlaces externos ===== */}
+        {/* ===== Practica jugando: mismo peso visual que los retos ===== */}
         {(games.length > 0 || externalLinks.length > 0) && (
           <section className="mt-12">
             <h2 className="mb-1 font-display text-2xl font-bold text-ink">
@@ -394,70 +394,89 @@ export default async function IntelligenceDetailPage({
               leer.
             </p>
 
-            {games.length > 0 && (
-              <div className="grid gap-5 md:grid-cols-3">
-                {games.map((game, i) => (
-                  <a
-                    key={i}
-                    href={game.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group overflow-hidden rounded-2xl border border-line bg-paper shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+            <div className="space-y-5">
+              {games.map((game, i) => (
+                <a
+                  key={`game-${i}`}
+                  href={game.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex overflow-hidden rounded-2xl border border-line bg-paper shadow-sm transition hover:-translate-y-1 hover:shadow-md md:grid md:grid-cols-[220px_1fr]"
+                >
+                  <div
+                    className="relative flex h-48 w-full shrink-0 items-center justify-center p-8 md:h-full"
+                    style={{ backgroundColor: intel.softVar }}
                   >
-                    <div
-                      className="relative flex aspect-[4/3] items-center justify-center p-8"
-                      style={{ backgroundColor: intel.softVar }}
-                    >
-                      <Image
-                        src={game.thumbnail}
-                        alt=""
-                        width={140}
-                        height={140}
-                        className="h-auto w-full max-w-[140px] object-contain"
-                      />
-                      <span
-                        className="absolute bottom-3 right-3 flex items-center gap-1 rounded-full px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition group-hover:opacity-90"
-                        style={{ backgroundColor: intel.colorVar }}
-                      >
-                        Jugar ↗
-                      </span>
-                    </div>
-                    <div className="px-4 py-3">
-                      <p className="text-sm font-semibold text-ink">{game.title}</p>
-                    </div>
-                  </a>
-                ))}
-              </div>
-            )}
-
-            {externalLinks.length > 0 && (
-              <div className={games.length > 0 ? "mt-5 grid gap-4" : "grid gap-4"}>
-                {externalLinks.map((link, i) => (
-                  <a
-                    key={i}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-between gap-4 rounded-2xl border border-line bg-paper p-5 shadow-sm transition hover:bg-cream-2"
-                  >
+                    <Image
+                      src={game.thumbnail}
+                      alt=""
+                      width={140}
+                      height={140}
+                      className="h-auto w-full max-w-[140px] object-contain transition-transform group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="flex flex-1 items-center justify-between gap-4 px-6 py-5">
                     <div>
-                      <p className="font-display text-base font-bold text-ink">
-                        {link.label}
+                      <p
+                        className="text-xs font-semibold uppercase tracking-wide"
+                        style={{ color: intel.inkVar }}
+                      >
+                        Juego interactivo
                       </p>
+                      <h3 className="mt-1 font-display text-lg font-bold text-ink">
+                        {game.title}
+                      </h3>
+                    </div>
+                    <span
+                      className="inline-flex shrink-0 items-center gap-1 rounded-full px-4 py-2 text-sm font-semibold text-white shadow-sm transition group-hover:opacity-90"
+                      style={{ backgroundColor: intel.colorVar }}
+                    >
+                      Jugar ↗
+                    </span>
+                  </div>
+                </a>
+              ))}
+
+              {externalLinks.map((link, i) => (
+                <a
+                  key={`link-${i}`}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex overflow-hidden rounded-2xl border border-line bg-paper shadow-sm transition hover:-translate-y-1 hover:shadow-md md:grid md:grid-cols-[220px_1fr]"
+                >
+                  <div
+                    className="flex h-32 w-full shrink-0 items-center justify-center text-5xl md:h-full"
+                    style={{ backgroundColor: intel.softVar }}
+                    aria-hidden="true"
+                  >
+                    🔗
+                  </div>
+                  <div className="flex flex-1 items-center justify-between gap-4 px-6 py-5">
+                    <div>
+                      <p
+                        className="text-xs font-semibold uppercase tracking-wide"
+                        style={{ color: intel.inkVar }}
+                      >
+                        Recurso externo
+                      </p>
+                      <h3 className="mt-1 font-display text-lg font-bold text-ink">
+                        {link.label}
+                      </h3>
                       {link.description && (
                         <p className="mt-1 text-sm text-ink-soft">{link.description}</p>
                       )}
                     </div>
                     <span
-                      className="shrink-0 text-sm font-semibold"
-                      style={{ color: intel.inkVar }}
+                      className="inline-flex shrink-0 items-center gap-1 rounded-full px-4 py-2 text-sm font-semibold text-white shadow-sm transition group-hover:opacity-90"
+                      style={{ backgroundColor: intel.colorVar }}
                     >
                       Ir al sitio ↗
                     </span>
-                  </a>
-                ))}
-              </div>
-            )}
+                  </div>
+                </a>
+              ))}
+            </div>
           </section>
         )}
       </div>
