@@ -70,12 +70,12 @@ export default function Home() {
           {/* Texto */}
           <div>
             <h1 className="font-display text-5xl font-black leading-[1.05] text-ink md:text-6xl">
-              DÉCOUVRE TON
+              AMÉLIOREZ VOTRE
               <br />
               ÉCRITURE.
             </h1>
             <p className="mt-5 max-w-md text-lg text-ink-soft">
-              Aprende a escribir en francés a partir de tu perfil único de
+              Potencia tu escritura en francés a partir de tu perfil único de
               Inteligencias Múltiples, basado en la teoría de Howard Gardner.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -176,7 +176,7 @@ export default function Home() {
                 icon: ICONS.responder,
                 number: "1",
                 title: "Responde las preguntas",
-                text: "Completa el inventario de inteligencias múltiples en 5–10 minutos.",
+                text: "Completa el test de inteligencias múltiples en 5–10 minutos.",
               },
               {
                 icon: ICONS.recibido,

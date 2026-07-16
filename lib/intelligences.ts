@@ -132,15 +132,15 @@ export const INTELLIGENCES: Intelligence[] = [
           image: "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784055821/tip-1_b9gu6d.png",
         },
         {
-          title: "Escritura libre (free writing)",
-          what: "Elige un tema, pon el cronómetro en cinco minutos y escribe en francés sin parar. Sin corregir, sin borrar, sin preocuparte por la gramática ni por la ortografía. Si te quedas en blanco, escribe «je ne sais pas quoi écrire» hasta que aparezca una idea nueva.",
+          title: "Escritura libre",
+          what: "Elige un tema, pon el cronómetro en cinco minutos y escribe en francés sin parar. Sin corregir, sin borrar, sin preocuparte por la gramática ni por la ortografía. Si te quedas en blanco, escribe « je ne sais pas quoi écrire » hasta que aparezca una idea nueva.",
           why: "Peter Elbow (1973) demostró que separar la generación de ideas de la corrección libera al escritor del bloqueo de la página en blanco. El error paraliza; el flujo desbloquea. Después vendrá el momento de corregir, pero primero hay que tener algo que corregir.",
           how: "Hazlo antes de cualquier texto que tengas que entregar. Cinco minutos de escritura libre sobre el tema y vas a descubrir que ya tienes la mitad de las ideas. Después las ordenas.",
           image: "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784055827/tip-2_ibswkm.png",
         },
         {
           title: "Reescribe con sinónimos",
-          what: "Toma un texto que ya escribiste y reescríbelo cambiando todas las palabras que se repitan. Si usaste «parce que» tres veces, busca «puisque», «étant donné que», «car», «en raison de».",
+          what: "Toma un texto que ya escribiste y reescríbelo cambiando todas las palabras que se repitan. Si usaste « parce que » tres veces, busca « puisque », « étant donné que », « car », « en raison de ».",
           why: "La riqueza léxica es uno de los criterios que más pesan al evaluar un texto. Y como el vocabulario es tu fortaleza natural, este ejercicio te hace crecer justamente donde ya eres fuerte. Además te obliga a notar tus muletillas, que todos tenemos.",
           how: "Hazlo con tus propios textos, no con textos ajenos. Es más incómodo, pero es donde realmente aprendes. Ten a mano un diccionario de sinónimos francés (los hay gratuitos en línea, como el CRISCO o el de Larousse).",
           image: "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784055828/tip-4_jlobqw.png",
@@ -156,7 +156,7 @@ export const INTELLIGENCES: Intelligence[] = [
           title: "Conversa con una IA para aclarar tus ideas",
           what: "Antes de escribir un texto, discute el tema con una inteligencia artificial usando mensajes de voz en francés. Pídele que te contradiga, que te haga preguntas difíciles, que te obligue a defender tu posición.",
           why: "No se puede escribir bien sobre algo que no se tiene claro. Y a alguien con tu perfil, las ideas se le ordenan hablando. Discutir en voz alta te obliga a formular argumentos, encontrar ejemplos y detectar los huecos de tu razonamiento. Cuando después te sientas a escribir, ya tienes el contenido.",
-          how: "Hay varias aplicaciones gratuitas con las que puedes hablar por voz en francés. Un buen arranque: «Je pense que [tu opinión]. Peux-tu me contredire et me poser des questions difficiles ?» Y después, a defenderte.",
+          how: "Hay varias aplicaciones gratuitas con las que puedes hablar por voz en francés. Un buen arranque: « Je pense que [tu opinión]. Peux-tu me contredire et me poser des questions difficiles ? » Y después, a defenderte.",
           image: "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784055859/tip-6_dnnkwh.png",
         },
         {
@@ -239,9 +239,9 @@ export const INTELLIGENCES: Intelligence[] = [
       },
       tips: [
         {
-          title: "Textos con huecos (cloze)",
+          title: "Textos con huecos",
           what: "Toma un texto en francés y borra sistemáticamente una palabra de cada siete. Después, intenta reconstruirlo. También puedes borrar solo un tipo de palabra: todos los conectores, o todos los verbos en pasado.",
-          why: "La técnica del cloze, creada por Wilson Taylor (1953), obliga al cerebro a activar simultáneamente la gramática, el vocabulario y la lógica del texto para adivinar qué falta. Es como resolver una ecuación con varias incógnitas, y es exactamente el tipo de tarea en la que tu mente brilla.",
+          why: "Esta técnica, creada por Wilson Taylor (1953), obliga al cerebro a activar simultáneamente la gramática, el vocabulario y la lógica del texto para adivinar qué falta. Es como resolver una ecuación con varias incógnitas, y es exactamente el tipo de tarea en la que tu mente brilla.",
           how: "Empieza borrando solo los conectores: vas a descubrir cuáles usas de verdad y cuáles no conoces. Después sube la dificultad borrando los tiempos verbales.",
           image:
             "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784154897/reto-textos-con-huecos_ns8e1p.png",
@@ -257,8 +257,8 @@ export const INTELLIGENCES: Intelligence[] = [
         {
           title: "Listas y categorías antes de escribir",
           what: "Antes de redactar, haz una lista simple de todas las ideas que se te ocurran sobre el tema, en el orden en que aparezcan. Después márcalas con símbolos para agruparlas: un asterisco a las causas, un más a las consecuencias, un círculo a los ejemplos.",
-          why: "Es la variante ordenada del brainstorming clásico (Osborn, 1953). A diferencia del mapa mental, que exige conectar todo desde el principio, la lista te deja generar primero y ordenar después. Es menos intimidante y encaja mejor con una mente que primero recolecta y luego clasifica.",
-          how: "Regla de oro del brainstorming: mientras generas ideas, no juzgues ninguna. Ni siquiera las tontas. La censura viene después, en el momento de clasificar.",
+          why: "Es la variante ordenada de la lluvia de ideas clásica (Osborn, 1953). A diferencia del mapa mental, que exige conectar todo desde el principio, la lista te deja generar primero y ordenar después. Es menos intimidante y encaja mejor con una mente que primero recolecta y luego clasifica.",
+          how: "Regla de oro de la lluvia de ideas: mientras generas ideas, no juzgues ninguna. Ni siquiera las tontas. La censura viene después, en el momento de clasificar.",
           image:
             "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784154967/reto-listas-categorias_ewwj8n.png",
         },
@@ -272,9 +272,9 @@ export const INTELLIGENCES: Intelligence[] = [
         },
         {
           title: "Prompts estructurados para la IA",
-          what: "Usa la inteligencia artificial, pero con precisión quirúrgica. No le preguntes «explícame el subjuntivo». Pídele: «Dame una tabla comparativa entre el subjonctif présent y l'indicatif, con cinco ejemplos de cada uno, y una regla clara para saber cuándo usar cada uno.»",
+          what: "Usa la inteligencia artificial, pero con precisión quirúrgica. No le preguntes « explícame el subjuntivo ». Pídele: « Dame una tabla comparativa entre el subjonctif présent y l'indicatif, con cinco ejemplos de cada uno, y una regla clara para saber cuándo usar cada uno. »",
           why: "La calidad de la respuesta depende de la calidad de la pregunta. Alguien con tu perfil puede sacarle mucho más provecho a una IA que la mayoría, porque sabe formular peticiones estructuradas. Pide tablas, reglas, comparaciones, contraejemplos. Es tu lenguaje.",
-          how: "Tres prompts útiles: «Fais-moi un tableau comparatif de X et Y avec cinq exemples.» / «Quelle est la règle générale pour X ? Donne-moi les exceptions.» / «Voici mon texte. Analyse uniquement les erreurs de temps verbaux et explique la règle de chacune.»",
+          how: "Tres prompts útiles: « Fais-moi un tableau comparatif de X et Y avec cinq exemples. » / « Quelle est la règle générale pour X ? Donne-moi les exceptions. » / « Voici mon texte. Analyse uniquement les erreurs de temps verbaux et explique la règle de chacune. »",
           image:
             "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784154894/reto-prompts-ia_resysx.png",
         },
@@ -326,7 +326,7 @@ export const INTELLIGENCES: Intelligence[] = [
         {
           title: "Mapas mentales antes de escribir",
           what: "Antes de redactar, dibuja el texto. En el centro, el tema. De ahí salen ramas gruesas con las ideas principales. De cada rama salen ramas más finas con los ejemplos y los detalles. Usa colores distintos para cada rama.",
-          why: "El mapping es una de las técnicas de brainstorming más eficaces para quienes piensan visualmente. Te permite ver todo el contenido de un vistazo antes de linealizarlo, y eso reduce mucho el riesgo de perderte a mitad de camino o de olvidar una idea importante.",
+          why: "El mapa mental es una de las técnicas de generación de ideas más eficaces para quienes piensan visualmente. Te permite ver todo el contenido de un vistazo antes de linealizarlo, y eso reduce mucho el riesgo de perderte a mitad de camino o de olvidar una idea importante.",
           how: "Hay dos tipos de mapa mental y los dos sirven: el de palabras (con conceptos escritos) y el de dibujos (donde cada idea es una imagen). Prueba los dos y quédate con el que te salga más natural. Si tu mapa termina siendo casi puro dibujo, está perfecto.",
           image:
             "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784172727/ecrire-avec-toi/visual-espacial/reto-mapas-mentales.png",
@@ -420,7 +420,7 @@ export const INTELLIGENCES: Intelligence[] = [
           title: "Canciones francófonas, pero con cuidado",
           what: "Elige una canción francesa, transcríbela de oído, y después marca todos los verbos en pasado. Analiza si están en passé composé o en imparfait, y por qué.",
           why: "Las canciones se te quedan grabadas sin esfuerzo, y con ellas se quedan las estructuras gramaticales que contienen. Es aprendizaje casi involuntario. Pero hay una trampa: muchas canciones están en registro informal y contienen errores deliberados, elisiones y licencias poéticas. Si copias esas estructuras en un texto académico, te va a costar caro.",
-          how: "Elige canciones con letra cuidada: la chanson française clásica (Brel, Brassens, Piaf, Barbara) suele tener una lengua muy correcta y rica. Si dudas de si una construcción es correcta, pregúntale a una IA: «Cette phrase de la chanson est-elle grammaticalement correcte en français standard ?»",
+          how: "Elige canciones con letra cuidada: la chanson française clásica (Brel, Brassens, Piaf, Barbara) suele tener una lengua muy correcta y rica. Si dudas de si una construcción es correcta, pregúntale a una IA: « Cette phrase de la chanson est-elle grammaticalement correcte en français standard ? »",
           image:
             "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784172765/ecrire-avec-toi/musical-ritmica/reto-canciones-francofonas.png",
         },
@@ -494,7 +494,7 @@ export const INTELLIGENCES: Intelligence[] = [
       },
       tips: [
         {
-          title: "Dictado corriendo (running dictation)",
+          title: "Dictado corriendo",
           what: "Pega un texto en francés en una pared lejana de donde estás sentado. Camina hasta ahí, memoriza una frase, vuelve corriendo a tu mesa y escríbela. Regresa por la siguiente. Repite hasta reconstruir todo el texto.",
           why: "Combina movimiento, memoria de corto plazo y escritura en una sola actividad. Y funciona brutalmente bien para tu perfil, porque convierte una tarea sedentaria (copiar un texto) en una tarea física. Además te obliga a retener la frase completa en la cabeza, lo que fortalece la memoria de trabajo.",
           how: "Hazlo con un compañero y compitan por quién reconstruye el texto primero, sin errores. Y una advertencia sensata: revisa que no haya obstáculos en el camino. Nadie quiere terminar en la enfermería por un dictado.",
@@ -529,7 +529,7 @@ export const INTELLIGENCES: Intelligence[] = [
           title: "Actúa antes de escribir",
           what: "Si tienes que escribir un diálogo, una escena o una situación, actúala primero. En voz alta, con gestos, moviéndote. Solo o con alguien más. Después siéntate y escríbela.",
           why: "El principio del Total Physical Response llevado a la escritura: el movimiento del cuerpo sugiere las palabras. Cuando actúas una escena, tu cuerpo encuentra las expresiones que tu mente no encontraba sentada. Y después, escribir es simplemente transcribir algo que ya sucedió.",
-          how: "Después de actuarla, pasa el diálogo al discurso indirecto («Il m'a dit qu'il ne voulait pas…»). Es un ejercicio doble: primero produces el contenido con el cuerpo, después lo transformas gramaticalmente.",
+          how: "Después de actuarla, pasa el diálogo al discurso indirecto (« Il m'a dit qu'il ne voulait pas… »). Es un ejercicio doble: primero produces el contenido con el cuerpo, después lo transformas gramaticalmente.",
           image:
             "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784174501/ecrire-avec-toi/corporal/reto-actua.png",
         },
@@ -605,7 +605,7 @@ export const INTELLIGENCES: Intelligence[] = [
         {
           title: "Autoevalúate con una rúbrica",
           what: "Antes de entregar un texto, evalúalo tú mismo con una rúbrica. Pon una nota a cada criterio: contenido, coherencia, cohesión, vocabulario, gramática, ortografía. Sé honesto.",
-          why: "Ser capaz de evaluar tu propio trabajo con criterios objetivos es una habilidad rara y valiosa, y tu perfil la tiene naturalmente. Además, cuando revisas con una rúbrica en la mano, dejas de leer «a ver si está bien» y pasas a revisar criterio por criterio, que es mucho más eficaz.",
+          why: "Ser capaz de evaluar tu propio trabajo con criterios objetivos es una habilidad rara y valiosa, y tu perfil la tiene naturalmente. Además, cuando revisas con una rúbrica en la mano, dejas de leer « a ver si está bien » y pasas a revisar criterio por criterio, que es mucho más eficaz.",
           how: "Un truco: deja el texto reposar al menos unas horas antes de autoevaluarlo. Recién escrito, todavía lo lees con los ojos de quien lo escribió. Al día siguiente, lo lees con los ojos de un lector.",
           image:
             "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784174872/ecrire-avec-toi/intrapersonal/reto-rubrica.png",
@@ -614,15 +614,15 @@ export const INTELLIGENCES: Intelligence[] = [
           title: "Escritura libre sin corrector",
           what: "Escribe en francés durante cinco o diez minutos sin parar, sin corregir, sin borrar. No importa la gramática ni la ortografía. Solo que fluya.",
           why: "Peter Elbow (1973) mostró que separar el momento de generar del de corregir libera al escritor. Y aunque tu tendencia natural sea revisar y evaluar constantemente (porque eres bueno en eso), a veces ese mismo rigor te paraliza. La escritura libre es tu antídoto: un espacio donde nada puede estar mal.",
-          how: "Ponte un cronómetro y no levantes la mano del papel hasta que suene. Si te quedas sin ideas, escribe «je ne sais pas quoi écrire, je ne sais pas quoi écrire» hasta que aparezca algo. Siempre aparece.",
+          how: "Ponte un cronómetro y no levantes la mano del papel hasta que suene. Si te quedas sin ideas, escribe « je ne sais pas quoi écrire, je ne sais pas quoi écrire » hasta que aparezca algo. Siempre aparece.",
           image:
             "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784174876/ecrire-avec-toi/intrapersonal/reto-libre.png",
         },
         {
           title: "Fija tus propias metas y sigue tu progreso",
-          what: "Define una meta concreta de escritura para el mes: por ejemplo, «escribir tres textos de 300 palabras», o «eliminar mis errores con los pronombres relativos». Anótala. Al final del mes, evalúa si la cumpliste.",
+          what: "Define una meta concreta de escritura para el mes: por ejemplo, « escribir tres textos de 300 palabras », o « eliminar mis errores con los pronombres relativos ». Anótala. Al final del mes, evalúa si la cumpliste.",
           why: "Las metas propias motivan mucho más que las impuestas desde afuera, sobre todo para alguien con tu perfil, que funciona con autonomía. Y el seguimiento explícito convierte el aprendizaje en algo visible: puedes ver que avanzaste, y eso alimenta las ganas de seguir.",
-          how: "Hazlas específicas y medibles. «Mejorar mi francés» no es una meta: es un deseo. «Escribir un texto de 300 palabras cada semana durante un mes» sí es una meta, porque puedes saber con certeza si la cumpliste o no.",
+          how: "Hazlas específicas y medibles. « Mejorar mi francés » no es una meta: es un deseo. « Escribir un texto de 300 palabras cada semana durante un mes » sí es una meta, porque puedes saber con certeza si la cumpliste o no.",
           image:
             "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784174881/ecrire-avec-toi/intrapersonal/reto-metas.png",
         },
@@ -672,9 +672,9 @@ export const INTELLIGENCES: Intelligence[] = [
             "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784175394/ecrire-avec-toi/interpersonal/reto-revision.png",
         },
         {
-          title: "Dictogloss en grupo",
+          title: "Reconstrucción de texto en grupo",
           what: "Escucha un texto corto en francés leído dos veces. La primera solo escuchas; la segunda tomas notas de las ideas principales, no de las palabras exactas. Después, en grupo, reconstruyen el texto entre todos.",
-          why: "El dictogloss (Wajnryb, 1990) es una técnica pensada exactamente para tu perfil. La reconstrucción se hace negociando: alguien recuerda una palabra, otro la estructura, discuten cuál tiempo verbal iba. Esa negociación es donde ocurre el aprendizaje. Solo, no lo lograrías; en grupo, sale.",
+          why: "Esta técnica (Wajnryb, 1990) está pensada exactamente para tu perfil. La reconstrucción se hace negociando: alguien recuerda una palabra, otro la estructura, discuten cuál tiempo verbal iba. Esa negociación es donde ocurre el aprendizaje. Solo, no lo lograrías; en grupo, sale.",
           how: "El punto no es reproducir el texto palabra por palabra, sino reconstruir el sentido con una gramática correcta. Cuando terminen, comparen su versión con el original y discutan las diferencias. Ahí está la mitad de la lección.",
           image:
             "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784175398/ecrire-avec-toi/interpersonal/reto-dictogloss.png",

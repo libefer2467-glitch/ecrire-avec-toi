@@ -13,7 +13,7 @@ estudiantes de 3er semestre. Autoras: **Libertad Fernández** y **María Cruz Qu
 - Despliegue en **Vercel**, código en **GitHub**
 
 ## Idioma
-- El título del hero va en **francés**: "DÉCOUVRE TON ÉCRITURE".
+- El título del hero va en **francés**: "AMÉLIOREZ VOTRE ÉCRITURE".
 - **Todo el resto de la interfaz va en español.** Mantener esta convención.
 
 ## Arquitectura y dónde está cada cosa

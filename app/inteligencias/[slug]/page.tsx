@@ -36,6 +36,10 @@ const CIRCUIT_PATTERN_URL = `url("data:image/svg+xml,${encodeURIComponent(CIRCUI
 const MAP_TEXTURE_URL =
   "https://images.unsplash.com/photo-1723306743407-cb6ac8f19941?w=1600&q=75&auto=format&fit=crop";
 
+// Ícono de lupa que encabeza la sección "Enfoque" en las 8 inteligencias.
+const APPROACH_ICON_URL =
+  "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784234931/ecrire-avec-toi/branding/lupa.png";
+
 export async function generateMetadata({
   params,
 }: {
@@ -243,8 +247,16 @@ export default async function IntelligenceDetailPage({
         >
           <div className={approachImage ? "grid gap-0 md:grid-cols-[1fr_220px]" : ""}>
             <div className="p-6">
+              <Image
+                src={APPROACH_ICON_URL}
+                alt=""
+                width={44}
+                height={44}
+                className="h-11 w-11"
+                aria-hidden="true"
+              />
               <h2
-                className="flex items-center gap-2 font-display text-lg font-bold"
+                className="mt-3 flex items-center gap-2 font-display text-lg font-bold"
                 style={{ color: intel.inkVar }}
               >
                 {iconConversacion && (

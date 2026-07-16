@@ -96,6 +96,10 @@ export function Footer() {
             Página diseñada y elaborada por Libertad Fernández y María Cruz
             Quiroz.
           </p>
+          <p className="mt-1">
+            Taller modalidad de graduación II · Docente: Mgr. Mosquera Coca
+            Marbin
+          </p>
           <p className="mt-1 text-xs">
             © {new Date().getFullYear()} · Proyecto de tesis · UMSS
           </p>
