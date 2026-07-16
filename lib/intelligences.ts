@@ -328,46 +328,56 @@ export const INTELLIGENCES: Intelligence[] = [
           what: "Antes de redactar, dibuja el texto. En el centro, el tema. De ahí salen ramas gruesas con las ideas principales. De cada rama salen ramas más finas con los ejemplos y los detalles. Usa colores distintos para cada rama.",
           why: "El mapping es una de las técnicas de brainstorming más eficaces para quienes piensan visualmente. Te permite ver todo el contenido de un vistazo antes de linealizarlo, y eso reduce mucho el riesgo de perderte a mitad de camino o de olvidar una idea importante.",
           how: "Hay dos tipos de mapa mental y los dos sirven: el de palabras (con conceptos escritos) y el de dibujos (donde cada idea es una imagen). Prueba los dos y quédate con el que te salga más natural. Si tu mapa termina siendo casi puro dibujo, está perfecto.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784172727/ecrire-avec-toi/visual-espacial/reto-mapas-mentales.png",
         },
         {
           title: "Código de colores por función",
           what: "Cuando revises un texto tuyo, subráyalo con colores según la función de cada parte. Rojo para las ideas principales. Verde para los ejemplos. Azul para los conectores. Amarillo para las opiniones.",
           why: "El color convierte una estructura abstracta en algo que puedes ver. De un vistazo, tu texto te muestra si le falta algo: si no hay verde, faltan ejemplos; si hay poco azul, el texto está desconectado; si todo es rojo, estás afirmando sin sustentar.",
           how: "Ten siempre a mano un juego de tres o cuatro resaltadores. Aplica el mismo código de colores siempre, para que se te vuelva automático. También sirve al revés: aplícalo a textos ajenos que admires, y vas a ver cómo están construidos.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784172731/ecrire-avec-toi/visual-espacial/reto-codigo-colores.png",
         },
         {
           title: "Describe imágenes en francés",
           what: "Elige una fotografía cualquiera (un edificio, un paisaje, una escena callejera, una obra de arte) y descríbela por escrito en francés con el mayor detalle que puedas. Qué se ve, en qué plano, qué colores, qué texturas, qué relación espacial hay entre los elementos.",
           why: "Describir es una de las mejores puertas de entrada a la escritura para tu perfil, porque parte de donde eres fuerte: lo que ves. Además te obliga a usar preposiciones de lugar, pronombres relativos y vocabulario preciso, que son justamente los puntos que más cuestan.",
           how: "Empieza con imágenes muy visuales y ordenadas (una fachada, un cuadro) y ve subiendo a escenas complejas (una calle llena de gente). Un truco: descríbela primero de arriba a abajo, después de izquierda a derecha, después del centro hacia afuera. Vas a producir tres textos distintos de la misma imagen.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784172735/ecrire-avec-toi/visual-espacial/reto-describe-imagenes.png",
         },
         {
           title: "Ve películas y series con subtítulos en francés",
           what: "Mira contenido audiovisual en francés con los subtítulos también en francés (nunca en castellano). Anota las frases que te llamen la atención y, al lado, haz un pequeño dibujo o esquema de la escena.",
           why: "Ver con subtítulos en la lengua meta conecta lo que oyes con lo que ves escrito, y ese doble canal es exactamente lo que la codificación dual predice que funciona mejor. El dibujo al lado ancla la frase a una imagen concreta, y así se te queda.",
           how: "TV5Monde tiene una plataforma completamente gratuita para aprender francés a partir de videos, series y reportajes, con más de dos mil ejercicios en línea organizados por nivel. Es probablemente el mejor recurso gratuito que existe para esto.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784172739/ecrire-avec-toi/visual-espacial/reto-peliculas-series.png",
         },
         {
           title: "Infografías de gramática hechas por ti",
           what: "En vez de estudiar los tiempos verbales leyendo listas, dibuja tu propia infografía: una línea de tiempo horizontal donde ubiques el passé composé, el imparfait y el plus-que-parfait según cuándo ocurre cada acción.",
           why: "Los conceptos temporales del francés son, en el fondo, conceptos espaciales: qué pasó antes, qué pasó durante, qué pasó después. Cuando los dibujas sobre una línea, dejan de ser reglas abstractas y se convierten en algo que puedes ver. Y lo que hiciste tú se recuerda mucho mejor que lo que copiaste.",
           how: "Hazla grande, en una hoja entera, con colores. Pégala en la pared donde estudias. La vas a mirar cien veces sin darte cuenta, y ese es justamente el punto.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784172743/ecrire-avec-toi/visual-espacial/reto-infografias.png",
         },
         {
           title: "El storyboard de tu texto",
           what: "Antes de escribir, dibuja tu texto como si fuera una historieta: una viñeta por párrafo. En cada viñeta, un dibujo rápido de lo que va a decir ese párrafo y una frase corta que resuma la idea.",
           why: "Es planificación visual pura. Te obliga a decidir cuántos párrafos vas a tener y qué va en cada uno antes de escribir la primera palabra. Y como cada viñeta tiene que contener una sola idea, previene el error más común: el párrafo que mezcla tres temas.",
           how: "Regla simple: si no puedes dibujar el párrafo en una viñeta, es porque tiene más de una idea. Divídelo en dos.",
-        },
-        {
-          title: "Organiza el espacio de tu página",
-          what: "Cuando escribas, cuida cómo se ve el texto en la página: márgenes, sangrías, separación entre párrafos, longitud de los bloques. Un texto que se ve bien, se lee mejor.",
-          why: "Para alguien con tu perfil, esto no es cosmética: es parte de la comunicación. Un párrafo de veinte líneas seguidas ahuyenta al lector. Uno de cinco líneas invita a leerlo. La presentación es uno de los criterios que se evalúan en cualquier rúbrica de escritura, y a ti se te da naturalmente. Aprovéchalo.",
-          how: "Al terminar un texto, aléjate y míralo desde lejos, sin leerlo. ¿Se ve equilibrado? ¿Hay bloques enormes? ¿Todos los párrafos tienen más o menos el mismo tamaño? Si algo se ve raro, probablemente también esté raro en el contenido.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784172747/ecrire-avec-toi/visual-espacial/reto-storyboard.png",
         },
       ],
       videoUrl: "https://www.youtube.com/watch?v=082GFQRakz0",
       banner: "¡Tu imaginación no tiene límites!",
+      media: {
+        heroImage:
+          "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784172716/ecrire-avec-toi/visual-espacial/hero.png",
+      },
     },
   },
   {
@@ -403,46 +413,56 @@ export const INTELLIGENCES: Intelligence[] = [
           what: "Consigue un audio corto en francés (un párrafo, un fragmento de video, una noticia de un minuto). Escúchalo tres veces: la primera para entender de qué va, la segunda escribiendo lo que oyes, la tercera para corregir lo que te faltó. Después compara con el original.",
           why: "El dictado es una de las técnicas más antiguas y más eficaces que existen, y ha sido revalorizada por la investigación reciente (Davis y Rinvolucri, 1988). Obliga a atender simultáneamente a la ortografía, la gramática, la puntuación y el vocabulario. Y para ti, que entras por el oído, es la vía directa entre lo que escuchas y lo que escribes.",
           how: "Los audios de TV5Monde son perfectos para esto: son cortos, están graduados por nivel y vienen con la transcripción, así que puedes verificar tu trabajo de inmediato.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784172761/ecrire-avec-toi/musical-ritmica/reto-dictado.png",
         },
         {
           title: "Canciones francófonas, pero con cuidado",
           what: "Elige una canción francesa, transcríbela de oído, y después marca todos los verbos en pasado. Analiza si están en passé composé o en imparfait, y por qué.",
           why: "Las canciones se te quedan grabadas sin esfuerzo, y con ellas se quedan las estructuras gramaticales que contienen. Es aprendizaje casi involuntario. Pero hay una trampa: muchas canciones están en registro informal y contienen errores deliberados, elisiones y licencias poéticas. Si copias esas estructuras en un texto académico, te va a costar caro.",
           how: "Elige canciones con letra cuidada: la chanson française clásica (Brel, Brassens, Piaf, Barbara) suele tener una lengua muy correcta y rica. Si dudas de si una construcción es correcta, pregúntale a una IA: «Cette phrase de la chanson est-elle grammaticalement correcte en français standard ?»",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784172765/ecrire-avec-toi/musical-ritmica/reto-canciones-francofonas.png",
         },
         {
           title: "Lee en voz alta cuando revises",
           what: "Nunca entregues un texto sin haberlo leído en voz alta. Tu oído va a detectar lo que tus ojos no vieron: frases demasiado largas, conectores repetidos, palabras que no cuajan, ritmos que se traban.",
           why: "Este es probablemente el mejor reto de esta sección, y el más subestimado. Tu oído para el lenguaje es una herramienta de corrección de primer nivel. Si al leer una frase te quedas sin aire, es demasiado larga. Si algo suena repetitivo, es repetitivo. Si tropiezas al leer, el lector también va a tropezar.",
           how: "Léelo en voz alta de verdad, no mentalmente. La diferencia es enorme. Y si puedes, grábate y escúchate después: vas a oír cosas que ni siquiera notaste mientras leías.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784172769/ecrire-avec-toi/musical-ritmica/reto-lee-en-voz-alta.png",
         },
         {
           title: "Convierte una canción en narración",
           what: "Toma una canción francesa que cuente una historia y reescríbela como un relato en tercera persona, usando passé composé para las acciones y imparfait para las descripciones y el contexto.",
           why: "Es la manera más natural de interiorizar la diferencia entre los dos tiempos del pasado, una de las dificultades más grandes del francés para los hispanohablantes. Partes de algo que ya tienes en la cabeza (la canción) y lo transformas. El contenido ya está; solo tienes que reorganizarlo gramaticalmente.",
           how: "Empieza con canciones narrativas claras, que cuenten una historia con principio y final. Después de reescribirlas, léelas en voz alta y verifica que la alternancia de tiempos suene natural.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784172773/ecrire-avec-toi/musical-ritmica/reto-cancion-a-narracion.png",
         },
         {
           title: "Juega con la intervención textual",
           what: "Toma un poema o una canción breve en francés y reescríbelo cambiando palabras, manteniendo la rima o el ritmo. Con cambiar una palabra o un signo de puntuación alcanza para transformar el texto en algo nuevo.",
           why: "La intervención textual (Pope, 1995) parte de una idea simple y potente: se entiende cómo funciona un texto cuando se lo manipula. Al cambiar palabras conservando el ritmo, tienes que entender simultáneamente el significado, la métrica y la gramática. Y como tienes oído, el ritmo te va a guiar solo.",
           how: "Prueba con poemas cortos y conocidos. Cambia los sustantivos manteniendo la estructura, y verás cómo el poema se convierte en otra cosa sin dejar de sonar bien. Es un juego, pero un juego que enseña muchísimo.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784172777/ecrire-avec-toi/musical-ritmica/reto-intervencion-textual.png",
         },
         {
           title: "Escucha podcasts y transcribe fragmentos",
           what: "Escucha podcasts en francés sobre temas que te interesen. Elige un fragmento de treinta segundos, transcríbelo palabra por palabra, y después escribe un párrafo comentando lo que dijeron.",
           why: "Los podcasts te dan francés real, hablado a velocidad natural, sobre temas que importan. Transcribir un fragmento corto te obliga a un nivel de precisión que la escucha pasiva nunca exige. Y el párrafo de comentario convierte la escucha en escritura, que es el puente que necesitas construir.",
           how: "Empieza con podcasts hechos para estudiantes de francés, que hablan más lento. Después pasa a podcasts para nativos. Verás que en pocas semanas entiendes cosas que al principio te parecían un muro.",
-        },
-        {
-          title: "Cuida el ritmo de tus frases",
-          what: "Cuando escribas, alterna frases largas con frases cortas. Después de dos o tres frases extensas, mete una breve. El texto respira, y el lector también.",
-          why: "El ritmo no es solo cosa de la música: los textos también tienen ritmo, y los buenos escritores lo trabajan conscientemente. Una sucesión de frases del mismo largo produce monotonía. Una frase corta después de varias largas produce impacto. Y como tienes oído, puedes percibir eso mejor que nadie.",
-          how: "Al revisar, lee en voz alta y marca dónde el ritmo se vuelve monótono. Ahí, corta una frase en dos, o une dos en una. Un texto bien ritmado se lee sin esfuerzo, y eso el lector lo agradece aunque no sepa por qué.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784172781/ecrire-avec-toi/musical-ritmica/reto-podcasts.png",
         },
       ],
       videoUrl: "https://www.youtube.com/watch?v=g5vCLE_cYbQ",
       banner: "¡El ritmo te acompaña en cada palabra!",
+      media: {
+        heroImage:
+          "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784172757/ecrire-avec-toi/musical-ritmica/hero.png",
+      },
     },
   },
   {
@@ -473,12 +493,6 @@ export const INTELLIGENCES: Intelligence[] = [
         body: "James Asher (1969) desarrolló un método de enseñanza de lenguas en el que el aprendizaje se produce a través del movimiento corporal. Su hallazgo central es que la memoria de una palabra o estructura se fija mucho mejor cuando el cuerpo participa en su adquisición. Para tu perfil, esto significa algo muy concreto: cada vez que puedas mover algo, moverte o manipular físicamente el lenguaje, hazlo. Va a funcionar.",
       },
       tips: [
-        {
-          title: "Tarjetas de palabras que se ordenan con las manos",
-          what: "Escribe cada palabra de una frase en una tarjeta distinta. Después, mezcla las tarjetas y reordénalas físicamente sobre la mesa hasta formar la frase correcta. Prueba armar la versión afirmativa, la negativa y la interrogativa moviendo las tarjetas.",
-          why: "El orden de las palabras en francés (sobre todo con la negación y los pronombres) es una de las cosas más difíciles de automatizar. Cuando lo trabajas moviendo objetos con las manos, el orden deja de ser una regla abstracta y se convierte en algo físico. Tu cuerpo recuerda lo que tu memoria abstracta olvida.",
-          how: "Empieza con frases simples y ve subiendo. Un ejercicio brutal para dominar la negación: arma «Je ne mange pas de viande» con tarjetas, y después intenta mover el «ne… pas» con otros verbos y otros complementos.",
-        },
         {
           title: "Dictado corriendo (running dictation)",
           what: "Pega un texto en francés en una pared lejana de donde estás sentado. Camina hasta ahí, memoriza una frase, vuelve corriendo a tu mesa y escríbela. Regresa por la siguiente. Repite hasta reconstruir todo el texto.",
@@ -553,12 +567,6 @@ export const INTELLIGENCES: Intelligence[] = [
           what: "Lleva un diario de escritura en francés siguiendo tres pasos. Primero describe una experiencia con la mayor objetividad posible. Después interprétala: ¿qué significó para ti? Y al final evalúala: ¿qué sentiste, qué piensas ahora al respecto?",
           why: "La técnica DIE (Describe, Interpret, Evaluate) separa tres operaciones mentales que solemos mezclar: los hechos, la interpretación y el juicio. Escribir separándolas te obliga a un nivel de precisión que la escritura espontánea no exige. Y como tu fortaleza es la reflexión, este es tu terreno.",
           how: "Elige tú el tema. Puede ser cualquier cosa que te haya sorprendido, molestado, intrigado o alegrado. La única regla es escribir en francés y respetar los tres pasos en orden. No corrijas mientras escribes; corrige después.",
-        },
-        {
-          title: "Diario de errores",
-          what: "Lleva un cuaderno pequeño donde anotes todos los errores que se te repiten en francés. Tres columnas: lo que escribí mal, la forma correcta, y por qué me equivoqué.",
-          why: "Nadie conoce tus errores mejor que tú, si te tomas el trabajo de mirarlos. Y para alguien con tu perfil, esa mirada honesta hacia adentro es lo natural. Al cabo de unas semanas vas a tener un mapa preciso de tus puntos débiles, y con ese mapa puedes trabajar en lugar de andar a ciegas.",
-          how: "Añade una cuarta columna: la fecha. Así puedes ver si un error que cometías en marzo sigue apareciendo en junio. Cuando un error deja de aparecer, márcalo con un color. Ver esos colores acumularse es de las cosas más motivadoras que existen.",
         },
         {
           title: "Explícate a ti mismo antes de escribir",
