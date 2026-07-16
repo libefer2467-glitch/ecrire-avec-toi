@@ -498,40 +498,56 @@ export const INTELLIGENCES: Intelligence[] = [
           what: "Pega un texto en francés en una pared lejana de donde estás sentado. Camina hasta ahí, memoriza una frase, vuelve corriendo a tu mesa y escríbela. Regresa por la siguiente. Repite hasta reconstruir todo el texto.",
           why: "Combina movimiento, memoria de corto plazo y escritura en una sola actividad. Y funciona brutalmente bien para tu perfil, porque convierte una tarea sedentaria (copiar un texto) en una tarea física. Además te obliga a retener la frase completa en la cabeza, lo que fortalece la memoria de trabajo.",
           how: "Hazlo con un compañero y compitan por quién reconstruye el texto primero, sin errores. Y una advertencia sensata: revisa que no haya obstáculos en el camino. Nadie quiere terminar en la enfermería por un dictado.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784174482/ecrire-avec-toi/corporal/reto-dictado-corriendo.png",
         },
         {
           title: "Flashcards que tú mismo recortas",
           what: "Imprime, recorta y arma tus propias tarjetas de vocabulario, conectores o estructuras. En un lado la palabra en francés, en el otro el significado y un ejemplo de uso. Manipúlalas: sepáralas en montones, clasifícalas, mézclalas.",
           why: "Para casi todos los perfiles, las flashcards son útiles. Para el tuyo, son doblemente útiles, porque el acto de recortarlas, doblarlas, ordenarlas y moverlas ya es parte del aprendizaje. El movimiento de las manos ancla el contenido antes incluso de que empieces a estudiarlo.",
           how: "No las compres hechas. Hazlas tú. El trabajo manual de producirlas es la mitad del beneficio. Divídelas en tres montones: las que sé, las que dudo, las que no sé. Y cada día, mueve las tarjetas de un montón a otro.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784174486/ecrire-avec-toi/corporal/reto-flashcards.png",
         },
         {
           title: "Post-its para armar la estructura",
           what: "Escribe cada idea de tu texto en un post-it distinto: la idea principal, cada argumento, cada ejemplo, la conclusión. Después, pégalos en una mesa o en la pared y muévelos hasta encontrar el orden que mejor funcione.",
           why: "Planificar un texto es, en el fondo, decidir un orden. Y cuando ese orden lo puedes tocar, moverlo, reorganizarlo físicamente, la decisión se vuelve mucho más fácil. Ves de inmediato qué idea sobra, cuál falta, cuál está en el lugar equivocado.",
           how: "Prueba al menos dos ordenamientos distintos antes de decidir. Vas a descubrir que el orden que se te ocurrió primero casi nunca es el mejor.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784174490/ecrire-avec-toi/corporal/reto-postits.png",
         },
         {
           title: "Planifica caminando",
           what: "Cuando tengas que escribir sobre algo, no te sientes de entrada. Sal a caminar diez o quince minutos pensando en el tema. Graba tus ideas con el celular, en francés, mientras caminas. Después sí, siéntate a escribir.",
           why: "El movimiento activa el pensamiento. No es una metáfora: hay evidencia de que caminar mejora la fluidez de ideas. Y para tu perfil, obligarte a estar sentado antes de tener las ideas es la receta perfecta para el bloqueo. Primero muévete, después escribe.",
           how: "Grabar en francés mientras caminas tiene un beneficio extra: te obliga a formular en la lengua meta desde el principio, en vez de pensar en castellano y traducir después. Cuando llegues a la mesa, transcribe lo que grabaste y ya tienes el borrador.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784174495/ecrire-avec-toi/corporal/reto-caminando.png",
         },
         {
           title: "Actúa antes de escribir",
           what: "Si tienes que escribir un diálogo, una escena o una situación, actúala primero. En voz alta, con gestos, moviéndote. Solo o con alguien más. Después siéntate y escríbela.",
           why: "El principio del Total Physical Response llevado a la escritura: el movimiento del cuerpo sugiere las palabras. Cuando actúas una escena, tu cuerpo encuentra las expresiones que tu mente no encontraba sentada. Y después, escribir es simplemente transcribir algo que ya sucedió.",
           how: "Después de actuarla, pasa el diálogo al discurso indirecto («Il m'a dit qu'il ne voulait pas…»). Es un ejercicio doble: primero produces el contenido con el cuerpo, después lo transformas gramaticalmente.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784174501/ecrire-avec-toi/corporal/reto-actua.png",
         },
         {
           title: "Escribe a mano, en superficies que se borran",
           what: "Consigue una pizarra acrílica pequeña o mete hojas en fundas plásticas transparentes. Escribe con marcador borrable. Escribe, borra, vuelve a escribir.",
           why: "Escribir a mano activa el cuerpo de una manera que teclear no logra. Y poder borrar de inmediato quita el peso del error: si te equivocaste, borras y ya. Esa libertad hace que escribas más y con menos miedo, que es exactamente lo que necesitas.",
           how: "Úsalo sobre todo para practicar conjugaciones y estructuras que quieres automatizar. La repetición física, con el marcador en la mano, fija los patrones mucho más rápido que leerlos en una tabla.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784174506/ecrire-avec-toi/corporal/reto-pizarra.png",
         },
       ],
       videoUrl: "https://www.youtube.com/watch?v=8ag_31qyHW8",
       banner: "¡Aprende moviéndote, escribe sintiendo!",
+      media: {
+        heroImage:
+          "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784174478/ecrire-avec-toi/corporal/hero.png",
+      },
     },
   },
   {
