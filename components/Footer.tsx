@@ -9,17 +9,13 @@ export function Footer() {
         <div className="grid gap-8 md:grid-cols-3">
           {/* Marca */}
           <div>
-            <div className="flex items-center gap-2">
-              <span
-                className="flex h-9 w-9 items-center justify-center rounded-lg bg-terracota text-lg text-white"
-                aria-hidden="true"
-              >
-                ✍️
-              </span>
-              <span className="font-display text-xl font-bold text-terracota-ink">
-                Écrire avec toi
-              </span>
-            </div>
+            <Image
+              src="https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784174077/ecrire-avec-toi/branding/logo.png"
+              alt="Écrire avec toi"
+              width={200}
+              height={67}
+              className="h-9 w-auto"
+            />
             <p className="mt-3 max-w-xs text-sm text-ink-soft">
               Plataforma educativa que aplica las Inteligencias Múltiples de
               Howard Gardner a la producción escrita en francés.

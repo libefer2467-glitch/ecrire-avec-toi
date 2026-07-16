@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { INTELLIGENCES } from "@/lib/intelligences";
@@ -31,18 +32,17 @@ export function Navbar() {
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-2"
+          className="flex items-center"
           onClick={() => setMobileOpen(false)}
         >
-          <span
-            className="flex h-9 w-9 items-center justify-center rounded-lg bg-terracota text-lg text-white shadow-sm"
-            aria-hidden="true"
-          >
-            ✍️
-          </span>
-          <span className="font-display text-xl font-bold text-terracota-ink">
-            Écrire avec toi
-          </span>
+          <Image
+            src="https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784174077/ecrire-avec-toi/branding/logo.png"
+            alt="Écrire avec toi"
+            width={200}
+            height={67}
+            priority
+            className="h-9 w-auto"
+          />
         </Link>
 
         {/* Desktop nav */}
