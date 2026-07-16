@@ -5,7 +5,7 @@ import { INTELLIGENCES } from "@/lib/intelligences";
 import { TOTAL_QUESTIONS } from "@/lib/mckenzie";
 
 const HERO_TOGETHER =
-  "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784204983/ecrire-avec-toi/home/hero-together-v2.png";
+  "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784218912/ecrire-avec-toi/home/hero-together-v3.png";
 const HERO_LIBERTAD =
   "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784176469/ecrire-avec-toi/home/hero-libertad.png";
 const HERO_ANA =
