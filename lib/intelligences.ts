@@ -668,46 +668,56 @@ export const INTELLIGENCES: Intelligence[] = [
           what: "Intercambia tu texto con un compañero. Cada uno revisa el del otro con una lista de cotejo objetiva: ¿hay una idea principal clara? ¿los argumentos tienen ejemplos? ¿los conectores son variados? ¿la conclusión cierra o queda colgando?",
           why: "Vygotsky explicaría que revisar el texto de otro te enseña a revisar el tuyo. Al aplicar criterios sobre un texto ajeno, esos criterios se interiorizan, y con el tiempo empiezas a aplicarlos automáticamente sobre lo que tú escribes. Es el camino de lo social a lo individual.",
           how: "Usa una lista de cotejo con preguntas objetivas, de sí o no, sobre todo al principio. Es más cómodo para los dos y evita el problema de sentir que estás criticando a un amigo. Con el tiempo, cuando le agarres confianza al ejercicio, pueden pasar a comentarios más abiertos.",
-        },
-        {
-          title: "Diarios dialogados",
-          what: "Ponte de acuerdo con un compañero (o con tu docente, si acepta) para llevar un diario en el que se escriben mutuamente en francés. Uno escribe una entrada, el otro responde. No se corrigen los errores: se conversa.",
-          why: "Los dialogue journals (Peyton y Reed, 1990) convierten la escritura en conversación, que es exactamente lo que tu perfil necesita. Escribes porque alguien te va a leer y responder, no porque te van a poner una nota. Y esa diferencia cambia todo: escribes más, con ganas, y sin darte cuenta escribes mejor.",
-          how: "La regla de oro es que nadie corrige a nadie. El objetivo es la comunicación, no la exactitud. Curiosamente, los errores disminuyen solos con el tiempo, sin que nadie los señale.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784175394/ecrire-avec-toi/interpersonal/reto-revision.png",
         },
         {
           title: "Dictogloss en grupo",
           what: "Escucha un texto corto en francés leído dos veces. La primera solo escuchas; la segunda tomas notas de las ideas principales, no de las palabras exactas. Después, en grupo, reconstruyen el texto entre todos.",
           why: "El dictogloss (Wajnryb, 1990) es una técnica pensada exactamente para tu perfil. La reconstrucción se hace negociando: alguien recuerda una palabra, otro la estructura, discuten cuál tiempo verbal iba. Esa negociación es donde ocurre el aprendizaje. Solo, no lo lograrías; en grupo, sale.",
           how: "El punto no es reproducir el texto palabra por palabra, sino reconstruir el sentido con una gramática correcta. Cuando terminen, comparen su versión con el original y discutan las diferencias. Ahí está la mitad de la lección.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784175398/ecrire-avec-toi/interpersonal/reto-dictogloss.png",
         },
         {
           title: "Escribe en pareja",
           what: "Elige un compañero y escriban un texto entre los dos. Uno propone la idea central, el otro los argumentos. Uno redacta la introducción, el otro la conclusión. Se revisan mutuamente.",
           why: "La co-escritura te obliga a verbalizar tus decisiones: por qué este conector y no otro, por qué este orden, por qué este ejemplo. Y verbalizar decisiones de escritura es la mejor manera de tomar conciencia de ellas. Además, el texto que sale suele ser mejor que el que cualquiera de los dos habría escrito solo.",
           how: "Divídanse el trabajo de forma explícita antes de empezar, y después revisen cada uno lo del otro. Discutan los desacuerdos: esas discusiones son oro puro.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784175402/ecrire-avec-toi/interpersonal/reto-pareja.png",
         },
         {
           title: "Busca clubes y grupos de conversación",
           what: "Únete a un grupo donde se hable francés regularmente. En Cochabamba, la Alianza Francesa organiza encuentros de conversación, y en la propia carrera de LAEL hay espacios donde se practica la lengua.",
           why: "Hablar afila las ideas antes de escribirlas. Cuando discutes un tema en voz alta con otros, te ves obligado a defender tu posición, a encontrar ejemplos, a responder objeciones. Todo eso es material que después vuelcas al papel. Para tu perfil, saltarse este paso es un desperdicio.",
           how: "Antes de cada encuentro, prepárate: lee algo sobre el tema, anota tres ideas. Después del encuentro, escribe un texto corto con lo que surgió. Así conviertes la conversación en escritura, que es el puente que necesitas.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784175406/ecrire-avec-toi/interpersonal/reto-clubes.png",
         },
         {
           title: "Consigue un corresponsal en francés",
           what: "Busca a alguien con quien escribirte en francés de forma regular. Puede ser un compañero de curso, alguien de otra ciudad, o un hablante nativo a través de plataformas de intercambio lingüístico.",
           why: "Escribir para alguien real cambia todo. Ya no escribes para una nota: escribes para que te entiendan. Y esa presión comunicativa (real, no académica) te empuja a buscar las palabras exactas de una manera que ninguna tarea logra.",
           how: "No hace falta que sea un nativo. Pueden ponerse de acuerdo con un compañero del curso: a partir de hoy, todos los mensajes entre ustedes van en francés. Es incómodo la primera semana. Después se vuelve natural, y el progreso es enorme.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784175410/ecrire-avec-toi/interpersonal/reto-corresponsal.png",
         },
         {
           title: "Enseña lo que acabas de aprender",
           what: "Cada vez que aprendas algo nuevo en francés (una regla, una estructura, un uso), explícaselo a alguien más. Puede ser un compañero, un familiar, o alguien que ni siquiera estudia francés.",
           why: "Es el efecto del aprendizaje por enseñanza, muy documentado: preparar una explicación te obliga a organizar el conocimiento de una manera que el estudio pasivo no exige. Y para tu perfil, además, es lo más disfrutable del mundo.",
           how: "El truco es explicárselo a alguien que no sepa nada del tema. Si logras que lo entienda, es porque tú lo entendiste de verdad. Si no lo logras, todavía te falta.",
+          image:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784175414/ecrire-avec-toi/interpersonal/reto-ensena.png",
         },
       ],
       videoUrl: "https://www.youtube.com/watch?v=_Ur8EPG05C8",
       banner: "¡Con otros, aprendes y escribes mejor!",
+      media: {
+        heroImage:
+          "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784175391/ecrire-avec-toi/interpersonal/hero.png",
+      },
     },
   },
   {
