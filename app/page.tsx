@@ -312,31 +312,38 @@ export default function Home() {
             Cada inteligencia tiene su propio color para guiarte visualmente por
             toda la plataforma.
           </p>
-          <ul className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
+          <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {INTELLIGENCES.map((intel) => (
               <li key={intel.id}>
                 <Link
                   href={`/inteligencias/${intel.slug}`}
-                  className="group flex flex-col items-center gap-2 rounded-xl p-3 text-center transition-colors hover:bg-cream-2"
+                  className="group flex h-full overflow-hidden rounded-2xl shadow-sm transition-shadow hover:shadow-md"
                 >
                   <span
-                    className="flex h-14 w-14 items-center justify-center rounded-2xl shadow-sm transition-transform group-hover:scale-105"
-                    style={{ backgroundColor: intel.softVar }}
+                    className="flex w-20 shrink-0 items-center justify-center"
+                    style={{
+                      backgroundImage: `linear-gradient(155deg, ${intel.colorVar} 0%, ${intel.inkVar} 100%)`,
+                    }}
                     aria-hidden="true"
                   >
                     <Image
                       src={INTEL_ICONS[intel.id]}
                       alt=""
-                      width={28}
-                      height={28}
-                      className="h-7 w-7"
+                      width={32}
+                      height={32}
+                      className="h-8 w-8 brightness-0 invert transition-transform group-hover:scale-110"
                     />
                   </span>
-                  <span
-                    className="text-sm font-semibold"
-                    style={{ color: intel.inkVar }}
-                  >
-                    {intel.shortName}
+                  <span className="flex flex-1 flex-col justify-center bg-paper px-4 py-3">
+                    <span
+                      className="font-display text-base font-bold"
+                      style={{ color: intel.inkVar }}
+                    >
+                      {intel.shortName}
+                    </span>
+                    <span className="mt-1 text-xs leading-snug text-ink-soft">
+                      {intel.description}
+                    </span>
                   </span>
                 </Link>
               </li>
