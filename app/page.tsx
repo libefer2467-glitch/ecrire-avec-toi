@@ -1,8 +1,15 @@
+import Image from "next/image";
 import Link from "next/link";
-import { AuthorsPhoto } from "@/components/AuthorsPhoto";
 import { VideoEmbed } from "@/components/VideoEmbed";
 import { INTELLIGENCES } from "@/lib/intelligences";
 import { TOTAL_QUESTIONS } from "@/lib/mckenzie";
+
+const HERO_TOGETHER =
+  "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784176479/ecrire-avec-toi/home/hero-together.png";
+const HERO_LIBERTAD =
+  "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784176469/ecrire-avec-toi/home/hero-libertad.png";
+const HERO_ANA =
+  "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784176473/ecrire-avec-toi/home/hero-ana.png";
 
 export default function Home() {
   return (
@@ -43,20 +50,59 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Foto */}
-          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-line shadow-xl">
-            <AuthorsPhoto />
+          {/* Collage de fotos */}
+          <div className="relative mx-auto aspect-square w-full max-w-md md:max-w-none">
+            {/* Resplandor suave detrás del collage */}
+            <div
+              className="absolute inset-0 rounded-full opacity-40 blur-3xl"
+              style={{
+                backgroundImage:
+                  "radial-gradient(circle, var(--terracota) 0%, transparent 70%)",
+              }}
+              aria-hidden="true"
+            />
+
+            {/* Foto principal: Libertad y Ana juntas */}
+            <div className="absolute left-[4%] top-[6%] w-[72%] -rotate-3 overflow-hidden rounded-3xl border-4 border-paper shadow-xl">
+              <div className="relative aspect-[4/3]">
+                <Image
+                  src={HERO_TOGETHER}
+                  alt="Libertad y Ana, autoras del proyecto, trabajando juntas"
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 90vw, 40vw"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Foto secundaria: Libertad */}
+            <div className="absolute bottom-[2%] left-0 w-[42%] rotate-6 overflow-hidden rounded-2xl border-4 border-paper shadow-lg">
+              <div className="relative aspect-[4/5]">
+                <Image
+                  src={HERO_LIBERTAD}
+                  alt="Libertad Fernández, autora del proyecto"
+                  fill
+                  sizes="(max-width: 768px) 45vw, 20vw"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Foto secundaria: Ana */}
+            <div className="absolute bottom-[8%] right-0 w-[42%] -rotate-6 overflow-hidden rounded-2xl border-4 border-paper shadow-lg">
+              <div className="relative aspect-[4/5]">
+                <Image
+                  src={HERO_ANA}
+                  alt="Ana, colaboradora del proyecto"
+                  fill
+                  sizes="(max-width: 768px) 45vw, 20vw"
+                  className="object-cover"
+                />
+              </div>
+            </div>
           </div>
         </div>
-      </section>
-
-      {/* ============ VIDEO INTRODUCTORIO ============ */}
-      <section className="mx-auto max-w-3xl px-4 pb-4">
-        <VideoEmbed
-          url="https://www.youtube.com/watch?v=2hJnFAysNNs"
-          title="Inteligencias Múltiples - Howard Gardner"
-          accentVar="var(--ling)"
-        />
       </section>
 
       {/* ============ PROCESO (3 pasos) ============ */}
@@ -207,6 +253,18 @@ export default function Home() {
             ))}
           </ul>
         </div>
+      </section>
+
+      {/* ============ VIDEO INTRODUCTORIO ============ */}
+      <section className="mx-auto max-w-3xl px-4 pb-16">
+        <h2 className="mb-4 text-center font-display text-2xl font-bold text-ink">
+          Conoce las Inteligencias Múltiples
+        </h2>
+        <VideoEmbed
+          url="https://www.youtube.com/watch?v=2hJnFAysNNs"
+          title="Inteligencias Múltiples - Howard Gardner"
+          accentVar="var(--ling)"
+        />
       </section>
     </>
   );
