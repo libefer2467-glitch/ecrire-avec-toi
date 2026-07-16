@@ -291,7 +291,7 @@ export const INTELLIGENCES: Intelligence[] = [
       banner: "¡La lógica te ayuda a resolverlo todo!",
       media: {
         heroImage:
-          "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784218908/ecrire-avec-toi/logico-hero-v2.png",
+          "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784223346/ecrire-avec-toi/logico-hero-v3.png",
       },
     },
   },
