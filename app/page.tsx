@@ -5,25 +5,38 @@ import { INTELLIGENCES } from "@/lib/intelligences";
 import { TOTAL_QUESTIONS } from "@/lib/mckenzie";
 
 const HERO_TOGETHER =
-  "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784176479/ecrire-avec-toi/home/hero-together.png";
+  "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784204983/ecrire-avec-toi/home/hero-together-v2.png";
 const HERO_LIBERTAD =
   "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784176469/ecrire-avec-toi/home/hero-libertad.png";
 const HERO_ANA =
   "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784176473/ecrire-avec-toi/home/hero-ana.png";
+
+// Textura de papel antiguo (grano jaspeado) para el fondo del hero.
+const PAPER_TEXTURE = `<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'>
+  <filter id='n'>
+    <feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch' />
+    <feColorMatrix type='matrix' values='0 0 0 0 0.65  0 0 0 0 0.52  0 0 0 0 0.35  0 0 0 0.35 0' />
+  </filter>
+  <rect width='100%' height='100%' filter='url(#n)' />
+</svg>`;
+const PAPER_TEXTURE_URL = `url("data:image/svg+xml,${encodeURIComponent(PAPER_TEXTURE)}")`;
 
 export default function Home() {
   return (
     <>
       {/* ============ HERO ============ */}
       <section className="relative overflow-hidden">
+        {/* Textura de papel antiguo jaspeado */}
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.35] mix-blend-multiply"
+          style={{ backgroundImage: PAPER_TEXTURE_URL, backgroundSize: "300px 300px" }}
+          aria-hidden="true"
+        />
         <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-12 md:grid-cols-2 md:py-20">
           {/* Texto */}
           <div>
-            <p className="inline-flex items-center gap-2 rounded-full bg-verde-ande-soft px-3 py-1 text-sm font-medium text-verde-ande">
-              🇫🇷 Français · Inteligencias Múltiples
-            </p>
-            <h1 className="mt-4 font-display text-5xl font-black leading-[1.05] text-ink md:text-6xl">
-              <span className="text-terracota">DÉCOUVRE</span> TON
+            <h1 className="font-display text-5xl font-black leading-[1.05] text-ink md:text-6xl">
+              DÉCOUVRE TON
               <br />
               ÉCRITURE.
             </h1>
@@ -59,6 +72,21 @@ export default function Home() {
                 backgroundImage:
                   "radial-gradient(circle, var(--terracota) 0%, transparent 70%)",
               }}
+              aria-hidden="true"
+            />
+
+            {/* Acentos azules decorativos */}
+            <div
+              className="absolute -left-6 top-[2%] h-16 w-16 rotate-12 rounded-2xl bg-azul-noche/20"
+              aria-hidden="true"
+            />
+            <div
+              className="absolute -right-4 top-[38%] h-10 w-10 -rotate-12 rounded-full"
+              style={{ backgroundColor: "color-mix(in srgb, var(--ling) 25%, transparent)" }}
+              aria-hidden="true"
+            />
+            <div
+              className="absolute -bottom-5 left-[38%] h-12 w-12 rotate-45 rounded-xl bg-azul-noche/20"
               aria-hidden="true"
             />
 

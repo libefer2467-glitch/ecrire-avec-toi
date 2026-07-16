@@ -36,12 +36,12 @@ export function Navbar() {
           onClick={() => setMobileOpen(false)}
         >
           <Image
-            src="https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784174077/ecrire-avec-toi/branding/logo.png"
+            src="https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784204984/ecrire-avec-toi/branding/logo-v2.png"
             alt="Écrire avec toi"
-            width={200}
-            height={67}
+            width={280}
+            height={98}
             priority
-            className="h-9 w-auto"
+            className="h-14 w-auto"
           />
         </Link>
 
@@ -59,10 +59,10 @@ export function Navbar() {
                   href={link.href}
                   aria-haspopup="true"
                   aria-expanded={intelOpen}
-                  className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
+                  className={`rounded-lg px-3 py-2 text-sm font-semibold transition-colors ${
                     isActive(link.href)
                       ? "bg-verde-ande-soft text-verde-ande"
-                      : "text-ink-soft hover:bg-cream-2 hover:text-ink"
+                      : "text-azul-noche hover:bg-cream-2"
                   }`}
                 >
                   {link.label} ▾
@@ -90,10 +90,10 @@ export function Navbar() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
+                  className={`rounded-lg px-3 py-2 text-sm font-semibold transition-colors ${
                     isActive(link.href)
                       ? "bg-verde-ande-soft text-verde-ande"
-                      : "text-ink-soft hover:bg-cream-2 hover:text-ink"
+                      : "text-azul-noche hover:bg-cream-2"
                   }`}
                 >
                   {link.label}
