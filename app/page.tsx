@@ -21,6 +21,40 @@ const PAPER_TEXTURE = `<svg xmlns='http://www.w3.org/2000/svg' width='300' heigh
 </svg>`;
 const PAPER_TEXTURE_URL = `url("data:image/svg+xml,${encodeURIComponent(PAPER_TEXTURE)}")`;
 
+const ICONS = {
+  responder:
+    "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784206242/ecrire-avec-toi/home/icons/responder.png",
+  recibido:
+    "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784206243/ecrire-avec-toi/home/icons/recibido.png",
+  aplicar:
+    "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784206245/ecrire-avec-toi/home/icons/aplicar.png",
+  queEsElTest:
+    "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784206245/ecrire-avec-toi/home/icons/que-es-el-test.png",
+  ochoInteligencias:
+    "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784206246/ecrire-avec-toi/home/icons/8-inteligencias.png",
+  recursos:
+    "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784206247/ecrire-avec-toi/home/icons/recursos.png",
+};
+
+const INTEL_ICONS: Record<string, string> = {
+  linguistica:
+    "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784206269/ecrire-avec-toi/home/icons-intel/verbal.png",
+  logica:
+    "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784206270/ecrire-avec-toi/home/icons-intel/matematica.png",
+  espacial:
+    "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784206272/ecrire-avec-toi/home/icons-intel/visual.png",
+  musical:
+    "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784206272/ecrire-avec-toi/home/icons-intel/musica.png",
+  corporal:
+    "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784206273/ecrire-avec-toi/home/icons-intel/kinestesica.png",
+  intrapersonal:
+    "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784206274/ecrire-avec-toi/home/icons-intel/intrapersonal.png",
+  interpersonal:
+    "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784206275/ecrire-avec-toi/home/icons-intel/interpersonal.png",
+  naturalista:
+    "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784206276/ecrire-avec-toi/home/icons-intel/naturalista.png",
+};
+
 export default function Home() {
   return (
     <>
@@ -134,44 +168,57 @@ export default function Home() {
       </section>
 
       {/* ============ PROCESO (3 pasos) ============ */}
-      <section className="border-y border-line bg-paper/60">
+      <section className="border-y border-line" style={{ backgroundColor: "#e7e6ea" }}>
         <div className="mx-auto max-w-6xl px-4 py-12">
           <div className="grid gap-6 md:grid-cols-3">
             {[
               {
-                icon: "📝",
-                title: "1. Responde las preguntas",
+                icon: ICONS.responder,
+                number: "1",
+                title: "Responde las preguntas",
                 text: "Completa el inventario de inteligencias múltiples en 5–10 minutos.",
-                color: "var(--corp)",
               },
               {
-                icon: "🎯",
-                title: "2. Recibe tu perfil",
+                icon: ICONS.recibido,
+                number: "2",
+                title: "Recibe tu perfil",
                 text: "Obtén un gráfico de radar con tus 8 inteligencias y tu color dominante.",
-                color: "var(--musi-ink)",
               },
               {
-                icon: "✍️",
-                title: "3. Aplica estrategias",
+                icon: ICONS.aplicar,
+                number: "3",
+                title: "Aplica estrategias",
                 text: "Accede a estrategias de escritura en francés adaptadas a tu perfil.",
-                color: "var(--verde-ande)",
               },
             ].map((step) => (
               <div
                 key={step.title}
-                className="rounded-2xl border border-line bg-cream p-6 shadow-sm"
+                className="flex items-start justify-between gap-4 rounded-2xl bg-azul-noche p-6 shadow-md"
               >
+                <div>
+                  <span
+                    className="font-display text-3xl font-black text-terracota"
+                    aria-hidden="true"
+                  >
+                    {step.number}
+                  </span>
+                  <h3 className="mt-2 font-display text-lg font-bold text-white">
+                    {step.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-white/75">{step.text}</p>
+                </div>
                 <div
-                  className="flex h-12 w-12 items-center justify-center rounded-xl text-2xl"
-                  style={{ backgroundColor: `${step.color}1a` }}
+                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/15"
                   aria-hidden="true"
                 >
-                  {step.icon}
+                  <Image
+                    src={step.icon}
+                    alt=""
+                    width={22}
+                    height={22}
+                    className="h-[22px] w-[22px] brightness-0 invert"
+                  />
                 </div>
-                <h3 className="mt-4 font-display text-lg font-bold text-ink">
-                  {step.title}
-                </h3>
-                <p className="mt-2 text-sm text-ink-soft">{step.text}</p>
               </div>
             ))}
           </div>
@@ -182,10 +229,11 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-4 py-16">
         <div className="grid gap-6 md:grid-cols-3">
           {/* Card 1 */}
-          <article className="flex flex-col rounded-2xl border border-line bg-paper p-7 shadow-sm">
-            <span className="text-3xl" aria-hidden="true">
-              💡
-            </span>
+          <article
+            className="flex flex-col rounded-2xl p-7 shadow-sm"
+            style={{ backgroundColor: "var(--corp-soft)" }}
+          >
+            <Image src={ICONS.queEsElTest} alt="" width={40} height={40} className="h-10 w-10" />
             <h2 className="mt-4 font-display text-xl font-bold text-ink">
               ¿Qué es el Test de Inteligencias Múltiples?
             </h2>
@@ -203,10 +251,17 @@ export default function Home() {
           </article>
 
           {/* Card 2 */}
-          <article className="flex flex-col rounded-2xl border border-line bg-paper p-7 shadow-sm">
-            <span className="text-3xl" aria-hidden="true">
-              🧠
-            </span>
+          <article
+            className="flex flex-col rounded-2xl p-7 shadow-sm"
+            style={{ backgroundColor: "var(--logi-soft)" }}
+          >
+            <Image
+              src={ICONS.ochoInteligencias}
+              alt=""
+              width={40}
+              height={40}
+              className="h-10 w-10"
+            />
             <h2 className="mt-4 font-display text-xl font-bold text-ink">
               Las 8 Inteligencias
             </h2>
@@ -224,10 +279,11 @@ export default function Home() {
           </article>
 
           {/* Card 3 */}
-          <article className="flex flex-col rounded-2xl border border-line bg-paper p-7 shadow-sm">
-            <span className="text-3xl" aria-hidden="true">
-              📚
-            </span>
+          <article
+            className="flex flex-col rounded-2xl p-7 shadow-sm"
+            style={{ backgroundColor: "var(--espa-soft)" }}
+          >
+            <Image src={ICONS.recursos} alt="" width={40} height={40} className="h-10 w-10" />
             <h2 className="mt-4 font-display text-xl font-bold text-ink">
               Zona de Recursos
             </h2>
@@ -264,11 +320,17 @@ export default function Home() {
                   className="group flex flex-col items-center gap-2 rounded-xl p-3 text-center transition-colors hover:bg-cream-2"
                 >
                   <span
-                    className="flex h-14 w-14 items-center justify-center rounded-2xl text-2xl shadow-sm transition-transform group-hover:scale-105"
+                    className="flex h-14 w-14 items-center justify-center rounded-2xl shadow-sm transition-transform group-hover:scale-105"
                     style={{ backgroundColor: intel.softVar }}
                     aria-hidden="true"
                   >
-                    {intel.emoji}
+                    <Image
+                      src={INTEL_ICONS[intel.id]}
+                      alt=""
+                      width={28}
+                      height={28}
+                      className="h-7 w-7"
+                    />
                   </span>
                   <span
                     className="text-sm font-semibold"
