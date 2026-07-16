@@ -195,7 +195,7 @@ export default function ResultPage() {
               Distribución de tus inteligencias
             </h2>
             <ul className="space-y-3">
-              {ranking.map(({ intel, pct }, index) => (
+              {ranking.map(({ intel, raw, pct }, index) => (
                 <li key={intel.id}>
                   <Link
                     href={`/inteligencias/${intel.slug}`}
@@ -206,8 +206,13 @@ export default function ResultPage() {
                         <span className="text-ink-soft">{index + 1}.</span>
                         {intel.emoji} {intel.name}
                       </span>
-                      <span className="font-semibold" style={{ color: intel.inkVar }}>
-                        {pct}%
+                      <span className="flex items-baseline gap-1.5">
+                        <span className="text-xs text-ink-soft">
+                          {raw}/{MAX_SCORE_PER_INTELLIGENCE}
+                        </span>
+                        <span className="font-semibold" style={{ color: intel.inkVar }}>
+                          {pct}%
+                        </span>
                       </span>
                     </div>
                     <div className="mt-1.5 h-2.5 w-full overflow-hidden rounded-full bg-cream-2">
