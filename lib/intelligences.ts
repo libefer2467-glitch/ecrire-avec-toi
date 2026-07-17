@@ -252,7 +252,7 @@ export const INTELLIGENCES: Intelligence[] = [
           why: "La conjugación francesa parece caótica, pero es un sistema con muy pocas excepciones reales. Cuando construyes las tablas tú mismo (en vez de leerlas hechas), el patrón se te queda grabado. Escribir con seguridad depende de tener los tiempos verbales automatizados: si tienes que parar a pensar cada verbo, pierdes el hilo de lo que querías decir.",
           how: "Cómprate una pizarra acrílica pequeña con marcadores borrables, o mete hojas bond en fundas plásticas transparentes (las fundas también se borran). Escribes, borras, vuelves a escribir. La repetición física fija el patrón. Un aliado perfecto es el Bescherelle, el clásico libro rojo de conjugación francesa (Hatier): 105 tablas modelo que cubren todos los verbos.",
           image:
-            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784154966/Tablas_vb70sf.png",
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784268923/ecrire-avec-toi/logico/tablas.png",
         },
         {
           title: "Listas y categorías antes de escribir",
@@ -260,7 +260,7 @@ export const INTELLIGENCES: Intelligence[] = [
           why: "Es la variante ordenada de la lluvia de ideas clásica (Osborn, 1953). A diferencia del mapa mental, que exige conectar todo desde el principio, la lista te deja generar primero y ordenar después. Es menos intimidante y encaja mejor con una mente que primero recolecta y luego clasifica.",
           how: "Regla de oro de la lluvia de ideas: mientras generas ideas, no juzgues ninguna. Ni siquiera las tontas. La censura viene después, en el momento de clasificar.",
           image:
-            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784154967/reto-listas-categorias_ewwj8n.png",
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784268926/ecrire-avec-toi/logico/listas-categorias.png",
         },
         {
           title: "Esquema con cajas y flechas",
@@ -268,7 +268,7 @@ export const INTELLIGENCES: Intelligence[] = [
           why: "Flower y Hayes (1981) mostraron que los escritores que planifican producen textos más coherentes que los que escriben directamente. Y para tu perfil, planificar visualmente con una estructura lógica es lo más natural del mundo. El esquema te evita perder el hilo mientras escribes.",
           how: "Escribe primero el esquema completo. Recién cuando esté cerrado, empieza a redactar. Vas a notar que la redacción sale mucho más rápido, porque ya sabes exactamente qué toca en cada párrafo.",
           image:
-            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784154961/Planificar_i5bspe.png",
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784268929/ecrire-avec-toi/logico/esquema-planificar.png",
         },
         {
           title: "Prompts estructurados para la IA",
@@ -276,7 +276,7 @@ export const INTELLIGENCES: Intelligence[] = [
           why: "La calidad de la respuesta depende de la calidad de la pregunta. Alguien con tu perfil puede sacarle mucho más provecho a una IA que la mayoría, porque sabe formular peticiones estructuradas. Pide tablas, reglas, comparaciones, contraejemplos. Es tu lenguaje.",
           how: "Tres prompts útiles: « Fais-moi un tableau comparatif de X et Y avec cinq exemples. » / « Quelle est la règle générale pour X ? Donne-moi les exceptions. » / « Voici mon texte. Analyse uniquement les erreurs de temps verbaux et explique la règle de chacune. »",
           image:
-            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784154894/reto-prompts-ia_resysx.png",
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784268933/ecrire-avec-toi/logico/prompts-ia.png",
         },
         {
           title: "Analiza tus errores como un sistema",
@@ -284,7 +284,7 @@ export const INTELLIGENCES: Intelligence[] = [
           why: "Tus errores no son aleatorios: son sistemáticos, y siguen patrones. Cuando los clasificas, dejas de ver un montón de correcciones sueltas en rojo y empiezas a ver dos o tres problemas de fondo que se repiten. Y esos sí se pueden atacar.",
           how: "Haz una tabla de tres columnas: lo que escribí / lo correcto / el tipo de error. Después de veinte entradas, mira cuál tipo domina. Ese es tu punto ciego, y ahí es donde tienes que trabajar.",
           image:
-            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784154968/reto-analiza-errores_ypwl2p.png",
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784268936/ecrire-avec-toi/logico/analiza-errores.png",
         },
       ],
       videoUrl: "https://www.youtube.com/watch?v=R5cVJi7Chlw&t=2041s",
