@@ -195,7 +195,7 @@ export const INTELLIGENCES: Intelligence[] = [
         },
       ],
       media: {
-        heroImage: "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784243099/ecrire-avec-toi/verbal/hero.png",
+        heroImage: "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784299366/ecrire-avec-toi/verbal/hero-v2.png",
         quotesImage:
           "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784071920/joven_lectora_i0gxfb.png",
         sideImages: [
@@ -361,7 +361,7 @@ export const INTELLIGENCES: Intelligence[] = [
           why: "Los conceptos temporales del francés son, en el fondo, conceptos espaciales: qué pasó antes, qué pasó durante, qué pasó después. Cuando los dibujas sobre una línea, dejan de ser reglas abstractas y se convierten en algo que puedes ver. Y lo que hiciste tú se recuerda mucho mejor que lo que copiaste.",
           how: "Hazla grande, en una hoja entera, con colores. Pégala en la pared donde estudias. La vas a mirar cien veces sin darte cuenta, y ese es justamente el punto.",
           image:
-            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784172743/ecrire-avec-toi/visual-espacial/reto-infografias.png",
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784269396/ecrire-avec-toi/visual-espacial/reto-infografias-v2.png",
         },
         {
           title: "El storyboard de tu texto",
@@ -369,14 +369,14 @@ export const INTELLIGENCES: Intelligence[] = [
           why: "Es planificación visual pura. Te obliga a decidir cuántos párrafos vas a tener y qué va en cada uno antes de escribir la primera palabra. Y como cada viñeta tiene que contener una sola idea, previene el error más común: el párrafo que mezcla tres temas.",
           how: "Regla simple: si no puedes dibujar el párrafo en una viñeta, es porque tiene más de una idea. Divídelo en dos.",
           image:
-            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784172747/ecrire-avec-toi/visual-espacial/reto-storyboard.png",
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784269399/ecrire-avec-toi/visual-espacial/reto-storyboard-v2.png",
         },
       ],
       videoUrl: "https://www.youtube.com/watch?v=082GFQRakz0",
       banner: "¡Tu imaginación no tiene límites!",
       media: {
         heroImage:
-          "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784172716/ecrire-avec-toi/visual-espacial/hero.png",
+          "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784299371/ecrire-avec-toi/visual-espacial/hero-v2.png",
       },
     },
   },
@@ -461,7 +461,7 @@ export const INTELLIGENCES: Intelligence[] = [
       banner: "¡El ritmo te acompaña en cada palabra!",
       media: {
         heroImage:
-          "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784172757/ecrire-avec-toi/musical-ritmica/hero.png",
+          "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784299375/ecrire-avec-toi/musical-ritmica/hero-v2.png",
       },
     },
   },
