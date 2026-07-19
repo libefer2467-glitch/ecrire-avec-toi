@@ -378,30 +378,31 @@ export default async function IntelligenceDetailPage({
                 </div>
               </div>
 
-              {tip.url && tip.resourceImage && (
+              {tip.url && tip.resourceImages && tip.resourceImages.length > 0 && (
                 <a
                   href={tip.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex shrink-0 flex-col overflow-hidden rounded-2xl border border-line bg-paper shadow-sm transition hover:-translate-y-1 hover:shadow-md md:w-44"
+                  className="group relative flex h-56 shrink-0 flex-col overflow-hidden rounded-2xl border border-line shadow-sm transition hover:-translate-y-1 hover:shadow-md md:h-auto md:w-44"
                 >
-                  <div className="relative h-32 w-full md:h-28">
-                    <Image
-                      src={tip.resourceImage}
-                      alt=""
-                      fill
-                      sizes="176px"
-                      className="object-cover"
-                    />
+                  <div className="flex flex-1 flex-col gap-0.5">
+                    {tip.resourceImages.map((src, j) => (
+                      <div key={j} className="relative w-full flex-1">
+                        <Image
+                          src={src}
+                          alt=""
+                          fill
+                          sizes="176px"
+                          className="object-cover"
+                        />
+                      </div>
+                    ))}
                   </div>
                   <div
-                    className="flex flex-1 items-center px-3 py-3"
-                    style={{ backgroundColor: intel.softVar }}
+                    className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent px-3 pb-3 pt-8"
+                    aria-hidden="false"
                   >
-                    <p
-                      className="text-sm font-bold leading-snug"
-                      style={{ color: intel.inkVar }}
-                    >
+                    <p className="text-sm font-bold leading-snug text-white">
                       {tip.resourceTitle ?? tip.title}
                       <span className="ml-1 inline-block transition group-hover:translate-x-0.5">
                         →
