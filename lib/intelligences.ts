@@ -25,6 +25,10 @@ export interface Tip {
   how: string; // Cómo hacerlo
   /** foto opcional (en /public) que acompaña la tarjeta del tip */
   image?: string;
+  /** enlace externo opcional a un recurso mencionado en "how" (ej. una plataforma de video) */
+  url?: string;
+  /** texto del enlace; por defecto "Ir al recurso" */
+  urlLabel?: string;
 }
 
 /**
@@ -36,6 +40,9 @@ export interface Tip {
 export interface IntelligenceMedia {
   /** foto grande del hero (junto al título) */
   heroImage?: string;
+  /** object-position CSS del hero, para encuadrar la cara si el recorte
+   *  automático (center) la corta; ej. "center 20%" */
+  heroImagePosition?: string;
   /** foto que acompaña la tarjeta de frases ("¿Te suena familiar?") */
   quotesImage?: string;
   /** fotos de apoyo para la sección de perfil/enfoque */
@@ -351,9 +358,11 @@ export const INTELLIGENCES: Intelligence[] = [
           title: "Ve películas y series con subtítulos en francés",
           what: "Mira contenido audiovisual en francés con los subtítulos también en francés (nunca en castellano). Anota las frases que te llamen la atención y, al lado, haz un pequeño dibujo o esquema de la escena.",
           why: "Ver con subtítulos en la lengua meta conecta lo que oyes con lo que ves escrito, y ese doble canal es exactamente lo que la codificación dual predice que funciona mejor. El dibujo al lado ancla la frase a una imagen concreta, y así se te queda.",
-          how: "TV5Monde tiene una plataforma completamente gratuita para aprender francés a partir de videos, series y reportajes, con más de dos mil ejercicios en línea organizados por nivel. Es probablemente el mejor recurso gratuito que existe para esto.",
+          how: "TV5Monde tiene una plataforma completamente gratuita para aprender francés a partir de videos, series y reportajes, con más de dos mil ejercicios en línea organizados por nivel. Es probablemente el mejor recurso gratuito que existe para esto. Y si quieres ver películas completas en francés, TV5MONDEplus tiene un catálogo gratuito.",
           image:
             "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784172739/ecrire-avec-toi/visual-espacial/reto-peliculas-series.png",
+          url: "https://www.tv5mondeplus.com/es/films",
+          urlLabel: "Ver películas en francés →",
         },
         {
           title: "Infografías de gramática hechas por ti",
@@ -376,7 +385,8 @@ export const INTELLIGENCES: Intelligence[] = [
       banner: "¡Tu imaginación no tiene límites!",
       media: {
         heroImage:
-          "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784299371/ecrire-avec-toi/visual-espacial/hero-v2.png",
+          "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784475173/ecrire-avec-toi/visual-espacial/hero-v3.png",
+        heroImagePosition: "center 22%",
       },
     },
   },
@@ -461,7 +471,8 @@ export const INTELLIGENCES: Intelligence[] = [
       banner: "¡El ritmo te acompaña en cada palabra!",
       media: {
         heroImage:
-          "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784299375/ecrire-avec-toi/musical-ritmica/hero-v2.png",
+          "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784172757/ecrire-avec-toi/musical-ritmica/hero.png",
+        heroImagePosition: "center 25%",
       },
     },
   },

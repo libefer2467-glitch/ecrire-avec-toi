@@ -95,6 +95,7 @@ export default async function IntelligenceDetailPage({
               priority
               sizes="(max-width: 768px) 100vw, 60vw"
               className="object-cover"
+              style={{ objectPosition: media.heroImagePosition ?? "center" }}
             />
           </div>
 
@@ -361,6 +362,17 @@ export default async function IntelligenceDetailPage({
                         Cómo hacerlo
                       </p>
                       <p className="mt-1 text-sm text-ink-soft">{tip.how}</p>
+                      {tip.url && (
+                        <a
+                          href={tip.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-2 inline-block text-sm font-semibold underline underline-offset-2"
+                          style={{ color: intel.inkVar }}
+                        >
+                          {tip.urlLabel ?? "Ir al recurso →"}
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>
