@@ -29,6 +29,10 @@ export interface Tip {
   url?: string;
   /** texto del enlace; por defecto "Ir al recurso" */
   urlLabel?: string;
+  /** foto opcional de una tarjeta pequeña al lado del tip, que también enlaza a "url" */
+  resourceImage?: string;
+  /** título de esa tarjeta pequeña; por defecto usa "title" */
+  resourceTitle?: string;
 }
 
 /**
@@ -363,6 +367,9 @@ export const INTELLIGENCES: Intelligence[] = [
             "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784172739/ecrire-avec-toi/visual-espacial/reto-peliculas-series.png",
           url: "https://www.tv5mondeplus.com/es/films",
           urlLabel: "Ver películas en francés →",
+          resourceImage:
+            "https://res.cloudinary.com/axnxzeg2/image/upload/f_auto,q_auto/v1784491733/ecrire-avec-toi/visual-espacial/reto-peliculas-recurso.png",
+          resourceTitle: "Películas en francés",
         },
         {
           title: "Infografías de gramática hechas por ti",

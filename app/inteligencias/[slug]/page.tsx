@@ -299,9 +299,9 @@ export default async function IntelligenceDetailPage({
 
           <div className="space-y-5">
             {intel.content.tips.map((tip, i) => (
+              <div key={i} className="flex flex-col gap-5 md:flex-row">
               <div
-                key={i}
-                className="overflow-hidden rounded-2xl border border-line bg-paper shadow-sm md:grid md:grid-cols-[220px_1fr]"
+                className="min-w-0 flex-1 overflow-hidden rounded-2xl border border-line bg-paper shadow-sm md:grid md:grid-cols-[220px_1fr]"
               >
                 {tip.image && (
                   <div className="relative h-48 w-full md:h-full">
@@ -376,6 +376,40 @@ export default async function IntelligenceDetailPage({
                     </div>
                   </div>
                 </div>
+              </div>
+
+              {tip.url && tip.resourceImage && (
+                <a
+                  href={tip.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex shrink-0 flex-col overflow-hidden rounded-2xl border border-line bg-paper shadow-sm transition hover:-translate-y-1 hover:shadow-md md:w-44"
+                >
+                  <div className="relative h-32 w-full md:h-28">
+                    <Image
+                      src={tip.resourceImage}
+                      alt=""
+                      fill
+                      sizes="176px"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div
+                    className="flex flex-1 items-center px-3 py-3"
+                    style={{ backgroundColor: intel.softVar }}
+                  >
+                    <p
+                      className="text-sm font-bold leading-snug"
+                      style={{ color: intel.inkVar }}
+                    >
+                      {tip.resourceTitle ?? tip.title}
+                      <span className="ml-1 inline-block transition group-hover:translate-x-0.5">
+                        →
+                      </span>
+                    </p>
+                  </div>
+                </a>
+              )}
               </div>
             ))}
           </div>
